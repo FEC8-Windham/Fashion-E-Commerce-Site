@@ -1,3 +1,5 @@
-const seiji = 1;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
 
-const mike = 0;
+ReactDOM.render(<App/>, document.getElementById('app'));
