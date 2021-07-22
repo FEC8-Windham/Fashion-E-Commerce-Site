@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewTile from './ReviewTile.jsx';
-import { Container } from './ReviewStyles.js';
+import { Container } from './styles/ReviewStyles.js';
 
 
 class ReviewIndex extends React.Component {

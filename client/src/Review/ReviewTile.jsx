@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from './ReviewStyles.js';
+import { Container } from './styles/ReviewStyles.js';
 
 
 const ReviewTile = () => {

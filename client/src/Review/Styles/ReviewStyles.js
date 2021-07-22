@@ -7,7 +7,7 @@ export const Container = styled.div`
   background: ${props => props.bgColor};
   float: ${props => props.float};
   text-align: ${props => props.float};
-
+  border: 1px solid;
 `;
 
 
