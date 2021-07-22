@@ -14,15 +14,15 @@ const RelatedProductsEntry = (props) => {
       */}
       <br></br>
       <Card>
-        {/* Image */} <Pic src='https://m.media-amazon.com/images/I/61xVh4j40iL._AC_UX569_.jpg' alt='clothingImage' />
+        <Pic src='https://i.guim.co.uk/img/media/1d3e368da379013c28a932d7e13de98cfbbe58c6/73_508_5206_3123/master/5206.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=afce95617427702369800ae1a9d4f2b0' alt='clothingImage' />
         <Info>
-          {/* Category */} <Category>Tops</Category>
+          <Category>Tops</Category>
           <br></br>
-          {/* Title */} <Title>Plain White Tee</Title>
+          <Title>Plain White Tee</Title>
           <br></br>
-          {/* Price */} <Price>$9.99</Price>
+          <Price>$9.99</Price>
           <br></br>
-          {/* Rating */} <Rating>⭑⭑⭑⭑⭑</Rating>
+          <Rating>⭑⭑⭑⭑⭑</Rating>
         </Info>
       </Card>
       <br></br>

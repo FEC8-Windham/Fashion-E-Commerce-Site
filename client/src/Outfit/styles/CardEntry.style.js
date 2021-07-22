@@ -14,6 +14,7 @@ export const Card = styled.div`
   margin: 0px;
   padding: 0px;
   cursor: pointer;
+  position: relative;
 `;
 
 export const Info = styled.div`
@@ -21,6 +22,8 @@ export const Info = styled.div`
   height: 100px;
   padding-left: 5px;
   padding-right: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+
 `;
 
 export const Pic = styled.img`
@@ -29,6 +32,11 @@ export const Pic = styled.img`
   border-bottom: 1px solid black;
   margin: 0px;
   padding: 0px;
+  transition: .5s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const Category = styled.span`

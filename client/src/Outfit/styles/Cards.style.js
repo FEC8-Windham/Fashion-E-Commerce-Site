@@ -12,6 +12,7 @@ export const RowContainer = styled.div`
 
 export const SectionTitle = styled.h4`
   margin-bottom: -10px;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 export const Fadeout = styled.div`
