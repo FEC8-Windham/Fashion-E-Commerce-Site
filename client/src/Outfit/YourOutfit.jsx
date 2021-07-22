@@ -1,12 +1,18 @@
 import React from 'react';
-import YourOutfitEntry from './YourOutfitEntry.jsx'
+import YourOutfitEntry from './YourOutfitEntry.jsx';
+import { RowContainer, Fadeout, NextButton } from './styles/Cards.style.js';
 
 const YourOutfit = (props) => {
   return (
-    <div>
-      Your Outfit Container!
+    <RowContainer>
       <YourOutfitEntry />
-    </div>
+      <YourOutfitEntry />
+      <YourOutfitEntry />
+      <Fadeout>
+        <YourOutfitEntry />
+      </Fadeout>
+      <NextButton>{'>'}</NextButton>
+    </RowContainer>
   );
 };
 

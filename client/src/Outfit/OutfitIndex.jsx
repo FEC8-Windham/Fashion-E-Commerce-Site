@@ -11,11 +11,12 @@ class OutfitIndex extends React.Component {
   render() {
     return (
       <div>
+        <hr></hr>
         Realted Products and My Outfit Component!
         <RelatedProducts />
         <YourOutfit />
       </div>
-    )
+    );
   }
 }
 
