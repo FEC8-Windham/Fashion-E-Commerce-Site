@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const RowContainer = styled.div`
-  margin: 0px;
-  margin-left: 50px;
+  margin: auto;
   padding: 0px;
   width: 850px;
   height: 100%;

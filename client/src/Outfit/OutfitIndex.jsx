@@ -3,12 +3,14 @@ import RelatedProducts from './RelatedProducts.jsx';
 import YourOutfit from './YourOutfit.jsx';
 
 var OutfitIndex = (props) => {
+
   return (
     <div>
       <hr></hr>
-      Realted Products and My Outfit Component!
+      <h1>Related Items and Comparison</h1>
       <RelatedProducts />
       <YourOutfit />
+      <hr></hr>
     </div>
   );
 };

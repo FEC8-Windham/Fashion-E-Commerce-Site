@@ -2,6 +2,8 @@ import React from 'react';
 import { CardContainer, Card, Info, Pic, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
 
 const RelatedProductsEntry = (props) => {
+  var style = props.data;
+  console.log('First style:', style);
   return (
     <CardContainer>
       {/* CARD
@@ -14,7 +16,7 @@ const RelatedProductsEntry = (props) => {
       */}
       <br></br>
       <Card>
-        <Pic src='https://i.guim.co.uk/img/media/1d3e368da379013c28a932d7e13de98cfbbe58c6/73_508_5206_3123/master/5206.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=afce95617427702369800ae1a9d4f2b0' alt='clothingImage' />
+        <Pic src={img} alt='clothingImage' />
         <Info>
           <Category>Tops</Category>
           <br></br>
@@ -28,6 +30,7 @@ const RelatedProductsEntry = (props) => {
       <br></br>
     </CardContainer>
   );
+
 };
 
 export default RelatedProductsEntry;
