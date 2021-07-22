@@ -9,9 +9,9 @@ class OverviewIndex extends React.Component {
   render() {
     return (
       <div>
-        <StarRating rating ={2.4}/>
+        <StarRating rating ={3.7}/>
       </div>
-    )
+    );
   }
 }
 
