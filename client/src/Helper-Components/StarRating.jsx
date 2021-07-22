@@ -25,14 +25,14 @@ var StarRating = (props) => {
 
   return (
     <div>
-    {
-      stars.map((percentage) =>
-        (<Star yellowPercentage= {percentage}>&#9733;</Star>)
-      )
-    }
+      {
+        stars.map((percentage) =>
+          (<Star yellowPercentage= {percentage}>&#9733;</Star>)
+        )
+      }
     </div>
   );
 
-}
+};
 
 export default StarRating;

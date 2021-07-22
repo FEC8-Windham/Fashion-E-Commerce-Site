@@ -8,6 +8,10 @@ class App extends React.Component{
     super(props);
   }
 
+  get(string) {
+    axios.get()
+  }
+
   render() {
     return(
       <div>
