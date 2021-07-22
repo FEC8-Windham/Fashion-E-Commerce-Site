@@ -1,4 +1,7 @@
 import React from 'react';
+import ReviewTile from './ReviewTile.jsx';
+import { Container } from './ReviewStyles.js';
+
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -7,10 +10,11 @@ class ReviewIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container height='200px' width='500px' bgColor={'red'}>
         Review Component!
-      </div>
-    )
+        <ReviewTile/>
+      </Container>
+    );
   }
 }
 
