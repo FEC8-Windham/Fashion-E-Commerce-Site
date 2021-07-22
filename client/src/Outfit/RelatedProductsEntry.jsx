@@ -16,7 +16,7 @@ const RelatedProductsEntry = (props) => {
       <Card>
         {/* Image */} <Pic src='https://m.media-amazon.com/images/I/61xVh4j40iL._AC_UX569_.jpg' alt='clothingImage' />
         <Info>
-          {/* Category */} <Category>Category</Category>
+          {/* Category */} <Category>Tops</Category>
           <br></br>
           {/* Title */} <Title>Plain White Tee</Title>
           <br></br>

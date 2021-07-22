@@ -5,9 +5,13 @@ export const RowContainer = styled.div`
   margin-left: 50px;
   padding: 0px;
   width: 850px;
-  height: 320px;
+  height: 100%;
   overflow: scroll;
   position: relative;
+`;
+
+export const SectionTitle = styled.h4`
+  margin-bottom: -10px;
 `;
 
 export const Fadeout = styled.div`

@@ -16,9 +16,9 @@ const YourOutfitEntry = (props) => {
       <Card>
         {/* Image */} <Pic src='https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/464e8d65-3a82-472a-aa2c-de53b2dfe7f2/wearallday-shoe-XpS7nX.png' alt='shoeImage' />
         <Info>
-          {/* Category */} <Category>Category</Category>
+          {/* Category */} <Category>Footwear</Category>
           <br></br>
-          {/* Title */} <Title>Shoe</Title>
+          {/* Title */} <Title>Nike Sneaker</Title>
           <br></br>
           {/* Price */} <Price>$999.99</Price>
           <br></br>
