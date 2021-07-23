@@ -13,9 +13,13 @@ const RelatedProducts = (props) => {
 
   // Use: 19809
 
+  var leftMost = true;
+  var rightMost = false;
+
   var clickHandlerLeft = () => {
     console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft += 202;
+    leftMost = false;
   };
 
   var clickHandlerRight = () => {
@@ -28,7 +32,7 @@ const RelatedProducts = (props) => {
   return (
     <Container>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
-      <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
+      {!leftMost ? <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton> : null}
       <RowContainer id="relatedContainer">
         {exampleArr.map(item => {
           if (exampleArr[exampleArr.length - 1] === item) {
@@ -39,7 +43,7 @@ const RelatedProducts = (props) => {
         })}
       </RowContainer>
       <Fadeout></Fadeout>
-      <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
+      {!rightMost ? <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton> : null}
     </Container>
   );
 };
