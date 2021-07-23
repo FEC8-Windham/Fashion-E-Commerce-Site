@@ -13,10 +13,13 @@ export const RowContainer = styled.div`
   padding: 0px;
   width: 800px;
   height: 360px;
-  overflow-x: scroll;
+  overflow-x: hidden;
   position: relative;
   white-space: nowrap;
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const SectionTitle = styled.h4`
