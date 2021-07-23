@@ -29,13 +29,13 @@ var StarRating = (props) => {
       stars.push(0);
     }
   }
-
+  var key = 0;
 
   return (
     <div>
       {
         stars.map((percentage) =>
-          (<Star yellowPercentage= {percentage}>&#9733;</Star>)
+          (<Star key= {key++} yellowPercentage= {percentage}>&#9733;</Star>)
         )
       }
     </div>

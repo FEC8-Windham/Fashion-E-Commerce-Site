@@ -30,3 +30,10 @@ export var Size = styled.div`
 
 
 `;
+
+export var Description = styled.div`
+
+
+
+`;
+
