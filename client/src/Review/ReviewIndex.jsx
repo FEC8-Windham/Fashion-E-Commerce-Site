@@ -1,21 +1,22 @@
 import React from 'react';
 import ReviewTile from './ReviewTile.jsx';
-import { Container } from './styles/ReviewStyles.js';
+import { FlexContainer } from './Styles/ReviewStyles.js';
 
 
-class ReviewIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const ReviewIndex = (props) => {
 
-  render() {
-    return (
-      <Container height='200px' width='500px' bgColor={'red'}>
-        Review Component!
-        <ReviewTile/>
-      </Container>
-    );
-  }
-}
+
+
+
+  return (
+
+    <div>
+      <ReviewTile/>
+      <ReviewTile/>
+    </div>
+
+  );
+
+};
 
 export default ReviewIndex;
