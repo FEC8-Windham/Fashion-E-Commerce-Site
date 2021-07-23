@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
-import { RowContainer, Fadeout, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
+import { Container, RowContainer, Fadeout, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 import { stylesJSON } from '../../../APIExamples/styles.js';
 import axios from 'axios';
 
@@ -72,21 +72,20 @@ const RelatedProducts = (props) => {
   // };
 
   var clickHandlerLeft = () => {
-    console.log('Right button click!');
-    document.getElementById('container').scrollLeft += 202;
+    console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
+    document.querySelector('#relatedContainer').scrollLeft += 202;
   };
 
   var clickHandlerRight = () => {
-    console.log('Left button click!');
-    document.getElementById('container').scrollLeft -= 202;
+    console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
+    document.querySelector('#relatedContainer').scrollLeft -= 202;
   };
 
   return (
-    <div>
-      <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
-      <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
+    <Container>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
-      <RowContainer id="container">
+      <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
+      <RowContainer id="relatedContainer">
         <RelatedProductsEntry ></RelatedProductsEntry>
         <RelatedProductsEntry ></RelatedProductsEntry>
         <RelatedProductsEntry ></RelatedProductsEntry>
@@ -95,7 +94,8 @@ const RelatedProducts = (props) => {
         <RelatedProductsEntry ></RelatedProductsEntry>
         <RelatedProductsEntry ></RelatedProductsEntry>
       </RowContainer>
-    </div>
+      <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
+    </Container>
   );
 };
 

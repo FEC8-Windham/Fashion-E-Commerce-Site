@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  margin: auto;
+  width: 900px;
+  height: 360px;
+  padding: 0px;
+  position: relative;
+`;
+
 export const RowContainer = styled.div`
   margin: auto;
   padding: 0px;
@@ -28,6 +36,7 @@ export const Fadeout = styled.div`
 export const PreviousButton = styled.button`
   position: relative;
   border: none;
+  top: 150px;
   /* background: none; */
   z-index: 1;
   font-weight: bold;
@@ -36,6 +45,9 @@ export const PreviousButton = styled.button`
 export const NextButton = styled.button`
   position: relative;
   border: none;
+  bottom: 200px;
+  right: 20px;
+  float: right;
   /* background: none; */
   z-index: 1;
   font-weight: bold;
