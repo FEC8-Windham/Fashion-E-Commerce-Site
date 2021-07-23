@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewTile from './ReviewTile.jsx';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -8,9 +9,11 @@ class ReviewIndex extends React.Component {
   render() {
     return (
       <div>
-        Review Component!
+        <ReviewTile/>
+        <ReviewTile/>
+
       </div>
-    )
+    );
   }
 }
 

@@ -85,14 +85,14 @@ const ReviewTile = () => {
     <FlexContainer>
       <Container >
         <Container float = 'left'>
-          <StarRating rating ={3.7}/>
+          <StarRating rating ={3.1}/>
         </Container>
         <Container float = 'right'>
           {review.reviewer_name + ',    ' + moment(review.date).format('MMMM Do YYYY')}
         </Container>
       </Container>
       <Container >
-        <b>{review.summary}</b>
+        <b>{review.summary.slice(0, 60)}</b>
       </Container>
       {/* <Container >
         Title 2
