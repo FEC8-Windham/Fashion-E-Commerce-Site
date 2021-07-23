@@ -88,11 +88,11 @@ const ReviewTile = () => {
           <StarRating rating ={3.7}/>
         </Container>
         <Container float = 'right'>
-          {review.reviewer_name + '    ' + moment(review.date).format('MMMM Do YYYY')}
+          {review.reviewer_name + ',    ' + moment(review.date).format('MMMM Do YYYY')}
         </Container>
       </Container>
       <Container >
-        {review.summary}
+        <b>{review.summary}</b>
       </Container>
       {/* <Container >
         Title 2
