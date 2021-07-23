@@ -1,7 +1,9 @@
 const path = require('path');
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
 
 module.exports = {
-  // mode: 'development',
+  mode: 'development',
   entry: './client/src/index.js',
   output: {
     filename: 'bundle.js',
@@ -18,7 +20,10 @@ module.exports = {
           options: {
             presets: [
               '@babel/preset-env',
-              '@babel/preset-react'
+              '@babel/preset-react',
+            ],
+            plugins: [
+              '@babel/transform-runtime'
             ]
           }
         }
