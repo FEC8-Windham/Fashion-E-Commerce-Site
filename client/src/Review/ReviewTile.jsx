@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRating from '../../Helper-Components/StarRating.jsx';
 import { Container, FlexContainer } from './Styles/ReviewStyles.js';
 
 
