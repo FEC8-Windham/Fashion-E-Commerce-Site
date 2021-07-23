@@ -1,3 +1,13 @@
+<<<<<<< HEAD
 node_modules
 public/bundle.js
 package-lock.json
+=======
+<<<<<<< HEAD
+node_modules
+=======
+node_modules
+##
+client/src/config/config.js
+>>>>>>> master
+>>>>>>> dev
