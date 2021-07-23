@@ -4,12 +4,12 @@ import { Container, RowContainer, SectionTitle, NextButton, PreviousButton, Fade
 
 const YourOutfit = (props) => {
   var clickHandlerLeft = () => {
-    console.log('Right button click!', document.querySelector('#outfitContainer').scrollLeft);
+    // console.log('Right button click!', document.querySelector('#outfitContainer').scrollLeft);
     document.querySelector('#outfitContainer').scrollLeft += 202;
   };
 
   var clickHandlerRight = () => {
-    console.log('Left button click!', document.querySelector('#outfitContainer').scrollLeft);
+    // console.log('Left button click!', document.querySelector('#outfitContainer').scrollLeft);
     document.querySelector('#outfitContainer').scrollLeft -= 202;
   };
 

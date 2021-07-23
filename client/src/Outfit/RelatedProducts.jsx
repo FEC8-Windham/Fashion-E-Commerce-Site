@@ -72,12 +72,12 @@ const RelatedProducts = (props) => {
   // };
 
   var clickHandlerLeft = () => {
-    console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
+    // console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft += 202;
   };
 
   var clickHandlerRight = () => {
-    console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
+    // console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft -= 202;
   };
 
