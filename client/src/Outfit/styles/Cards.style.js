@@ -35,6 +35,7 @@ export const Fadeout = styled.div`
   white-space: nowrap;
   mask-image: linear-gradient(to right, black 0%, transparent 100%);
   display: inline-block;
+  z-index: 1;
 `;
 
 export const PreviousButton = styled.button`

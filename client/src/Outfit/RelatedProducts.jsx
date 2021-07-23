@@ -13,87 +13,32 @@ const RelatedProducts = (props) => {
 
   // Use: 19809
 
-  useEffect(() => {
-    getRelatedIds();
-  }, []);
-
-  var getRelatedIds = () => {
-    var config = {
-      method: 'get',
-      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${currentItemId}/related`,
-      headers: {
-        'Authorization': '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'
-      },
-      data: data
-    };
-
-    axios(config)
-      .then(function (response) {
-        setRelatedIds(response.data);
-        console.log('Related IDs:', relatedIds);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  var getRelatedItems = (id) => {
-    console.log('Related IDs:', id);
-    var config = {
-      method: 'get',
-      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${id}/styles`,
-      headers: {
-        'Authorization': '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'
-      },
-      data: data
-    };
-
-    axios(config)
-      .then(function (response) {
-        console.log(response.data);
-        var temp = allRelatedProducts;
-        temp.push(response.data);
-        console.log('Temp', temp);
-        changeRelatedProducts(temp);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  // buttonRight = document.getElementById('slideRight');
-  // buttonLeft = document.getElementyById('slideLeft');
-
-  // buttonRight.onclick = () => {
-  //   document.getElementById('container').scrollLeft += 20;
-  // };
-  // buttonLeft.onclick = () => {
-  //   document.getElementById('container').scrollLeft -= 20;
-  // };
-
   var clickHandlerLeft = () => {
-    // console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
+    console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft += 202;
   };
 
   var clickHandlerRight = () => {
-    // console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
+    console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft -= 202;
   };
+
+  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <Container>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
       <RowContainer id="relatedContainer">
-        <RelatedProductsEntry />
-        <RelatedProductsEntry />
-        <RelatedProductsEntry />
-        <RelatedProductsEntry />
-        <RelatedProductsEntry />
-        <RelatedProductsEntry />
-        <RelatedProductsEntry last={true}></RelatedProductsEntry>
+        {exampleArr.map(item => {
+          if (exampleArr[exampleArr.length - 1] === item) {
+            return <RelatedProductsEntry last={true} />;
+          } else {
+            return <RelatedProductsEntry />;
+          }
+        })}
       </RowContainer>
+      <Fadeout></Fadeout>
       <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
     </Container>
   );

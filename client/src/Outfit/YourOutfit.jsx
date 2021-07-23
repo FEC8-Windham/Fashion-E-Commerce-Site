@@ -13,18 +13,20 @@ const YourOutfit = (props) => {
     document.querySelector('#outfitContainer').scrollLeft -= 202;
   };
 
+  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
+
   return (
     <Container>
       <SectionTitle>YOUR OUTFIT</SectionTitle>
       <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
       <RowContainer id="outfitContainer">
-        <YourOutfitEntry />
-        <YourOutfitEntry />
-        <YourOutfitEntry />
-        <YourOutfitEntry />
-        <YourOutfitEntry />
-        <YourOutfitEntry />
-        <YourOutfitEntry last={true}/>
+        {exampleArr.map(item => {
+          if (exampleArr[exampleArr.length - 1] === item) {
+            return <YourOutfitEntry last={true} />;
+          } else {
+            return <YourOutfitEntry />;
+          }
+        })}
       </RowContainer>
       <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
     </Container>
