@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
   display: inline-block;
-  margin-right: 20px;
+  margin-right: ${props => props.margin};
   white-space: normal;
   overflow: hidden;
 `;

@@ -24,7 +24,7 @@ const YourOutfit = (props) => {
         <YourOutfitEntry />
         <YourOutfitEntry />
         <YourOutfitEntry />
-        <YourOutfitEntry />
+        <YourOutfitEntry last={true}/>
       </RowContainer>
       <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
     </Container>

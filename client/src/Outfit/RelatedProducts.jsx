@@ -86,13 +86,13 @@ const RelatedProducts = (props) => {
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
       <RowContainer id="relatedContainer">
-        <RelatedProductsEntry ></RelatedProductsEntry>
-        <RelatedProductsEntry ></RelatedProductsEntry>
-        <RelatedProductsEntry ></RelatedProductsEntry>
-        <RelatedProductsEntry ></RelatedProductsEntry>
-        <RelatedProductsEntry ></RelatedProductsEntry>
-        <RelatedProductsEntry ></RelatedProductsEntry>
-        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry />
+        <RelatedProductsEntry />
+        <RelatedProductsEntry />
+        <RelatedProductsEntry />
+        <RelatedProductsEntry />
+        <RelatedProductsEntry />
+        <RelatedProductsEntry last={true}></RelatedProductsEntry>
       </RowContainer>
       <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
     </Container>

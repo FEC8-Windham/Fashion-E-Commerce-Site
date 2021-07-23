@@ -4,8 +4,14 @@ import StarRating from '../Helper-Components/StarRating.jsx';
 
 
 const YourOutfitEntry = (props) => {
+  var isLast = false;
+  var marginx = '20px';
+  if (props.last) {
+    isLast = true;
+    marginx = '0px';
+  }
   return (
-    <CardContainer>
+    <CardContainer margin={marginx}>
       {/* CARD
         Pic
         Category
