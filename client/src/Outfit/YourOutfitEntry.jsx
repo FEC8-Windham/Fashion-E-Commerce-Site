@@ -26,7 +26,7 @@ const YourOutfitEntry = (props) => {
           <br></br>
           <Price>$999.99</Price>
           <br></br>
-          <Rating>⭑✩✩✩✩</Rating>
+          <StarRating rating={3.5}/>
         </Info>
       </Card>
       <br></br>

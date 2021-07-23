@@ -16,6 +16,7 @@ export const RowContainer = styled.div`
   overflow-x: scroll;
   position: relative;
   white-space: nowrap;
+  scroll-behavior: smooth;
 `;
 
 export const SectionTitle = styled.h4`
