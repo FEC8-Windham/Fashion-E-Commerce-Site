@@ -1,22 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import RelatedProducts from './RelatedProducts.jsx';
 import YourOutfit from './YourOutfit.jsx';
 
-class OutfitIndex extends React.Component {
-  constructor(props) {
-    super(props);
+var OutfitIndex = (props) => {
 
-  }
-
-  render() {
-    return (
-      <div>
-        Realted Products and My Outfit Component!
-        <RelatedProducts />
-        <YourOutfit />
-      </div>
-    )
-  }
-}
+  return (
+    <div>
+      <hr></hr>
+      <h1>Related Items and Comparison</h1>
+      <RelatedProducts />
+      <YourOutfit />
+      <hr></hr>
+    </div>
+  );
+};
 
 export default OutfitIndex;

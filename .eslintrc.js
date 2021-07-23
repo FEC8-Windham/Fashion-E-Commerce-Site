@@ -6,11 +6,12 @@
 
 module.exports = {
   env: {
+    'node': true,
     'es6': true
   },
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6,
+    ecmaVersion: 8,
     ecmaFeatures: {
       'jsx': true
     }
