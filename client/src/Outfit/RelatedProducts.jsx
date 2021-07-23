@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
 import { Container, RowContainer, Fadeout, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
-import { stylesJSON } from '../../../APIExamples/styles.js';
+import { getData } from '../Controllers/getData.js';
 import axios from 'axios';
 
 const RelatedProducts = (props) => {
@@ -12,22 +12,28 @@ const RelatedProducts = (props) => {
   var [allRelatedProducts, changeRelatedProducts] = useState([]);
 
   // Use: 19809
+  var [leftMost, setLeftMost] = useState(true);
+  var [rightMost, setRightMost] = useState(false);
 
-  var leftMost = true;
-  var rightMost = false;
+  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
 
   var clickHandlerLeft = () => {
-    console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft += 202;
-    leftMost = false;
+    console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
+    if (document.querySelector('#relatedContainer').scrollLeft >= exampleArr.length * 50) {
+      setRightMost(true);
+    }
+    setLeftMost(false);
   };
 
   var clickHandlerRight = () => {
-    console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
     document.querySelector('#relatedContainer').scrollLeft -= 202;
+    console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
+    if (document.querySelector('#relatedContainer').scrollLeft < 203) {
+      setLeftMost(true);
+    }
+    setRightMost(false);
   };
-
-  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <Container>

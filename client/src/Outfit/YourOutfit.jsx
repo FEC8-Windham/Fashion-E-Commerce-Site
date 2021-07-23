@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import YourOutfitEntry from './YourOutfitEntry.jsx';
 import { Container, RowContainer, SectionTitle, NextButton, PreviousButton, Fadeout } from './styles/Cards.style.js';
 
 const YourOutfit = (props) => {
+  var [leftMost, setLeftMost] = useState(true);
+  var [rightMost, setRightMost] = useState(false);
+
+  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
+
   var clickHandlerLeft = () => {
-    // console.log('Right button click!', document.querySelector('#outfitContainer').scrollLeft);
     document.querySelector('#outfitContainer').scrollLeft += 202;
+    console.log('Right button click!', document.querySelector('#outfitContainer').scrollLeft);
+    if (document.querySelector('#outfitContainer').scrollLeft >= exampleArr.length * 50) {
+      setRightMost(true);
+    }
+    setLeftMost(false);
   };
 
   var clickHandlerRight = () => {
-    // console.log('Left button click!', document.querySelector('#outfitContainer').scrollLeft);
     document.querySelector('#outfitContainer').scrollLeft -= 202;
+    console.log('Left button click!', document.querySelector('#outfitContainer').scrollLeft);
+    if (document.querySelector('#outfitContainer').scrollLeft < 203) {
+      setLeftMost(true);
+    }
+    setRightMost(false);
   };
-
-  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <Container>
       <SectionTitle>YOUR OUTFIT</SectionTitle>
-      <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
+      {!leftMost ? <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton> : null}
       <RowContainer id="outfitContainer">
         {exampleArr.map(item => {
           if (exampleArr[exampleArr.length - 1] === item) {
@@ -28,7 +39,7 @@ const YourOutfit = (props) => {
           }
         })}
       </RowContainer>
-      <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
+      {!rightMost ? <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton> : null}
     </Container>
   );
 };

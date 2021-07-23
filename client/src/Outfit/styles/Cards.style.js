@@ -39,18 +39,22 @@ export const Fadeout = styled.div`
 `;
 
 export const PreviousButton = styled.button`
-  position: relative;
+  position: absolute;
   border: none;
-  top: 150px;
+  margin: 0px;
+  padding: 0px;
+  left: 15px;
+  top: 160px;
   /* background: none; */
   z-index: 1;
   font-weight: bold;
 `;
 
 export const NextButton = styled.button`
-  position: relative;
+  position: absolute;
   border: none;
-  bottom: 200px;
+  margin: 0px;
+  bottom: 190px;
   right: 20px;
   float: right;
   /* background: none; */
