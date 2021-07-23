@@ -1,5 +1,7 @@
 import React from 'react';
-import { CardContainer, Card, Info, Pic, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
+import { CardContainer, Card, Info, ImageContainer, Pic, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
+import StarRating from '../Helper-Components/StarRating.jsx';
+
 
 const YourOutfitEntry = (props) => {
   return (
@@ -14,15 +16,17 @@ const YourOutfitEntry = (props) => {
       */}
       <br></br>
       <Card>
-        {/* Image */} <Pic src='https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/464e8d65-3a82-472a-aa2c-de53b2dfe7f2/wearallday-shoe-XpS7nX.png' alt='shoeImage' />
+        <ImageContainer>
+          <Pic src='https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/464e8d65-3a82-472a-aa2c-de53b2dfe7f2/wearallday-shoe-XpS7nX.png' alt='shoeImage' />
+        </ImageContainer>
         <Info>
-          {/* Category */} <Category>Footwear</Category>
+          <Category>Footwear</Category>
           <br></br>
-          {/* Title */} <Title>Nike Sneaker</Title>
+          <Title>Nike Sneaker</Title>
           <br></br>
-          {/* Price */} <Price>$999.99</Price>
+          <Price>$999.99</Price>
           <br></br>
-          {/* Rating */} <Rating>⭑✩✩✩✩</Rating>
+          <Rating>⭑✩✩✩✩</Rating>
         </Info>
       </Card>
       <br></br>

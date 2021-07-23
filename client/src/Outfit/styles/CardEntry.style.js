@@ -4,6 +4,7 @@ export const CardContainer = styled.div`
   display: inline-block;
   margin-right: 20px;
   white-space: normal;
+  overflow: hidden;
 `;
 
 export const Card = styled.div`
@@ -15,15 +16,25 @@ export const Card = styled.div`
   padding: 0px;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 `;
 
 export const Info = styled.div`
   weight: 180px;
   height: 100px;
-  padding-left: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
   padding-right: 5px;
   font-family: Arial, Helvetica, sans-serif;
 
+`;
+
+export const ImageContainer = styled.div`
+  width: 180px;
+  height: 200px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
 `;
 
 export const Pic = styled.img`
@@ -33,9 +44,11 @@ export const Pic = styled.img`
   margin: 0px;
   padding: 0px;
   transition: .5s ease;
+  overflow: hidden;
 
   &:hover {
     opacity: 0.7;
+    transform: scale(1.05);
   }
 `;
 

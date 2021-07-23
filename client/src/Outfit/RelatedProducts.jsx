@@ -1,47 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
-import { RowContainer, Fadeout, NextButton, SectionTitle } from './styles/Cards.style.js';
+import { RowContainer, Fadeout, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 import { stylesJSON } from '../../../APIExamples/styles.js';
 import axios from 'axios';
 
 const RelatedProducts = (props) => {
   var [data, setData] = useState('');
   var [isLoading, setLoading] = useState(true);
-  var [currentItemId, setCurrentItemId] = useState(0);
+  var [currentItemId, setCurrentItemId] = useState(19809);
   var [relatedIds, setRelatedIds] = useState([]);
   var [allRelatedProducts, changeRelatedProducts] = useState([]);
-  var [fourOnly, changeData] = useState([]);
+
+  // Use: 19809
 
   useEffect(() => {
-    setCurrentItemId(19809);
-    getRelatedIds((relatedIds) => {
-      for (var i = 0; i < relatedIds.length; i++) {
-        getRelatedItems(relatedIds[i]);
-      }
+    getRelatedIds();
+  }, []);
 
-    });
-  }, [currentItemId]);
+  var getRelatedIds = () => {
+    var config = {
+      method: 'get',
+      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${currentItemId}/related`,
+      headers: {
+        'Authorization': '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'
+      },
+      data: data
+    };
 
-  var getRelatedIds = (callback) => {
-    if (currentItemId !== 0) {
-      var config = {
-        method: 'get',
-        url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${currentItemId}/related`,
-        headers: {
-          'Authorization': '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'
-        },
-        data: data
-      };
-
-      axios(config)
-        .then(function (response) {
-          setRelatedIds(response.data);
-          callback(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
+    axios(config)
+      .then(function (response) {
+        setRelatedIds(response.data);
+        console.log('Related IDs:', relatedIds);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   var getRelatedItems = (id) => {
@@ -57,8 +50,10 @@ const RelatedProducts = (props) => {
 
     axios(config)
       .then(function (response) {
+        console.log(response.data);
         var temp = allRelatedProducts;
         temp.push(response.data);
+        console.log('Temp', temp);
         changeRelatedProducts(temp);
       })
       .catch(function (error) {
@@ -66,15 +61,113 @@ const RelatedProducts = (props) => {
       });
   };
 
-  return (
-    <RowContainer>
-      {console.log('hi', allRelatedProducts)}
-      <SectionTitle>RELATED PRODUCTS</SectionTitle>
-      {allRelatedProducts.map(entry => <RelatedProductsEntry key={entry.product_id} data={entry.results[0]} />)};
-      <NextButton>{'>'}</NextButton>
-    </RowContainer>
-  );
+  // buttonRight = document.getElementById('slideRight');
+  // buttonLeft = document.getElementyById('slideLeft');
 
+  // buttonRight.onclick = () => {
+  //   document.getElementById('container').scrollLeft += 20;
+  // };
+  // buttonLeft.onclick = () => {
+  //   document.getElementById('container').scrollLeft -= 20;
+  // };
+
+  var clickHandler = () => {
+    console.log('Button click!');
+  };
+
+  return (
+    <div>
+      <PreviousButton onClick={clickHandler}>{'<'}</PreviousButton>
+      <NextButton onClick={clickHandler}>{'>'}</NextButton>
+      <SectionTitle>RELATED PRODUCTS</SectionTitle>
+      <RowContainer id="container">
+        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry ></RelatedProductsEntry>
+        <RelatedProductsEntry ></RelatedProductsEntry>
+      </RowContainer>
+    </div>
+  );
 };
 
 export default RelatedProducts;
+
+// class RelatedProducts extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       data: '',
+//       currentItemId: 19809,
+//       relatedIds: [],
+//       allRelatedProducts: []
+//     };
+//   }
+
+//   componentDidMount() {
+//     console.log('Hello');
+//     this.getRelatedIds();
+//   }
+
+//   getRelatedIds() {
+//     var config = {
+//       method: 'get',
+//       url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${this.state.currentItemId}/related`,
+//       headers: {
+//         'Authorization': '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'
+//       },
+//       data: this.state.data
+//     };
+
+//     axios(config)
+//       .then(response => {
+//         this.setState ({relatedIds: response.data}, () => {
+//           this.getRelatedItems(this.state.relatedIds);
+//         });
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+//   }
+
+//   getRelatedItems(ids) {
+//     console.log('Related IDs:', ids);
+//     ids.forEach(id => {
+//       var config = {
+//         method: 'get',
+//         url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${id}/styles`,
+//         headers: {
+//           'Authorization': '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'
+//         },
+//         data: this.state.data
+//       };
+
+//       axios(config)
+//         .then(response => {
+//           var temp = this.state.allRelatedProducts;
+//           temp.push(response.data);
+//           this.setState({allRelatedProducts: temp});
+//           if (this.state.allRelatedProducts.length === 4) {
+//             console.log('4');
+//             this.state.allRelatedProducts.map(product => <RelatedProductsEntry data={product}></RelatedProductsEntry>);
+//           }
+//         })
+//         .catch(error => {
+//           console.log(error);
+//         });
+//     });
+//   }
+
+//   render() {
+//     return (
+//       <RowContainer>
+//         <SectionTitle>RELATED PRODUCTS</SectionTitle>
+//         {console.log('All related products:', this.state.allRelatedProducts)}
+//         {this.state.allRelatedProducts}
+//         <NextButton>{'>'}</NextButton>
+//       </RowContainer>
+//     );
+//   }
+// }

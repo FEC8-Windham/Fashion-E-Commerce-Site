@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const RowContainer = styled.div`
   margin: auto;
   padding: 0px;
-  width: 850px;
-  height: 100%;
-  overflow: scroll;
+  width: 800px;
+  height: 360px;
+  overflow-x: scroll;
   position: relative;
+  white-space: nowrap;
 `;
 
 export const SectionTitle = styled.h4`
@@ -24,12 +25,18 @@ export const Fadeout = styled.div`
   display: inline-block;
 `;
 
+export const PreviousButton = styled.button`
+  position: relative;
+  border: none;
+  /* background: none; */
+  z-index: 1;
+  font-weight: bold;
+`;
+
 export const NextButton = styled.button`
   position: relative;
-  bottom: 160px;
-  right: 20px;
   border: none;
-  background: none;
+  /* background: none; */
   z-index: 1;
   font-weight: bold;
 `;
