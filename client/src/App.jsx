@@ -3,23 +3,23 @@ import OverviewIndex from './Overview/OverviewIndex.jsx';
 import OutfitIndex from './Outfit/OutfitIndex.jsx';
 import ReviewIndex from './Review/ReviewIndex.jsx';
 
-class App extends React.Component{
+class App extends React.Component {
   constructor(props) {
     super(props);
   }
 
   get(string) {
-    axios.get()
+    axios.get();
   }
 
   render() {
-    return(
+    return (
       <div>
         <div><OverviewIndex/></div>
         <div><OutfitIndex/></div>
         <div><ReviewIndex/></div>
       </div>
-    )
+    );
   }
 }
 
