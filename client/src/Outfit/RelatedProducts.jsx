@@ -71,14 +71,20 @@ const RelatedProducts = (props) => {
   //   document.getElementById('container').scrollLeft -= 20;
   // };
 
-  var clickHandler = () => {
-    console.log('Button click!');
+  var clickHandlerLeft = () => {
+    console.log('Right button click!');
+    document.getElementById('container').scrollLeft += 202;
+  };
+
+  var clickHandlerRight = () => {
+    console.log('Left button click!');
+    document.getElementById('container').scrollLeft -= 202;
   };
 
   return (
     <div>
-      <PreviousButton onClick={clickHandler}>{'<'}</PreviousButton>
-      <NextButton onClick={clickHandler}>{'>'}</NextButton>
+      <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton>
+      <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       <RowContainer id="container">
         <RelatedProductsEntry ></RelatedProductsEntry>
