@@ -9,9 +9,9 @@ var StarRating = (props) => {
   -webkit-text-fill-color: transparent;
 `;
 
-  var roundedStar = Math.ceil(4 * props.rating) / 4;
-  var fullStars = Math.floor(roundedStar);
-  var remainder = roundedStar - fullStars;
+  var roundedRating = Math.ceil(4 * props.rating) / 4;
+  var fullStars = Math.floor(roundedRating);
+  var remainder = roundedRating - fullStars;
   var stars = [];
 
   if (remainder === 0.25) {
@@ -23,10 +23,13 @@ var StarRating = (props) => {
   for (var i = 0; i < fullStars; i++) {
     stars.push(100);
   }
-  stars.push(remainder * 100);
-  for (var i = 0; i < 5 - fullStars - 1; i++) {
-    stars.push(0);
+  if (fullStars <= 4) {
+    stars.push(remainder * 100);
+    for (var i = 0; i < 5 - fullStars - 1; i++) {
+      stars.push(0);
+    }
   }
+
 
   return (
     <div>
