@@ -35,27 +35,5 @@ var App = (props) => {
   );
 };
 
-<<<<<<< HEAD
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  get(string) {
-    axios.get();
-  }
-
-  render() {
-    return (
-      <div>
-        <div><OverviewIndex/></div>
-        <div><OutfitIndex/></div>
-        <div><ReviewIndex/></div>
-      </div>
-    );
-  }
-}
-=======
->>>>>>> 7ee8135952eebc494b38c9c2b21894e0e4ea7ec1
 
 export default App;
