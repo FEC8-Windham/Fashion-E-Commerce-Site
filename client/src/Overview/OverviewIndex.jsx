@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRating from '../Helper-Components/StarRating.jsx';
 
 class OverviewIndex extends React.Component {
   constructor(props) {
@@ -8,9 +9,9 @@ class OverviewIndex extends React.Component {
   render() {
     return (
       <div>
-        Overview Component!
+        <StarRating rating ={3.7}/>
       </div>
-    )
+    );
   }
 }
 
