@@ -1,31 +1,17 @@
-import React, {useState, useEffect}from 'react';
-import ProductInfo from './ProductInfo.jsx';
+import React, {useState, useEffect} from 'react';
+import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import axios from 'axios';
-import API_KEY from '../config/config.js';
+import { calculateAverageRating } from '../HelperFunctions.js';
 
-
-
-
-var OverviewIndex = ({productInfo}) => {
-  var [currProductId, setCurrProductId] = useState(0);
-  var [rating, setRating] = useState(5);
-  // var [category, setCategory] = useState('Dipers');
-  var [name, setName] = useState('exampleName');
-  var [price, setPrice] = useState(99.99);
-  var [styles, setStyles] = useState([]);
-  var [size, setSize] = useState('L');
-  var [description, setDescription] = useState
-  ('exampleDescription');
-  var [features, setFeatures] = useState({});
-
-  console.log(productInfo);
-  console.log(productInfo.category);
-
-
+var OverviewIndex = ({productInfo, productStyles, reviewMeta}) => {
+  var [currStyle, setCurrStyle] = useState(productStyles[0]);
+  var [price, setPrice] = useState(currStyle.original_price);
+  var averageRating = calculateAverageRating(reviewMeta.ratings);
+  console.log(productStyles);
 
   return (
     <div>
-      <ProductInfo rating = {rating} category = {productInfo.category} name = {productInfo.name} price = {productInfo.price} styles = {styles} size = {size} description = {productInfo.description}/>
+      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} price = {price} styles = {productStyles} />
     </div>
   );
 };
