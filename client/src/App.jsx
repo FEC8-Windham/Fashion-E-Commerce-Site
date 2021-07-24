@@ -9,27 +9,21 @@ import { getData } from './Controllers/getData.js';
 
 var App = (props) => {
 
+  var [loading, setLoading] = useState(false);
   var [metaData, setMetaData] = useState({
-    productsList: [],
-    productId: 0,
-    productInfo: {},
-    productStyles: [],
-    relatedProducts: [],
-    reviewList: [],
-    reviewMeta: []
   });
 
   useEffect( async () => {
-    var metaData = await getData();
-    setMetaData(metaData);
+    setMetaData(await getData());
+    setLoading(true);
   }, []);
-
 
 
   return (
     <div>
-      <div><OverviewIndex productInfo = {metaData.productInfo}/></div>
-      <div><OutfitIndex/></div>
+      {loading ? <OverviewIndex productInfo = {metaData.productInfo} productStyles = {metaData.productStyles} reviewMeta = {metaData.reviewMeta}/> : <div>Hi</div>}
+
+      <div><OutfitIndex /></div>
       <div><ReviewIndex/></div>
     </div>
   );
