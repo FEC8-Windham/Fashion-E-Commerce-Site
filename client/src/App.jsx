@@ -22,8 +22,7 @@ var App = (props) => {
   return (
     <div>
       {loading ? <OverviewIndex productInfo = {metaData.productInfo} productStyles = {metaData.productStyles} reviewMeta = {metaData.reviewMeta}/> : <div>Hi</div>}
-
-      <div><OutfitIndex /></div>
+      {loading ? <OutfitIndex metaData={metaData} /> : null}
       <div><ReviewIndex/></div>
     </div>
   );

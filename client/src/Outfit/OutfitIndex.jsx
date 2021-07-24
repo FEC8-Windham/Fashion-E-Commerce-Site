@@ -4,6 +4,9 @@ import YourOutfit from './YourOutfit.jsx';
 
 var OutfitIndex = (props) => {
 
+  var productInfo = props.metaData.productStyles;
+  console.log('productInfo', productInfo);
+
   return (
     <div>
       <hr></hr>
