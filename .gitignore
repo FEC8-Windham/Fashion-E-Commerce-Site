@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 node_modules
-=======
-node_modules
-##
+public/bundle.js
+package-lock.json
 client/src/config/config.js
->>>>>>> master
