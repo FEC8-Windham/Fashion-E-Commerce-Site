@@ -9,19 +9,19 @@ import { getData } from './Controllers/getData.js';
 
 var App = (props) => {
 
-  var [loading, setLoading] = useState(false);
-  var [metaData, setMetaData] = useState({
-  });
+  var [loaded, setLoaded] = useState(false);
+  var [metaData, setMetaData] = useState({});
+  var [currStyle, setCurrStyle] = useState(null);
+  var [averageRating, setAverageRating] = useState(0);
 
   useEffect( async () => {
     setMetaData(await getData());
-    setLoading(true);
+    setLoaded(true);
   }, []);
-
 
   return (
     <div>
-      {loading ? <OverviewIndex productInfo = {metaData.productInfo} productStyles = {metaData.productStyles} reviewMeta = {metaData.reviewMeta}/> : <div>Hi</div>}
+      {loaded ? <OverviewIndex productInfo = {metaData.productInfo} productStyles = {metaData.productStyles} reviewMeta = {metaData.reviewMeta} currStyle = {currStyle}setCurrStyle = {setCurrStyle} setAverageRating ={setAverageRating} averageRating= {averageRating}/> : <div>Loading...</div>}
 
       <div><OutfitIndex /></div>
       <div><ReviewIndex/></div>

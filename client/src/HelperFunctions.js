@@ -9,3 +9,14 @@ export var calculateAverageRating = (ratingsObj) => {
 
 };
 
+
+export var getDefaultStyle = (styles) => {
+  var defaultStyle;
+  for (var i = 0; i < styles.length; i++) {
+    if (styles[i]['default?']) {
+      return styles[i];
+    }
+  }
+  throw 'No default style!';
+};
+
