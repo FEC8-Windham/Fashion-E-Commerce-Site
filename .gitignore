@@ -1,7 +1,4 @@
 node_modules
-##
-client/src/config/config.js
-
 public/bundle.js
-
 package-lock.json
+client/src/config/config.js
