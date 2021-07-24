@@ -5,7 +5,6 @@ import { Container, FlexContainer } from './Styles/ReviewStyles.js';
 import reviewData from '../../../APIExamples/reviews.js';
 import HelpfulWidget from './HelpfulWidget.jsx';
 
-
 const ReviewTile = () => {
 
   const data = reviewData;
