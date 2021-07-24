@@ -37,7 +37,7 @@ const HelpfulWidget = (props) => {
   return <span>Helpful?{'              '}
     <span onClick={()=>handleClick('helpful')} >
       <u>Yes</u>  ({yes})</span >
-    <span onClick={()=>handleClick('report')}>     |   <u>Report</u> </span>
+    <span onClick={()=>handleClick('report')}>     |   <u>No</u> </span>
   </span>;
 };
 
