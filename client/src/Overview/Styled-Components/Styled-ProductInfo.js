@@ -19,10 +19,16 @@ export var Price = styled.div`
 
 `;
 
-export var Style = styled.div`
+export var Style = styled.img`
+  border-radius: 50%;
+  width:30px;
+  height: 30px;
+  padding: 5px;
 
+`;
 
-
+export var StylesContainer = styled.div`
+  float: left;
 `;
 
 export var Size = styled.div`
