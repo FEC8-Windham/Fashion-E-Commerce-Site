@@ -1,4 +1,4 @@
-{
+const reviewData = {
   "product": "19093",
   "page": 0,
   "count": 5,
@@ -69,4 +69,6 @@
           "photos": []
       }
   ]
-}
+};
+
+export default reviewData;
