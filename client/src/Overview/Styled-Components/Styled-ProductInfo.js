@@ -19,7 +19,7 @@ export var Price = styled.div`
 
 `;
 
-export var Style = styled.img`
+export var StyleThumbnail = styled.img`
   border-radius: 50%;
   width:30px;
   height: 30px;
