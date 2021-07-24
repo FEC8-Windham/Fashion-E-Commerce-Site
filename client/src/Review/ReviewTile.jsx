@@ -94,9 +94,7 @@ const ReviewTile = () => {
       <Container >
         <b>{review.summary.slice(0, 60)}</b>
       </Container>
-      {/* <Container >
-        Title 2
-      </Container> */}
+      {null}
       <Container >
         {review.body}
       </Container>
