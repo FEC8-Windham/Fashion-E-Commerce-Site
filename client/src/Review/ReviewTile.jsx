@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import moment from 'moment';
 import StarRating from '../Helper-Components/StarRating.jsx';
 import { Container, FlexContainer } from './Styles/ReviewStyles.js';
@@ -79,22 +79,35 @@ const ReviewTile = () => {
     ]
   };
 
-  const review = data.results[0]
+  const review = data.results[0];
+
+  const recommendCheck = (bool) => {
+    return bool ? <span>&#10003;I recommend this product</span> : null;
+  };
+
+  console.log(recommendCheck(review.recommend));
+
+
+  const [summary, setSummary] = useState(()=> review.summary.slice(0, 60));
+  const [recommendation, setRecommendation] = useState(() => {
+    return review.recommend ? <span>&#10003;   I recommend this product</span> : null;
+  });
+
 
   return (
     <FlexContainer>
       <Container >
         <Container float = 'left'>
-          <StarRating rating ={3.1}/>
+          <StarRating rating={review.rating}/>
         </Container>
         <Container float = 'right'>
           {review.reviewer_name + ',    ' + moment(review.date).format('MMMM Do YYYY')}
         </Container>
       </Container>
       <Container >
-        <b>{review.summary.slice(0, 60)}</b>
+        <b>{summary}</b>
       </Container>
-      {null}
+      {recommendation}
       <Container >
         {review.body}
       </Container>
