@@ -33,9 +33,9 @@ const YourOutfit = (props) => {
       <RowContainer id="outfitContainer">
         {exampleArr.map(item => {
           if (exampleArr[exampleArr.length - 1] === item) {
-            return <YourOutfitEntry last={true} />;
+            return <YourOutfitEntry key={item} last={true} />;
           } else {
-            return <YourOutfitEntry />;
+            return <YourOutfitEntry key={item} />;
           }
         })}
       </RowContainer>

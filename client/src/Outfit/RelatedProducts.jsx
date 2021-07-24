@@ -35,9 +35,9 @@ const RelatedProducts = (props) => {
       <RowContainer id="relatedContainer">
         {exampleArr.map(item => {
           if (exampleArr[exampleArr.length - 1] === item) {
-            return <RelatedProductsEntry last={true} />;
+            return <RelatedProductsEntry key={item} last={true} />;
           } else {
-            return <RelatedProductsEntry />;
+            return <RelatedProductsEntry key={item} />;
           }
         })}
       </RowContainer>
