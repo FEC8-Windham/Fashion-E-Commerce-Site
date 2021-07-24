@@ -18,6 +18,7 @@ var App = (props) => {
     setMetaData(await getData());
     setLoaded(true);
   }, []);
+
   return (
     <div>
       {loaded ? <OverviewIndex productInfo = {metaData.productInfo} productStyles = {metaData.productStyles} reviewMeta = {metaData.reviewMeta} currStyle = {currStyle}setCurrStyle = {setCurrStyle} setAverageRating ={setAverageRating} averageRating= {averageRating}/> : <div>Loading...</div>}

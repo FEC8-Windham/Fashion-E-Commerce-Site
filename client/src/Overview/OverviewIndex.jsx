@@ -9,6 +9,7 @@ var OverviewIndex = ({productInfo, productStyles, reviewMeta, setCurrStyle, curr
     setAverageRating(calculateAverageRating(reviewMeta.ratings));
 
   }, []);
+  var price = 0;
 
   return (
     <div>
