@@ -3,8 +3,14 @@ import { CardContainer, Card, Info, ImageContainer, Pic, Category, Title, Price,
 import StarRating from '../Helper-Components/StarRating.jsx';
 
 const RelatedProductsEntry = (props) => {
+  var isLast = false;
+  var marginx = '20px';
+  if (props.last) {
+    isLast = true;
+    marginx = '0px';
+  }
   return (
-    <CardContainer>
+    <CardContainer margin={marginx} >
       {/* CARD
           Pic
           Category
