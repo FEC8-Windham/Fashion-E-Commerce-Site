@@ -1,4 +1,4 @@
-{
+const reviewData = {
   "product": "19093",
   "page": 0,
   "count": 5,
@@ -8,7 +8,7 @@
           "rating": 5,
           "summary": "Great",
           "recommend": true,
-          "response": null,
+          "response": "reeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
           "body": "This is a great review. Such a good review right here",
           "date": "2021-04-23T00:00:00.000Z",
           "reviewer_name": "theReviewer",
@@ -69,4 +69,6 @@
           "photos": []
       }
   ]
-}
+};
+
+export default reviewData;
