@@ -75,6 +75,25 @@ export const StarButton = styled.button`
   }
 `;
 
+export const XButton = styled.button`
+  z-index: 1;
+  float: left;
+  display: inline-block;
+  right: 5px;
+  top: 1px;
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: .2s ease;
+  &:hover {
+    transform: scale(1.05);
+    font-weight: bold;
+  }
+`;
+
 export const Category = styled.span`
 
 `;
