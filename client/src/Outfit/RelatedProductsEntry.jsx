@@ -12,14 +12,6 @@ const RelatedProductsEntry = (props) => {
 
   return (
     <CardContainer margin={marginx} >
-      {/* CARD
-          Pic
-          Category
-          Title
-          Price
-          Rating
-          Action
-        */}
       <br></br>
       <Card>
         <ImageContainer>

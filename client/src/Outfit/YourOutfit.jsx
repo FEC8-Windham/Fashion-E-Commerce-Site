@@ -32,6 +32,7 @@ const YourOutfit = (props) => {
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight>
         <RowContainer id="outfitContainer">
+          <YourOutfitEntry first={true} />
           {exampleArr.map(item => {
             if (exampleArr[exampleArr.length - 1] === item) {
               return <YourOutfitEntry key={item} last={true} />;

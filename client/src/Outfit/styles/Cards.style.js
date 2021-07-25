@@ -32,7 +32,7 @@ export const SectionTitle = styled.h4`
 export const FadeoutRight = styled.div`
   margin: auto;
   padding: 0px;
-  width: 790px;
+  width: 750px;
   height: 360px;
   mask-image: linear-gradient(to right, black 80%, transparent);
   z-index: 1;

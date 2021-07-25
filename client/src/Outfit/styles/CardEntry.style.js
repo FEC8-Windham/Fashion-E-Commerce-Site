@@ -38,6 +38,7 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   z-index: 0;
   position: relative;
+  border-bottom: 1px solid black;
   `;
 
 export const Pic = styled.img`
@@ -108,4 +109,18 @@ export const Price = styled.span`
 
 export const Rating = styled.span`
 
+`;
+
+export const Add = styled.img`
+  width: 90px;
+  left: 50px;
+  top: 55px;
+  margin: auto;
+  transition: .2s ease;
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
 `;
