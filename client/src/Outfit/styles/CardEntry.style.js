@@ -5,6 +5,7 @@ export const CardContainer = styled.div`
   margin-right: ${props => props.margin || '20px'};
   white-space: normal;
   overflow: hidden;
+  z-index: 0;
 `;
 
 export const Card = styled.div`
@@ -17,6 +18,8 @@ export const Card = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+
 `;
 
 export const Info = styled.div`

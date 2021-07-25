@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
-import { Container, RowContainer, Fadeout, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
+import { Container, RowContainer, FadeoutRight, FadeoutLeft, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 import { getData } from '../Controllers/getData.js';
 import axios from 'axios';
 
@@ -32,16 +32,17 @@ const RelatedProducts = (props) => {
     <Container>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton> : null}
-      <RowContainer id="relatedContainer">
-        {exampleArr.map(item => {
-          if (exampleArr[exampleArr.length - 1] === item) {
-            return <RelatedProductsEntry key={item} last={true} />;
-          } else {
-            return <RelatedProductsEntry key={item} />;
-          }
-        })}
-      </RowContainer>
-      <Fadeout></Fadeout>
+      <FadeoutRight>
+        <RowContainer id="relatedContainer">
+          {exampleArr.map(item => {
+            if (exampleArr[exampleArr.length - 1] === item) {
+              return <RelatedProductsEntry key={item} last={true} />;
+            } else {
+              return <RelatedProductsEntry key={item} />;
+            }
+          })}
+        </RowContainer>
+      </FadeoutRight>
       {!rightMost ? <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton> : null}
     </Container>
   );
