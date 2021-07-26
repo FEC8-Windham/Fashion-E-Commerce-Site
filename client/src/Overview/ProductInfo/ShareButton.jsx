@@ -40,7 +40,7 @@ var ShareButton = () => {
     <ShareButtons>
       <Facebook>
         <a className="fb-share-button"
-          data-href='https://www.your-domain.com/your-page.html'
+          data-href='https://www.google.com'
           data-layout='button_count' >
         </a>
       </Facebook>
