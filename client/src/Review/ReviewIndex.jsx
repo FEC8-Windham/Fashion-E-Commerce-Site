@@ -1,20 +1,19 @@
 import React from 'react';
-import ReviewTile from './ReviewTile.jsx';
+import ReviewTile from './ReviewTile/ReviewTile.jsx';
 
-class ReviewIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
-  render() {
-    return (
-      <div>
-        <ReviewTile/>
-        <ReviewTile/>
 
-      </div>
-    );
-  }
-}
+
+const ReviewIndex = (props) => {
+
+  const reviews = props.reviews;
+  //alert(typeof reviews,'reeeeee')
+
+  return (
+    <div>
+      {reviews.map(review => <ReviewTile review={review}/>)}
+    </div>
+  );
+};
 
 export default ReviewIndex;

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import StarRating from '../Helper-Components/StarRating.jsx';
-import { Container, FlexContainer } from './Styles/ReviewStyles.js';
-import reviewData from '../../../APIExamples/reviews.js';
+import ReviewTileBody from './ReviewTileBody.jsx';
+import StarRating from '../../Helper-Components/StarRating.jsx';
+import { Container, FlexContainer } from '../Styles/ReviewStyles.js';
+import reviewData from '../../../../APIExamples/reviews.js';
 import HelpfulWidget from './HelpfulWidget.jsx';
 
-const ReviewTile = () => {
+const ReviewTile = (props) => {
 
   const data = reviewData;
   console.log(data);
-  const review = data.results[0];
+  const review = props.review;
 
   const recommendCheck = (bool) => {
     return bool ? <span>&#10003;I recommend this product</span> : null;
@@ -19,8 +20,8 @@ const ReviewTile = () => {
     return review.response ? <Container><div><b>Response:<br></br></b>{review.response}</div></Container> : null;
   };
 
-  const responseDiv = () => {
-
+  const bodyDiv = () => {
+    return showMore ? review.body : review.body.slice(0, 12);
   };
 
   console.log(recommendCheck(review.recommend));
@@ -31,6 +32,8 @@ const ReviewTile = () => {
     return review.recommend ? <Container><span>&#10003;   I recommend this product</span></Container> : null;
   });
   const [response, setResponse] = useState(()=>responseCheck(review.response));
+  const [showMore, setShowMore] = useState(false);
+  const [body, setBody] = useState(()=>bodyDiv());
 
 
   return (
@@ -46,12 +49,13 @@ const ReviewTile = () => {
       <Container >
         <b>{summary}</b>
       </Container>
+      <ReviewTileBody review={review}/>
+      {/* <Container >
+        {body}
+      </Container> */}
       {recommendation}
       {response}
-      <Container >
-        {review.body}
-      </Container>
-      <Container >
+      <Container>
         <HelpfulWidget/>
       </Container>
     </FlexContainer>
