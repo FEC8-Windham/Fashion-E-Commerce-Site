@@ -12,28 +12,21 @@ const ReviewTile = (props) => {
   console.log(data);
   const review = props.review;
 
-  const recommendCheck = (bool) => {
-    return bool ? <span>&#10003;I recommend this product</span> : null;
-  };
-
+  //checks for response, returns a div if there is one
   const responseCheck = () => {
     return review.response ? <Container><div><b>Response:<br></br></b>{review.response}</div></Container> : null;
   };
 
-  const bodyDiv = () => {
-    return showMore ? review.body : review.body.slice(0, 12);
-  };
-
-  console.log(recommendCheck(review.recommend));
-
-
+  //first 60 chars of the review summary
   const [summary, setSummary] = useState(()=> review.summary.slice(0, 60));
+
+  //only returns div if the product was recommended by reviewer
   const [recommendation, setRecommendation] = useState(() => {
     return review.recommend ? <Container><span>&#10003;   I recommend this product</span></Container> : null;
   });
+
+  //renders a employee response if there was one.
   const [response, setResponse] = useState(()=>responseCheck(review.response));
-  const [showMore, setShowMore] = useState(false);
-  const [body, setBody] = useState(()=>bodyDiv());
 
 
   return (
@@ -50,9 +43,6 @@ const ReviewTile = (props) => {
         <b>{summary}</b>
       </Container>
       <ReviewTileBody review={review}/>
-      {/* <Container >
-        {body}
-      </Container> */}
       {recommendation}
       {response}
       <Container>
