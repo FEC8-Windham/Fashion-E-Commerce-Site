@@ -5,6 +5,7 @@ import ReviewIndex from './Review/ReviewIndex.jsx';
 import axios from 'axios';
 import { getData } from './Controllers/getData.js';
 import { calculateAverageRating, getDefaultStyle } from './HelperFunctions.js';
+import Modal from './Helper-Components/Modal.jsx';
 
 
 var App = (props) => {
@@ -15,7 +16,6 @@ var App = (props) => {
   var [averageRating, setAverageRating] = useState(0);
   var [originalPrice, setOriginalPrice] = useState(0);
   var [salePrice, setSalePrice] = useState(0);
-
 
   //getting all the data at once.
   useEffect( async () => {
