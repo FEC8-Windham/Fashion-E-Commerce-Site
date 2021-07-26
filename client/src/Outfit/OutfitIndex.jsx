@@ -22,9 +22,9 @@ var OutfitIndex = (props) => {
   return (
     <div>
       <hr></hr>
-      {modalState ? Modal(modalState, tempData) : null}
       <h1>Related Items and Comparison</h1>
-      <RelatedProducts data={relatedProducts} clickHandler={clickHandler}/>
+      {Modal(modalState, tempData)}
+      <RelatedProducts data={relatedProducts} clickHandler={clickHandler} />
       <YourOutfit />
       <hr></hr>
     </div>

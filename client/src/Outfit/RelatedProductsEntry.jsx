@@ -16,7 +16,7 @@ const RelatedProductsEntry = (props) => {
   var [loaded, setLoaded] = useState(false);
 
   useEffect(async () => {
-    setMetaData(await getRelatedData(relatedId)); // refer to app.jsx
+    setMetaData(await getRelatedData(relatedId));
   }, []);
 
   useEffect(() => {

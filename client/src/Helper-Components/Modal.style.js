@@ -23,11 +23,12 @@ export const OverviewModal = styled.div`
 
 export const ComparisonModalContainer = styled.div`
   margin: auto;
-  width: 300px;
-  height: 250px;
+  width: 400px;
+  height: 300px;
   background-color: gray;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
+  left: 50%;
 `;
 
 export const ComparisonModal = styled.div`

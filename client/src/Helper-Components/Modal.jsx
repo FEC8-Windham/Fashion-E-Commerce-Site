@@ -1,12 +1,11 @@
 import React from 'react';
-import { Nothing, Background, OverviewModal, ComparisonModalContainer, ComparisonModal, NewReviewModal, ReviewImageModal} from './Modal.style';
+import { Nothing, Background, OverviewModal, ComparisonModalContainer, ComparisonModal, NewReviewModal, ReviewImageModal } from './Modal.style';
 
 const Modal = (component, data) => {
 
   console.log('Modal function called!');
 
-  if (!component) {
-    console.log('Nothing!');
+  if (component === '') {
     return (
       <Nothing />
     );
@@ -18,19 +17,15 @@ const Modal = (component, data) => {
     );
   } else if (component === 'comparison') {
     return (
-      <div>
-        <ComparisonModalContainer>
-          <ComparisonModal>
-            {data}
-          </ComparisonModal>
-        </ComparisonModalContainer>
-      </div>
+      <ComparisonModalContainer>
+        <ComparisonModal>
+          {data}
+        </ComparisonModal>
+      </ComparisonModalContainer>
     );
   } else if (component === 'newReview') {
     return (
-      <div>
-        <NewReviewModal></NewReviewModal>
-      </div>
+      <NewReviewModal></NewReviewModal>
     );
   } else if (component === 'reviewImage') {
     return (
