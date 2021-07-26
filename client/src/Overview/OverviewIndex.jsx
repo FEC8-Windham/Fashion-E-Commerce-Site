@@ -8,8 +8,11 @@ var OverviewIndex = ({productInfo, productStyles, setCurrStyle, currStyle, setAv
 
   return (
     <div>
-      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} styles = {productStyles} setCurrStyle = {setCurrStyle} currStyle ={currStyle} originalPrice = {originalPrice} salePrice = {salePrice}/>
-      <div></div>
+      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} styles = {productStyles} setCurrStyle = {setCurrStyle} currStyle ={currStyle} originalPrice = {originalPrice} salePrice = {salePrice} description= {productInfo.description} slogan = {productInfo.slogan}
+      />
+
+      <div>
+      </div>
     </div>
   );
 };

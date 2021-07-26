@@ -44,7 +44,6 @@ export var StyleThumbnail = styled.img`
   height: 40px;
   padding: 5px;
   float: left;
-
 `;
 
 export var StylesContainer = styled.div`
@@ -65,3 +64,30 @@ export var Description = styled.div`
 
 `;
 
+export var Slogan = styled.div`
+  font-weight: bold;
+`;
+
+export var Facebook = styled.div`
+float:left;
+
+`;
+
+export var Twitter = styled.div`
+float:left;
+
+`;
+
+export var Pinterest = styled.div`
+float:left;
+top: 20px;
+right:100px;
+
+`;
+
+export var ShareButtons = styled.div`
+
+float:left;
+display: inline-block;
+
+`;

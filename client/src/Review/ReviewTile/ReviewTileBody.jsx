@@ -22,7 +22,7 @@ const ReviewTileBody = (props) => {
     if (review.photos.length >= 1) {
       return (
         <ImageFlexContainer>
-          {review.photos.map(photo => <img height ={80} width={80} src ={photo.url}></img>)}
+          {review.photos.map(photo => <img key={photo.id} height ={80} width={80} src ={photo.url}></img>)}
         </ImageFlexContainer>
       );
     }
