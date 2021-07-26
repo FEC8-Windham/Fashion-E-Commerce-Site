@@ -11,7 +11,7 @@ const HelpfulWidget = (props) => {
 
 
 
-  const review = reviewData.results[0];
+  const review = props.review;
 
   const yes = review.helpfulness;
 

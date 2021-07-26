@@ -7,9 +7,6 @@ import reviewData from '../../../../APIExamples/reviews.js';
 import HelpfulWidget from './HelpfulWidget.jsx';
 
 const ReviewTile = (props) => {
-
-  const data = reviewData;
-  console.log(data);
   const review = props.review;
 
   //checks for response, returns a div if there is one
@@ -46,7 +43,7 @@ const ReviewTile = (props) => {
       {recommendation}
       {response}
       <Container>
-        <HelpfulWidget/>
+        <HelpfulWidget review={review}/>
       </Container>
     </FlexContainer>
 

@@ -2,6 +2,7 @@ import axios from 'axios';
 import API_KEY from '../config/config';
 
 export const helpfulClick = (reviewID, string) => {
+  console.log(reviewID)
   let config = {
     method: 'put',
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/${string}`,
