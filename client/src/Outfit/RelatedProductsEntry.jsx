@@ -12,7 +12,7 @@ const RelatedProductsEntry = (props) => {
   var [category, setCategory] = useState('');
   var [price, setPrice] = useState('');
   var [url, setUrl] = useState('');
-  var [rating, setRating] = useState('');
+  var [rating, setRating] = useState(null);
   var [loaded, setLoaded] = useState(false);
 
   useEffect(async () => {
@@ -53,7 +53,7 @@ const RelatedProductsEntry = (props) => {
             <br></br>
             <Price>${price}</Price>
             <br></br>
-            <StarRating rating={rating} />
+            {rating ? <StarRating rating={rating} /> : 'No rating yet' }
           </Info>
         </Card>
         : null}

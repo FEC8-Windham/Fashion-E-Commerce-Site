@@ -4,7 +4,6 @@ import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, Sect
 
 const RelatedProducts = (props) => {
   var relatedProducts = props.data;
-  console.log('Related products', relatedProducts);
 
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);

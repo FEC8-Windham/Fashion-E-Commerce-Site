@@ -106,7 +106,7 @@ export const Title = styled.span`
 `;
 
 export const Price = styled.span`
-  font-size: x-small;
+  font-size: small;
 `;
 
 export const Rating = styled.span`
