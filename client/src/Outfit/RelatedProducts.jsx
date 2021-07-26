@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
-import { Container, RowContainer, FadeoutRight, FadeoutLeft, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
-import { getData } from '../Controllers/getData.js';
-import axios from 'axios';
+import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 
 const RelatedProducts = (props) => {
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);
 
+  console.log('Related Products:', props.data);
   var exampleArr = [1, 2, 3, 4, 5, 6, 7];
 
   var clickHandlerLeft = () => {
