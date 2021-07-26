@@ -8,11 +8,7 @@ import {helpfulClick} from '../../Controllers/reviewController.js'; //'../src/Co
 import API_KEY from '../../config/config.js';
 
 const HelpfulWidget = (props) => {
-
-
-
   const review = props.review;
-
   const yes = review.helpfulness;
 
   //update the helpfulness rating with a put request to the reviewID, only allows one submission
@@ -22,7 +18,8 @@ const HelpfulWidget = (props) => {
       return;
     }
     setVoteMade(true);
-    helpfulClick(review.review_id, string);
+    helpfulClick(review.review_id, string)
+      .then(()=> props.refresh());
   };
 
   const [voteMade, setVoteMade] = useState(false);
@@ -30,7 +27,7 @@ const HelpfulWidget = (props) => {
   return <span>Helpful?{'              '}
     <span onClick={()=>handleClick('helpful')} >
       <u>Yes</u>  ({yes})</span >
-    <span onClick={()=>handleClick('report')}>     |   <u>No</u> </span>
+    <span onClick={()=>handleClick('report')}>     |   <u>Report</u> </span>
   </span>;
 };
 

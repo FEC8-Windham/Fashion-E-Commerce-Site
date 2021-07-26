@@ -4,6 +4,7 @@ import { Container, ImageFlexContainer } from '../Styles/ReviewStyles.js';
 const ReviewTileBody = (props) => {
 
   const review = props.review;
+  const body = review.body;
 
   //returns the body text up to 250 chars, showmore must be true to return full text
   const bodyDiv = () => {
@@ -31,10 +32,11 @@ const ReviewTileBody = (props) => {
   const [showMore, setShowMore] = useState(false);
 
 
+
   return (
     <Container>
       {bodyDiv()}
-      {bodyDiv().length > 250 && !showMore ? <span onClick={()=>handleClick()}>...<u>show more</u></span> : null}
+      {(review.body.length > 250 && !showMore) ? <span onClick={()=>handleClick()}>...<u>show more</u></span> : null}
       {images()}
     </Container>
 

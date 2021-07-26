@@ -43,7 +43,7 @@ const ReviewTile = (props) => {
       {recommendation}
       {response}
       <Container>
-        <HelpfulWidget review={review}/>
+        <HelpfulWidget refresh={props.refresh} review={review}/>
       </Container>
     </FlexContainer>
 
