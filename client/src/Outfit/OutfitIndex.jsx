@@ -4,6 +4,7 @@ import YourOutfit from './YourOutfit.jsx';
 
 var OutfitIndex = (props) => {
   var relatedProducts = props.metaData.relatedProducts;
+
   return (
     <div>
       <hr></hr>

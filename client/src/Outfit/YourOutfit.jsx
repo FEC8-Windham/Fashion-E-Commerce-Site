@@ -10,7 +10,6 @@ const YourOutfit = (props) => {
 
   var clickHandlerRight = () => {
     document.querySelector('#outfitContainer').scrollLeft += 202;
-    console.log('Right button click!', document.querySelector('#outfitContainer').scrollLeft);
     if (document.querySelector('#outfitContainer').scrollLeft >= exampleArr.length * 50) {
       setRightMost(true);
     }
@@ -19,7 +18,6 @@ const YourOutfit = (props) => {
 
   var clickHandlerLeft = () => {
     document.querySelector('#outfitContainer').scrollLeft -= 202;
-    console.log('Left button click!', document.querySelector('#outfitContainer').scrollLeft);
     if (document.querySelector('#outfitContainer').scrollLeft < 203) {
       setLeftMost(true);
     }
