@@ -11,11 +11,17 @@ export const Container = styled.div`
 export const RowContainer = styled.div`
   margin: auto;
   padding: 0px;
-  width: 800px;
+
+  width: 790px;
   height: 360px;
-  overflow-x: scroll;
+  overflow-x: hidden;
   position: relative;
   white-space: nowrap;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  z-index: 0;
 `;
 
 export const SectionTitle = styled.h4`
@@ -23,7 +29,16 @@ export const SectionTitle = styled.h4`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-export const Fadeout = styled.div`
+export const FadeoutRight = styled.div`
+  margin: auto;
+  padding: 0px;
+  width: 750px;
+  height: 360px;
+  mask-image: linear-gradient(to right, black 80%, transparent);
+  z-index: 1;
+`;
+
+export const FadeoutLeft = styled.div`
   margin: 0px;
   padding: 0px;
   width: 180px;
@@ -31,24 +46,28 @@ export const Fadeout = styled.div`
   white-space: nowrap;
   mask-image: linear-gradient(to right, black 0%, transparent 100%);
   display: inline-block;
+  z-index: 1;
 `;
 
 export const PreviousButton = styled.button`
-  position: relative;
+  position: absolute;
   border: none;
-  top: 150px;
-  /* background: none; */
+  margin: 0px;
+  left: 58px;
+  top: 160px;
+  background: none;
   z-index: 1;
   font-weight: bold;
 `;
 
 export const NextButton = styled.button`
-  position: relative;
+  position: absolute;
   border: none;
-  bottom: 200px;
-  right: 20px;
+  margin: 0px;
+  bottom: 180px;
+  right: 58px;
   float: right;
-  /* background: none; */
+  background: none;
   z-index: 1;
   font-weight: bold;
 `;

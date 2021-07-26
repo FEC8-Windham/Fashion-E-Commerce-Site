@@ -1,17 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import axios from 'axios';
-import { calculateAverageRating } from '../HelperFunctions.js';
 
-var OverviewIndex = ({productInfo, productStyles, reviewMeta}) => {
-  var [currStyle, setCurrStyle] = useState(productStyles[0]);
-  var [price, setPrice] = useState(currStyle.original_price);
-  var averageRating = calculateAverageRating(reviewMeta.ratings);
-  console.log(productStyles);
+
+var OverviewIndex = ({productInfo, productStyles, setCurrStyle, currStyle, setAverageRating, averageRating, originalPrice, salePrice}) => {
+
 
   return (
     <div>
-      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} price = {price} styles = {productStyles} />
+      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} styles = {productStyles} setCurrStyle = {setCurrStyle} currStyle ={currStyle} originalPrice = {originalPrice} salePrice = {salePrice}/>
+      <div></div>
     </div>
   );
 };

@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import {StylesContainer} from '../Styled-Components/Styled-ProductInfo.js';
-import StyleEntry from '../StyleEntry.js';
+import StyleEntry from './StyleEntry.jsx';
 
-var Styles = ({styles}) => {
+var Styles = ({styles, setCurrStyle, currStyle}) => {
 
 
-  console.log(styles);
   return (
     <StylesContainer>
       {styles.map((style, i) => {
-        return <StyleEntry style = {style}/>;
+        return <StyleEntry key = {i} style = {style} setCurrStyle = {setCurrStyle}/>;
       })}
     </StylesContainer>
   );
