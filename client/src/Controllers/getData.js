@@ -23,8 +23,8 @@ export var getData = async () => {
   var productStyles = responseObj.data.results;
 
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productId}/related`;
-  var relatedProducts = await axios(config);
-  var relatedProducts = responseObj.data.results;
+  var responseObj = await axios(config);
+  var relatedProducts = responseObj.data;
 
   config.params = {product_id: productId};
   config.url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews';
