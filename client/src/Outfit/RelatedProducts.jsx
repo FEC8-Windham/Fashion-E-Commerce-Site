@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
-import { Container, RowContainer, Fadeout, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
-import { getData } from '../Controllers/getData.js';
-import axios from 'axios';
+import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 
 const RelatedProducts = (props) => {
+  var relatedProducts = props.data;
+
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);
 
-  var exampleArr = [1, 2, 3, 4, 5, 6, 7];
-
-  var clickHandlerLeft = () => {
+  var clickHandlerRight = () => {
     document.querySelector('#relatedContainer').scrollLeft += 202;
-    console.log('Right button click!', document.querySelector('#relatedContainer').scrollLeft);
-    if (document.querySelector('#relatedContainer').scrollLeft >= exampleArr.length * 50) {
+    if (document.querySelector('#relatedContainer').scrollLeft >= relatedProducts.length * 30) {
       setRightMost(true);
     }
     setLeftMost(false);
   };
 
-  var clickHandlerRight = () => {
+  var clickHandlerLeft = () => {
     document.querySelector('#relatedContainer').scrollLeft -= 202;
-    console.log('Left button click!', document.querySelector('#relatedContainer').scrollLeft);
     if (document.querySelector('#relatedContainer').scrollLeft < 203) {
       setLeftMost(true);
     }
@@ -31,18 +27,19 @@ const RelatedProducts = (props) => {
   return (
     <Container>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
-      {!leftMost ? <PreviousButton onClick={clickHandlerRight}>{'<'}</PreviousButton> : null}
-      <RowContainer id="relatedContainer">
-        {exampleArr.map(item => {
-          if (exampleArr[exampleArr.length - 1] === item) {
-            return <RelatedProductsEntry last={true} />;
-          } else {
-            return <RelatedProductsEntry />;
-          }
-        })}
-      </RowContainer>
-      <Fadeout></Fadeout>
-      {!rightMost ? <NextButton onClick={clickHandlerLeft}>{'>'}</NextButton> : null}
+      {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
+      <FadeoutRight>
+        <RowContainer id="relatedContainer">
+          {relatedProducts.map(item => {
+            if (relatedProducts[relatedProducts.length - 1] === item) {
+              return <RelatedProductsEntry key={item} id={item} last={true} />;
+            } else {
+              return <RelatedProductsEntry key={item} id={item} />;
+            }
+          })}
+        </RowContainer>
+      </FadeoutRight>
+      {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
     </Container>
   );
 };
