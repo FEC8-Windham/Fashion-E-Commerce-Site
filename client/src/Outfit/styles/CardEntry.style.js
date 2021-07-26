@@ -50,6 +50,7 @@ export const Pic = styled.img`
   bottom: 22px;
   transition: .5s ease;
   overflow: hidden;
+  object-fit: cover;
 
   &:hover {
     opacity: 0.7;
@@ -101,10 +102,11 @@ export const Category = styled.span`
 
 export const Title = styled.span`
   font-weight: bold;
+  font-size: 13px;
 `;
 
 export const Price = styled.span`
-  font-size: x-small;
+  font-size: small;
 `;
 
 export const Rating = styled.span`

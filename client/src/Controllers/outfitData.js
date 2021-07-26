@@ -1,7 +1,7 @@
 import axios from 'axios';
 import API_KEY from '../config/config';
 
-export var getData = async () => {
+export var getRelatedData = async (productId) => {
   var metaData = {};
   var config = {
     method: 'GET',
@@ -10,33 +10,26 @@ export var getData = async () => {
       'Authorization': API_KEY
     }
   };
-  var responseObj = await axios(config);
-  var productsList = responseObj.data;
-  var productId = productsList[0].id;
 
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productId}`;
   var responseObj = await axios(config);
   var productInfo = responseObj.data;
+  // name, category, default_price
+  // console.log('Product Info:', productInfo);
 
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productId}/styles`;
   var responseObj = await axios(config);
   var productStyles = responseObj.data.results;
-
-  config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productId}/related`;
-  var responseObj = await axios(config);
-  var relatedProducts = responseObj.data;
+  // photos[0].url
+  // console.log('Product Styles:', productStyles);
 
   config.params = {product_id: productId};
-  config.url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews';
-  var responseObj = await axios(config);
-  var reviewList = responseObj.data.results;
-
   config.url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta';
   var responseObj = await axios(config);
   var reviewMeta = responseObj.data;
+  // console.log('Review Meta:', reviewMeta);
 
-  metaData = {productsList, productId, productInfo, productStyles, relatedProducts, reviewList, reviewMeta};
+  metaData = {productInfo, productStyles, reviewMeta};
 
   return metaData;
-
 };
