@@ -5,6 +5,7 @@ export const CardContainer = styled.div`
   margin-right: ${props => props.margin || '20px'};
   white-space: normal;
   overflow: hidden;
+  z-index: 0;
 `;
 
 export const Card = styled.div`
@@ -17,6 +18,7 @@ export const Card = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 `;
 
 export const Info = styled.div`
@@ -26,7 +28,6 @@ export const Info = styled.div`
   padding-left: 10px;
   padding-right: 5px;
   font-family: Arial, Helvetica, sans-serif;
-
 `;
 
 export const ImageContainer = styled.div`
@@ -35,7 +36,10 @@ export const ImageContainer = styled.div`
   margin: 0px;
   padding: 0px;
   overflow: hidden;
-`;
+  z-index: 0;
+  position: relative;
+  border-bottom: 1px solid black;
+  `;
 
 export const Pic = styled.img`
   width: 180px;
@@ -43,12 +47,51 @@ export const Pic = styled.img`
   border-bottom: 1px solid black;
   margin: 0px;
   padding: 0px;
+  bottom: 22px;
   transition: .5s ease;
   overflow: hidden;
 
   &:hover {
     opacity: 0.7;
     transform: scale(1.05);
+  }
+  `;
+
+export const StarButton = styled.button`
+  z-index: 1;
+  float: left;
+  display: inline-block;
+  right: 5px;
+  top: 1px;
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: .2s ease;
+  &:hover {
+    transform: scale(1.05);
+    font-weight: bold;
+  }
+`;
+
+export const XButton = styled.button`
+  z-index: 1;
+  float: left;
+  display: inline-block;
+  right: 5px;
+  top: 1px;
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: .2s ease;
+  &:hover {
+    transform: scale(1.05);
+    font-weight: bold;
   }
 `;
 
@@ -66,4 +109,18 @@ export const Price = styled.span`
 
 export const Rating = styled.span`
 
+`;
+
+export const Add = styled.img`
+  width: 90px;
+  left: 50px;
+  top: 55px;
+  margin: auto;
+  transition: .2s ease;
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
 `;
