@@ -1,37 +1,41 @@
 import React from 'react';
-import { Background } from './Modal.style';
+import { Nothing, Background, OverviewModal, ComparisonModalContainer, ComparisonModal, NewReviewModal, ReviewImageModal} from './Modal.style';
 
-const Modal = (component) => {
+const Modal = (component, data) => {
 
-  // Overview Modal
-  if (component === 'overview') {
+  console.log('Modal function called!');
+
+  if (!component) {
+    console.log('Nothing!');
+    return (
+      <Nothing />
+    );
+  } else if (component === 'overview') {
     return (
       <Background>
-        Overview!
+        <OverviewModal></OverviewModal>
       </Background>
     );
-  }
-
-  // Related Products Modal
-  if (component === 'comparison') {
+  } else if (component === 'comparison') {
     return (
       <div>
-        Related Products Comparison!
+        <ComparisonModalContainer>
+          <ComparisonModal>
+            {data}
+          </ComparisonModal>
+        </ComparisonModalContainer>
       </div>
     );
-  }
-
-  // Reviews Modal
-  if (component === 'newReview') {
+  } else if (component === 'newReview') {
     return (
       <div>
-        New review form!
+        <NewReviewModal></NewReviewModal>
       </div>
     );
   } else if (component === 'reviewImage') {
     return (
       <Background>
-        Review!
+        <ReviewImageModal></ReviewImageModal>
       </Background>
     );
   }

@@ -5,8 +5,6 @@ import ReviewIndex from './Review/ReviewIndex.jsx';
 import axios from 'axios';
 import { getData } from './Controllers/getData.js';
 import { calculateAverageRating, getDefaultStyle } from './HelperFunctions.js';
-import Modal from './Helper-Components/Modal.jsx';
-
 
 var App = (props) => {
 
@@ -43,7 +41,6 @@ var App = (props) => {
   return (
     <div>
       {loaded ? <OverviewIndex productInfo = {metaData.productInfo} productStyles = {metaData.productStyles} currStyle = {currStyle} setCurrStyle = {setCurrStyle} averageRating= {averageRating} originalPrice = {originalPrice} salePrice = {salePrice}/> : <div>Loading...</div>}
-
       {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating}/></div> : null}
       <div><ReviewIndex/></div>
     </div>
