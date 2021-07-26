@@ -29,6 +29,8 @@ var App = (props) => {
     if (currStyle) {
       setOriginalPrice(currStyle.original_price);
       setSalePrice(currStyle.sale_price);
+      console.log(currStyle);
+      console.log(metaData.productInfo);
     }
   }, [currStyle]);
 
