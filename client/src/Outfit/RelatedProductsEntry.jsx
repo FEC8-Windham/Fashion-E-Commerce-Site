@@ -8,10 +8,11 @@ const RelatedProductsEntry = (props) => {
   var relatedId = props.id;
 
   var [metaData, setMetaData] = useState(null);
-  var [name, setName] = useState('');
-  var [category, setCategory] = useState('');
-  var [price, setPrice] = useState('');
-  var [url, setUrl] = useState('');
+  var [name, setName] = useState(null);
+  var [category, setCategory] = useState(null);
+  var [price, setPrice] = useState(null);
+  var [salePrice, setSalePrice] = useState(null);
+  var [url, setUrl] = useState(null);
   var [rating, setRating] = useState(null);
   var [loaded, setLoaded] = useState(false);
 
@@ -24,6 +25,7 @@ const RelatedProductsEntry = (props) => {
       setName(metaData.productInfo.name);
       setCategory(metaData.productInfo.category);
       setPrice(metaData.productInfo.default_price);
+      setSalePrice(metaData.productStyles[0].sale_price);
       setUrl(metaData.productStyles[0].photos[0].url);
       setRating(calculateAverageRating(metaData.reviewMeta.ratings));
       setLoaded(true);
@@ -51,9 +53,16 @@ const RelatedProductsEntry = (props) => {
             <br></br>
             <Title>{name}</Title>
             <br></br>
-            <Price>${price}</Price>
+            {console.log('Sale Price:', salePrice)}
+            {salePrice ?
+              <div>
+                <Price decoration='line-through'>${price}</Price>
+                <Price color='red'> ${salePrice}</Price> </div> :
+              <Price>${price}</Price>}
             <br></br>
-            {rating ? <StarRating rating={rating} /> : 'No rating yet' }
+            <Rating>
+              {rating ? <StarRating rating={rating} /> : 'No rating yet'}
+            </Rating>
           </Info>
         </Card>
         : null}

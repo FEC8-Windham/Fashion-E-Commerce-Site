@@ -95,7 +95,7 @@ export const XButton = styled.button`
 `;
 
 export const Category = styled.span`
-
+  font-size: 13px;
 `;
 
 export const Title = styled.span`
@@ -105,10 +105,14 @@ export const Title = styled.span`
 
 export const Price = styled.span`
   font-size: small;
+  text-decoration: ${prop => prop.decoration || 'none'};
+  color: ${prop => prop.color || 'black'};
 `;
 
-export const Rating = styled.span`
-
+export const Rating = styled.div`
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
 `;
 
 export const Add = styled.img`
