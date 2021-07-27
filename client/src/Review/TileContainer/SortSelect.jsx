@@ -8,8 +8,8 @@ const SortSelect = (props) => {
 
   return (
     <select onChange={e=>props.refresh(e.target.value)}>
-      <option value="relevant">Relevant</option>
-      <option value="helpful">Helpful</option>
+      <option value="relevant">Relevance</option>
+      <option value="helpful">Helpfulness</option>
       <option value="newest">Newest</option>
     </select>
   );

@@ -23,7 +23,7 @@ const ReviewIndex = (props) => {
 
   return (
     <div>
-      <TileContainer reviews={props.reviews}/>
+      <TileContainer reviewMeta={props.reviewMeta} reviews={props.reviews}/>
     </div>
   );
 };

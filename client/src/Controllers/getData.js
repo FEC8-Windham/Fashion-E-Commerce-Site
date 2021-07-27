@@ -36,7 +36,7 @@ export var getData = async () => {
   config.url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta';
   var responseObj = await axios(config);
   var reviewMeta = responseObj.data;
-  console.log('review', reviewMeta);
+  //console.log('review', reviewMeta);
 
   metaData = {productsList, productId, productInfo, productStyles, relatedProducts, reviewList, reviewMeta};
 
