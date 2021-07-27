@@ -4,11 +4,11 @@ import Check from '../../../../Lib/Check.png';
 
 
 
-var StyleEntry = ({style, setCurrStyle}) => {
-  var handleClick = (e) => {
-    e.preventDefault();
-    setCurrStyle(style);
+var StyleEntry = ({style, setCurrStyleIndex, index}) => {
+  var handleClick = () => {
+    setCurrStyleIndex(index);
   };
+
   return (
     <ThumbnailContainer>
       <CheckMark src ={Check}></CheckMark>

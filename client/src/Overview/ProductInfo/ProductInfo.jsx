@@ -5,7 +5,16 @@ import Styles from './Styles.jsx';
 import ShareButton from './ShareButton.jsx';
 import { Category, Name, OriginalPrice, SalePrice, Price, Style, Size, Description, Slogan } from '../Styled-Components/Styled-ProductInfo.js';
 
-var ProductInfo = ({rating, category, name, styles, size, setCurrStyle, currStyle, originalPrice, salePrice, description, slogan}) => {
+var ProductInfo = ({rating, category, name, styles, size, description, slogan}) => {
+
+  var [currStyleIndex, setCurrStyleIndex] = useState(0);
+  var [originalPrice, setOriginalPrice] = useState(styles[0].original_price);
+  var [salePrice, setSalePrice] = useState(styles[0].sale_price);
+
+  useEffect(() => {
+    setOriginalPrice(styles[currStyleIndex].original_price);
+    setSalePrice(styles[currStyleIndex].sale_price);
+  });
 
   return (
     <div>
@@ -30,7 +39,7 @@ var ProductInfo = ({rating, category, name, styles, size, setCurrStyle, currStyl
         </Price>
       }
 
-      <Styles styles = {styles} setCurrStyle ={setCurrStyle} currStyle = {currStyle}/>
+      <Styles styles = {styles} setCurrStyleIndex ={setCurrStyleIndex} />
 
       <Size>Largee</Size>
       <Slogan>{slogan}</Slogan>
