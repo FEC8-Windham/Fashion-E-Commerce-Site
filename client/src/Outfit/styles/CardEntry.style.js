@@ -79,8 +79,6 @@ export const StarButton = styled.button`
 
 export const XButton = styled.button`
   z-index: 1;
-  float: left;
-  display: inline-block;
   right: 5px;
   top: 1px;
   position: absolute;

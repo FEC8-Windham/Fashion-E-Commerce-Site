@@ -4,22 +4,36 @@ export const Nothing = styled.div`
   display: none;
 `;
 
-export const Background = styled.body`
+export const Background = styled.div`
   margin: 0px;
   padding: 0px;
   height: 100vh;
   width: 100vw;
-  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
   opacity: 0.5;
   z-index: 1;
-  position: fixed;
+  position: absolute;
   overflow-y: hidden;
-  `;
+`;
 
 export const OverviewModal = styled.div`
-
-
+  margin: auto;
+  right: 0;
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  z-index: 2;
+  position: fixed;
+  border: 1px solid black;
 `;
+
 
 export const ComparisonModalContainer = styled.div`
   margin: auto;

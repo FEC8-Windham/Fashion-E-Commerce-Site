@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import RelatedProducts from './RelatedProducts.jsx';
 import YourOutfit from './YourOutfit.jsx';
-import Modal from '../Helper-Components/Modal.jsx';
+import ComparisonModal from './ComparisonModal.jsx';
 
 var OutfitIndex = (props) => {
   var relatedProducts = props.metaData.relatedProducts;
-  var [modalState, setModalState] = useState(null);
-  var [tempData, setData] = useState(null);
+  const [openp, setOpenP] = useState(false);
+  const [modalData, setData] = useState(null);
 
-  useEffect(() => {
-    if (modalState) {
-      console.log('Modal:', modalState);
-    }
-  }, [modalState]);
-
-  var clickHandler = (type, data) => {
-    setModalState(type);
+  var clickHandler = (data) => {
+    console.log('Click!');
     setData(data);
+    setOpenP(true);
   };
 
   return (
     <div>
+      <ComparisonModal
+        message={modalData}
+        isOpen={openp}
+        onClose={() => setOpenP(false)}
+      />
       <hr></hr>
       <h1>Related Items and Comparison</h1>
-      {Modal(modalState, tempData)}
+      <div id="modalHere"></div>
       <RelatedProducts data={relatedProducts} clickHandler={clickHandler} />
       <YourOutfit />
       <hr></hr>

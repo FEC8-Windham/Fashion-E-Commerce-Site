@@ -41,7 +41,7 @@ const RelatedProductsEntry = (props) => {
     <CardContainer margin={marginx}>
       <br></br>
       {loaded ?
-        <Card onClick={() => { props.clickHandler('comparison', name); }}>
+        <Card onClick={() => { props.clickHandler(name); }}>
           <ImageContainer>
             <StarButton>✩</StarButton>
             <Pic src={url} alt='no image' />
