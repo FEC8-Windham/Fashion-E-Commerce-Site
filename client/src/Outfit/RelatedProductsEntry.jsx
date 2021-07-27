@@ -46,7 +46,6 @@ const RelatedProductsEntry = (props) => {
   return (
     <CardContainer margin={marginx}>
       <br></br>
-      {console.log('RATING', rating)}
       {loaded ?
         <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
           <ImageContainer>

@@ -12,14 +12,15 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
     Category
     Default price
     Number of Styles
-    Features (if same category)
+    Features (overlap if same feature)
     Average rating
   */
-  var sameCategory = false;
+  if (relatedData && currentData) {
 
-  if ((relatedData && currentData) && relatedData.category === currentData.category) {
-    sameCategory = true;
+    console.log('RelatedData:', relatedData);
+    console.log('CurrentData:', currentData);
   }
+
 
   if (!isOpen) {
     return null;
@@ -31,8 +32,8 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
         <Top>
           <tbody>
             <Row>
-              <ProductNames>{relatedData.name}</ProductNames>
-              <ProductNames align={'right'}>{currentData.name}</ProductNames>
+              <ProductNames>{currentData.name}</ProductNames>
+              <ProductNames align={'right'}>{relatedData.name}</ProductNames>
             </Row>
           </tbody>
         </Top>
@@ -40,69 +41,62 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
         <Table>
           <tbody>
             <Row>
-              <Column1>{relatedData.category}</Column1>
+              <Column1>{currentData.category}</Column1>
               <Column2>Category</Column2>
-              <Column3>{currentData.category}</Column3>
+              <Column3>{relatedData.category}</Column3>
             </Row>
             <Row>
-              <Column1>${relatedData.default_price}</Column1>
+              <Column1>${currentData.default_price}</Column1>
               <Column2>Default Price</Column2>
-              <Column3>${currentData.default_price}</Column3>
+              <Column3>${relatedData.default_price}</Column3>
             </Row>
             <Row>
-              <Column1>{relatedData.numberStyles}</Column1>
+              <Column1>{currentData.numberStyles}</Column1>
               <Column2>Number of Styles</Column2>
-              <Column3>{currentData.numberStyles}</Column3>
+              <Column3>{relatedData.numberStyles}</Column3>
             </Row>
           </tbody>
-          {sameCategory ?
-            <tbody>
-              {relatedData.features.map((feature, i) => {
+          <tbody>
+            {relatedData.features.map((feature, i) => {
+              var value = '';
+              if (currentData.features[i] && currentData.features[i].feature === feature.feature) {
+                value = currentData.features[i].value;
+                console.log('Value:', value);
+              } else {
+                value = 'N/A';
+              }
+              return (
+                <Row key={feature.value}>
+                  <Column1>{value}</Column1>
+                  <Column2>{feature.feature}</Column2>
+                  <Column3>{feature.value || 'N/A'}</Column3>
+                </Row>
+              );
+            })}
+            {currentData.features.map((feature, i) => {
+              var value2 = '';
+              if (feature.feature !== relatedData.features[i].feature) {
+                if (relatedData.features[i] && relatedData.features[i].feature === feature.feature) {
+                  value2 = relatedData.features[i].value;
+                  console.log('Value2:', value2);
+                } else {
+                  value2 = 'N/A';
+                }
                 return (
                   <Row key={feature.value}>
                     <Column1>{feature.value || 'N/A'}</Column1>
                     <Column2>{feature.feature}</Column2>
-                    <Column3>{currentData.features[i].value || 'N/A'}</Column3>
+                    <Column3>{value2}</Column3>
                   </Row>
                 );
-              })}
-              {currentData.features.map((feature, i) => {
-                return (
-                  <Row key={feature.value}>
-                    <Column1>{relatedData.features[i].value || 'N/A'}</Column1>
-                    <Column2>{feature.feature}</Column2>
-                    <Column3>{feature.value || 'N/A'}</Column3>
-                  </Row>
-                );
-              })}
-            </tbody>
-            :
-            <tbody>
-              {relatedData.features.map((feature, i) => {
-                return (
-                  <Row key={feature.value}>
-                    <Column1>{feature.value || 'N/A'}</Column1>
-                    <Column2>{feature.feature}</Column2>
-                    <Column3>{'N/A'}</Column3>
-                  </Row>
-                );
-              })}
-              {currentData.features.map((feature, i) => {
-                return (
-                  <Row key={feature.value}>
-                    <Column1>{'N/A'}</Column1>
-                    <Column2>{feature.feature}</Column2>
-                    <Column3>{feature.value || 'N/A'}</Column3>
-                  </Row>
-                );
-              })}
-            </tbody>
-          }
+              }
+            })}
+          </tbody>
           <tbody>
             <Row>
-              <Column1>{relatedData.rating ? <StarRating rating={relatedData.rating} /> : 'No ratings'}</Column1>
+              <Column1><StarRating rating={currentData.rating} /></Column1>
               <Column2>Average rating</Column2>
-              <Column3><StarRating rating={currentData.rating}/></Column3>
+              <Column3>{relatedData.rating ? <StarRating rating={relatedData.rating} /> : 'No ratings'}</Column3>
             </Row>
           </tbody>
         </Table>
