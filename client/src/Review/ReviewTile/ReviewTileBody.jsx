@@ -20,7 +20,7 @@ const ReviewTileBody = (props) => {
   const openModal = (e) => {
     setImageUrl(e.target.currentSrc);
     setClosed(!closed);
-    console.log(e,'eeeeeeeeeee');
+    console.log(e, 'eeeeeeeeeee');
   };
 
   const closeModal = () => {
