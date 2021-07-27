@@ -12,21 +12,27 @@ module.exports = {
   module:
   {
     rules:
-      [
-        {
-          test: /.jsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react',
-            ],
-            plugins: [
-              '@babel/transform-runtime'
-            ]
-          }
+      [  {
+        test: /\.(jpg|png|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images',
         }
+      },
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react',
+          ],
+          plugins: [
+            '@babel/transform-runtime'
+          ]
+        }
+      },
       ]
   }
 };
