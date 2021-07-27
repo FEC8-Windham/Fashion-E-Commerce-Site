@@ -1,3 +1,4 @@
+
 export var calculateAverageRating = (ratingsObj) => {
   var reviewCount = 0;
   var reviewTotal = 0;
@@ -9,14 +10,16 @@ export var calculateAverageRating = (ratingsObj) => {
 
 };
 
-
-export var getDefaultStyle = (styles) => {
-  var defaultStyle;
-  for (var i = 0; i < styles.length; i++) {
-    if (styles[i]['default?']) {
-      return styles[i];
+export var setDefaultAsFirstStyle = (styles) => {
+  var newStyleList = styles.slice();
+  for (var i = 0; i < newStyleList.length; i++) {
+    if (newStyleList[i]['default?']) {
+      var temp = newStyleList[i];
+      newStyleList.splice(i, 1);
+      newStyleList.unshift(temp);
+      break;
     }
   }
-  throw 'No default style!';
+  return newStyleList;
 };
 

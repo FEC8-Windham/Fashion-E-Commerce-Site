@@ -3,12 +3,12 @@ import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import axios from 'axios';
 
 
-var OverviewIndex = ({productInfo, productStyles, setCurrStyle, currStyle, setAverageRating, averageRating, originalPrice, salePrice}) => {
+var OverviewIndex = ({productInfo, averageRating, styles}) => {
 
 
   return (
     <div>
-      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} styles = {productStyles} setCurrStyle = {setCurrStyle} currStyle ={currStyle} originalPrice = {originalPrice} salePrice = {salePrice} description= {productInfo.description} slogan = {productInfo.slogan}
+      <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} styles = {styles} description= {productInfo.description} slogan = {productInfo.slogan}
       />
 
       <div>
