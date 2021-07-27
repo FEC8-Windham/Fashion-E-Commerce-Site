@@ -15,12 +15,6 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
     Features (overlap if same feature)
     Average rating
   */
-  if (relatedData && currentData) {
-
-    console.log('RelatedData:', relatedData);
-    console.log('CurrentData:', currentData);
-  }
-
 
   if (!isOpen) {
     return null;
@@ -61,7 +55,6 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
               var value = '';
               if (currentData.features[i] && currentData.features[i].feature === feature.feature) {
                 value = currentData.features[i].value;
-                console.log('Value:', value);
               } else {
                 value = 'N/A';
               }
@@ -78,7 +71,6 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
               if (feature.feature !== relatedData.features[i].feature) {
                 if (relatedData.features[i] && relatedData.features[i].feature === feature.feature) {
                   value2 = relatedData.features[i].value;
-                  console.log('Value2:', value2);
                 } else {
                   value2 = 'N/A';
                 }
