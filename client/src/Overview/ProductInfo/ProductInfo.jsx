@@ -39,7 +39,7 @@ var ProductInfo = ({rating, category, name, styles, size, description, slogan}) 
         </Price>
       }
 
-      <Styles styles = {styles} setCurrStyleIndex ={setCurrStyleIndex} />
+      <Styles styles = {styles} setCurrStyleIndex ={setCurrStyleIndex} currStyleIndex= {currStyleIndex} />
 
       <Size>Largee</Size>
       <Slogan>{slogan}</Slogan>
