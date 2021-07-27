@@ -87,7 +87,7 @@ right:100px;
 
 export var ShareButtons = styled.div`
 
-float:left;
+
 display: inline-block;
 
 `;
@@ -108,3 +108,25 @@ export var ThumbnailContainer = styled.div`
   height: 50px;
   float:left;
   `;
+
+export var SizeSelect = styled.select`
+  float:left;
+  size: 2;
+`;
+
+export var QuantitySelect = styled.select`
+
+`;
+
+export var CartButton = styled.button`
+
+`;
+
+export var CartContainer = styled.div`
+
+`;
+
+export var SizeMessage = styled.span`
+  color: red;
+
+`;

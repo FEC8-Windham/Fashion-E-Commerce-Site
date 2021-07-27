@@ -16,7 +16,6 @@ var App = (props) => {
   var [salePrice, setSalePrice] = useState(0);
 
 
-  //getting all the data at once.
   useEffect( async () => {
     setMetaData(await getData());
     setLoaded(true);
