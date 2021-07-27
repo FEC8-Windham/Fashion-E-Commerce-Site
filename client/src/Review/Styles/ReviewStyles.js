@@ -9,7 +9,7 @@ export const Container = styled.div`
   text-align: ${props => props.float};
   overflow-wrap: break-word;
   border: 1px solid;
-  margin: 5px;
+  padding: 5px;
 `;
 
 export const FlexContainer = styled.div`
@@ -19,10 +19,17 @@ export const FlexContainer = styled.div`
   align-self:stretch;
   background: gray;
   width: 500px;
-  margin: 5px;
   border-bottom: 1px solid black;
+`;
 
-
+export const TileFlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self:stretch;
+  background: gray;
+  width: fit-content;
+  border-bottom: 1px solid black;
 `;
 
 export const ImageFlexContainer = styled.div`
@@ -32,8 +39,6 @@ export const ImageFlexContainer = styled.div`
   justify-content: left;
   align-self:stretch;
   background: green;
-  margin: 5px;
-  border-bottom: 1px solid black;
 
 
 `;
