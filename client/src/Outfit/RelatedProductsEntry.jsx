@@ -8,6 +8,8 @@ const RelatedProductsEntry = (props) => {
   var relatedId = props.id;
 
   var [metaData, setMetaData] = useState(null);
+  var [relatedData, setRelatedData] = useState(null);
+  var [numberStyles, setNumberStyles] = useState(null);
   var [name, setName] = useState(null);
   var [category, setCategory] = useState(null);
   var [price, setPrice] = useState(null);
@@ -22,6 +24,8 @@ const RelatedProductsEntry = (props) => {
 
   useEffect(() => {
     if (metaData) {
+      setRelatedData(metaData.productInfo);
+      setNumberStyles(metaData.productStyles.length);
       setName(metaData.productInfo.name);
       setCategory(metaData.productInfo.category);
       setPrice(metaData.productInfo.default_price);
@@ -42,8 +46,9 @@ const RelatedProductsEntry = (props) => {
   return (
     <CardContainer margin={marginx}>
       <br></br>
+      {console.log('RATING', rating)}
       {loaded ?
-        <Card onClick={() => { props.clickHandler(name); }}>
+        <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
           <ImageContainer>
             <StarButton>✩</StarButton>
             <Pic src={url} alt='no image' />
@@ -53,7 +58,6 @@ const RelatedProductsEntry = (props) => {
             <br></br>
             <Title>{name}</Title>
             <br></br>
-            {console.log('Sale Price:', salePrice)}
             {salePrice ?
               <div>
                 <Price decoration='line-through'>${price}</Price>
