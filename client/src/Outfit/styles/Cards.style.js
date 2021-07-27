@@ -11,7 +11,6 @@ export const Container = styled.div`
 export const RowContainer = styled.div`
   margin: auto;
   padding: 0px;
-
   width: 790px;
   height: 360px;
   overflow-x: hidden;
@@ -34,18 +33,7 @@ export const FadeoutRight = styled.div`
   padding: 0px;
   width: 750px;
   height: 360px;
-  mask-image: linear-gradient(to right, black 80%, transparent);
-  z-index: 1;
-`;
-
-export const FadeoutLeft = styled.div`
-  margin: 0px;
-  padding: 0px;
-  width: 180px;
-  height: 350px;
-  white-space: nowrap;
-  mask-image: linear-gradient(to right, black 0%, transparent 100%);
-  display: inline-block;
+  mask-image: ${prop => prop.mask || 'linear-gradient(to right, black 80%, transparent)'};
   z-index: 1;
 `;
 
@@ -53,6 +41,7 @@ export const PreviousButton = styled.button`
   position: absolute;
   border: none;
   margin: 0px;
+  padding: 0;
   left: 58px;
   top: 160px;
   background: none;
