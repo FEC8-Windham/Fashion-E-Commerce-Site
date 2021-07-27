@@ -12,6 +12,9 @@ var App = (props) => {
   var [metaData, setMetaData] = useState(null);
   var [styles, setStyles] = useState(null);
   var [averageRating, setAverageRating] = useState(0);
+  var [originalPrice, setOriginalPrice] = useState(0);
+  var [salePrice, setSalePrice] = useState(0);
+
 
   //getting all the data at once.
   useEffect( async () => {
