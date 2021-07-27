@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
-import { StyleThumbnail } from '../Styled-Components/Styled-ProductInfo';
+import { ThumbImg, CheckMark, ThumbnailContainer} from '../Styled-Components/Styled-ProductInfo';
+import Check from '../../../../Lib/Check.png';
 
+var StyleEntry = ({style, setCurrStyleIndex, index, currStyleIndex}) => {
 
-var StyleEntry = ({style, setCurrStyle}) => {
-  var handleClick = (e) => {
-    e.preventDefault();
-    setCurrStyle(style);
+  var handleClick = () => {
+    setCurrStyleIndex(index);
   };
+
   return (
-    <StyleThumbnail src={style.photos[0].thumbnail_url} onClick = {handleClick}></StyleThumbnail>
+    <ThumbnailContainer>
+      {currStyleIndex === index ? <CheckMark src ={Check}></CheckMark> : null}
+      <ThumbImg src={style.photos[0].thumbnail_url} onClick = {handleClick}>
+      </ThumbImg>
+    </ThumbnailContainer>
   );
 };
 
