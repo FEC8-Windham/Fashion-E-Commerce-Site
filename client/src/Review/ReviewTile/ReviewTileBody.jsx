@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, ImageFlexContainer } from '../Styles/ReviewStyles.js';
+import ReviewModal from '../../Helper-Components/ReviewModal.jsx';
 
 const ReviewTileBody = (props) => {
 
@@ -16,13 +17,24 @@ const ReviewTileBody = (props) => {
     setShowMore(!showMore);
   };
 
+  const openModal = (e) => {
+    setImageUrl(e.target.currentSrc);
+    setClosed(!closed);
+    console.log(e,'eeeeeeeeeee');
+  };
+
+  const closeModal = () => {
+    setClosed(true);
+  };
+
 
   //maps all images to a div, renders nothing if its empty
   const images = () => {
     if (review.photos.length >= 1) {
       return (
         <ImageFlexContainer>
-          {review.photos.map(photo => <img key={photo.id} height ={80} width={80} src ={photo.url}></img>)}
+          {review.photos.map(photo => <img onClick={openModal} key={photo.id} height ={80} width={80} src ={photo.url}></img>)}
+          {<ReviewModal closeModal={closeModal} chosenPhoto={imageUrl} closed={closed}/>}
         </ImageFlexContainer>
       );
     }
@@ -30,6 +42,8 @@ const ReviewTileBody = (props) => {
   };
 
   const [showMore, setShowMore] = useState(false);
+  const [closed, setClosed] = useState(true);
+  const [imageUrl, setImageUrl] = useState('');
 
 
 
