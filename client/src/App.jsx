@@ -6,13 +6,15 @@ import axios from 'axios';
 import { getData } from './Controllers/getData.js';
 import { calculateAverageRating, getDefaultStyle, setDefaultAsFirstStyle } from './HelperFunctions.js';
 
-
 var App = (props) => {
 
   var [loaded, setLoaded] = useState(false);
   var [metaData, setMetaData] = useState(null);
   var [styles, setStyles] = useState(null);
   var [averageRating, setAverageRating] = useState(0);
+  var [originalPrice, setOriginalPrice] = useState(0);
+  var [salePrice, setSalePrice] = useState(0);
+
 
   useEffect( async () => {
     setMetaData(await getData());

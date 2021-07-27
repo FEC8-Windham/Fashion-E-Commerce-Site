@@ -37,7 +37,7 @@ const YourOutfitEntry = (props) => {
           <Info>
             <Category>Footwear</Category>
             <br></br>
-            <Title>Nike Sneaker</Title>
+            <Title>{props.item}</Title>
             <br></br>
             <Price>$999.99</Price>
             <br></br>

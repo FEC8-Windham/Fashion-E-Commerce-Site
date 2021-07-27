@@ -7,10 +7,21 @@ const RelatedProducts = (props) => {
 
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);
+  var [display, setDisplay] = useState(null);
 
-  var clickHandlerRight = () => {
+  useEffect (() => {
+    if (relatedProducts.length <= 4) {
+      setDisplay('none');
+      setRightMost(true);
+    }
+  }, []);
+
+  var clickHandlerRight = async (e) => {
     document.querySelector('#relatedContainer').scrollLeft += 202;
-    if (document.querySelector('#relatedContainer').scrollLeft >= relatedProducts.length * 30) {
+    const end = document.querySelector('#relatedContainer').scrollWidth - document.querySelector('#relatedContainer').scrollLeft - 990;
+    if (end <= 0) {
+      console.log('End of scroll');
+      setDisplay('none');
       setRightMost(true);
     }
     setLeftMost(false);
@@ -20,21 +31,22 @@ const RelatedProducts = (props) => {
     document.querySelector('#relatedContainer').scrollLeft -= 202;
     if (document.querySelector('#relatedContainer').scrollLeft < 203) {
       setLeftMost(true);
+      setRightMost(false);
     }
-    setRightMost(false);
+    setDisplay('linear-gradient(to right, black 80%, transparent)');
   };
 
   return (
     <Container>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
-      <FadeoutRight>
+      <FadeoutRight mask={display}>
         <RowContainer id="relatedContainer">
           {relatedProducts.map(item => {
             if (relatedProducts[relatedProducts.length - 1] === item) {
-              return <RelatedProductsEntry key={item} id={item} last={true} />;
+              return <RelatedProductsEntry key={item} id={item} clickHandler={props.clickHandler} last={true} />;
             } else {
-              return <RelatedProductsEntry key={item} id={item} />;
+              return <RelatedProductsEntry key={item} id={item} clickHandler={props.clickHandler} />;
             }
           })}
         </RowContainer>

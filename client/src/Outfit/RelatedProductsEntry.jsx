@@ -16,7 +16,7 @@ const RelatedProductsEntry = (props) => {
   var [loaded, setLoaded] = useState(false);
 
   useEffect(async () => {
-    setMetaData(await getRelatedData(relatedId)); // refer to app.jsx
+    setMetaData(await getRelatedData(relatedId));
   }, []);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const RelatedProductsEntry = (props) => {
     <CardContainer margin={marginx}>
       <br></br>
       {loaded ?
-        <Card>
+        <Card onClick={() => { props.clickHandler(name); }}>
           <ImageContainer>
             <StarButton>✩</StarButton>
             <Pic src={url} alt='no image' />
