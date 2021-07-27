@@ -9,7 +9,7 @@ export const Modal = styled.div`
   border-radius: 5px;
   background: #fff;
   width: 500px;
-  height: 600px;
+  height: 500px;
   position: absolute;
   z-index: 1;
 `;
