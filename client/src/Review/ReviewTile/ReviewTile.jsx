@@ -1,35 +1,28 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import StarRating from '../Helper-Components/StarRating.jsx';
-import { Container, FlexContainer } from './Styles/ReviewStyles.js';
-import reviewData from '../../../APIExamples/reviews.js';
+import ReviewTileBody from './ReviewTileBody.jsx';
+import StarRating from '../../Helper-Components/StarRating.jsx';
+import { Container, FlexContainer } from '../Styles/ReviewStyles.js';
+import reviewData from '../../../../APIExamples/reviews.js';
 import HelpfulWidget from './HelpfulWidget.jsx';
 
-const ReviewTile = () => {
+const ReviewTile = (props) => {
+  const review = props.review;
 
-  const data = reviewData;
-  console.log(data);
-  const review = data.results[0];
-
-  const recommendCheck = (bool) => {
-    return bool ? <span>&#10003;I recommend this product</span> : null;
-  };
-
+  //checks for response, returns a div if there is one
   const responseCheck = () => {
     return review.response ? <Container><div><b>Response:<br></br></b>{review.response}</div></Container> : null;
   };
 
-  const responseDiv = () => {
-
-  };
-
-  console.log(recommendCheck(review.recommend));
-
-
+  //first 60 chars of the review summary
   const [summary, setSummary] = useState(()=> review.summary.slice(0, 60));
+
+  //only returns div if the product was recommended by reviewer
   const [recommendation, setRecommendation] = useState(() => {
     return review.recommend ? <Container><span>&#10003;   I recommend this product</span></Container> : null;
   });
+
+  //renders a employee response if there was one.
   const [response, setResponse] = useState(()=>responseCheck(review.response));
 
 
@@ -46,13 +39,11 @@ const ReviewTile = () => {
       <Container >
         <b>{summary}</b>
       </Container>
+      <ReviewTileBody review={review}/>
       {recommendation}
       {response}
-      <Container >
-        {review.body}
-      </Container>
-      <Container >
-        <HelpfulWidget/>
+      <Container>
+        <HelpfulWidget refresh={props.refresh} review={review}/>
       </Container>
     </FlexContainer>
 
