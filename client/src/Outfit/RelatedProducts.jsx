@@ -32,9 +32,9 @@ const RelatedProducts = (props) => {
         <RowContainer id="relatedContainer">
           {relatedProducts.map(item => {
             if (relatedProducts[relatedProducts.length - 1] === item) {
-              return <RelatedProductsEntry key={item} id={item} last={true} />;
+              return <RelatedProductsEntry key={item} id={item} clickHandler={props.clickHandler} last={true} />;
             } else {
-              return <RelatedProductsEntry key={item} id={item} />;
+              return <RelatedProductsEntry key={item} id={item} clickHandler={props.clickHandler} />;
             }
           })}
         </RowContainer>
