@@ -52,6 +52,7 @@ export const ProductNames = styled.th`
 export const Column1 = styled.th`
   width: 20%;
   font-weight: normal;
+  color: ${prop => prop.color || 'black'};
 `;
 
 export const Column2 = styled.th`

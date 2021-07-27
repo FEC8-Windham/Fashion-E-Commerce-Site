@@ -40,7 +40,7 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
               <Column3>{relatedData.category}</Column3>
             </Row>
             <Row>
-              <Column1>${currentData.default_price}</Column1>
+              {currentData.sale ? <Column1 color='red'>${currentData.sale}</Column1> : <Column1>${currentData.default_price}</Column1>}
               <Column2>Default Price</Column2>
               <Column3>${relatedData.default_price}</Column3>
             </Row>
