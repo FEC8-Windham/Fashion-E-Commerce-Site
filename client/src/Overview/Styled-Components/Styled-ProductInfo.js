@@ -38,7 +38,7 @@ color: red;
 `;
 
 
-export var StyleThumbnail = styled.img`
+export var ThumbImg = styled.img`
   border-radius: 50%;
   width:40px;
   height: 40px;
@@ -91,3 +91,20 @@ float:left;
 display: inline-block;
 
 `;
+
+export var CheckMark = styled.img`
+  z-index: 1;
+  float: left;
+  right: 5px;
+  top: 5px;
+  position: absolute;
+  border-radius: 5px;
+  width: 10px;
+`;
+
+export var ThumbnailContainer = styled.div`
+  position: relative;
+  width:50px;
+  height: 50px;
+  float:left;
+  `;
