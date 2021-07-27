@@ -3,10 +3,6 @@ import { QuantitySelect } from '../Styled-Components/Styled-ProductInfo';
 
 
 var QuantitySelector = ({currStyle, selectedCount}) => {
-
-
-
-
   return (
     <div>
       {

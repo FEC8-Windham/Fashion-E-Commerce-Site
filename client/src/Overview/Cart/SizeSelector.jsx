@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { SizeSelect } from '../Styled-Components/Styled-ProductInfo';
 import { getQuantityBySize } from '../../HelperFunctions';
 
-var SizeSelector = ({currStyle, setSelectedCount}) => {
+var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize}) => {
 
   var [xsCount, SetXsCount] = useState(0);
   var [sCount, SetSCount] = useState(0);
@@ -12,12 +12,23 @@ var SizeSelector = ({currStyle, setSelectedCount}) => {
   var [totalCount, SetTotalCount] = useState(0);
 
   var changeHandler = (e) => {
+    if (e.target.value === 'DEFAULT') {
+      setIsSizeSelected(false);
+      return;
+    }
+    var index = e.target.selectedIndex;
+    var size = e.target[index].text;
     var count = Number(e.target.value);
     if (count > 15) {
       count = 15;
     }
+    setCurrSize(size);
     setSelectedCount(count);
+    setIsSizeSelected(true);
+    setShowSelectSizeMessage(false);
+
   };
+
 
   useEffect(() => {
     var quantityObj = getQuantityBySize(currStyle);
@@ -27,6 +38,9 @@ var SizeSelector = ({currStyle, setSelectedCount}) => {
     SetLCount(quantityObj.L);
     SetXlCount(quantityObj.XL);
     SetTotalCount(quantityObj.totalCount);
+    if (!quantityObj.totalCount) {
+      setIsOutOfStock(true);
+    }
   }, []);
 
   return (
@@ -36,8 +50,8 @@ var SizeSelector = ({currStyle, setSelectedCount}) => {
           <option value = 'DEFAULT'>OUT OF STOCK</option>
         </SizeSelect>
         :
-        <SizeSelect defaultValue = {'DEFAULT'} onChange = {changeHandler}>
-          <option value='DEFAULT' disabled>Select Size</option>
+        <SizeSelect defaultValue = {'DEFAULT'} onChange = {changeHandler} >
+          <option value='DEFAULT' >Select Size</option>
           {
             xsCount ? <option value = {xsCount}>XS</option> : null
           }

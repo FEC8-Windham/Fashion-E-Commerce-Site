@@ -14,7 +14,6 @@ var App = (props) => {
   var [styles, setStyles] = useState(null);
   var [averageRating, setAverageRating] = useState(0);
 
-  //getting all the data at once.
   useEffect( async () => {
     setMetaData(await getData());
     setLoaded(true);

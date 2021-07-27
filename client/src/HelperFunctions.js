@@ -41,3 +41,13 @@ export var getQuantityBySize = (style) => {
   quantityObj.totalCount = totalCount;
   return quantityObj;
 };
+
+export var getSKU = (style, size) => {
+  var skus = style.skus;
+  for (var key in skus) {
+    if (skus[key].size === size) {
+      return key;
+    }
+  }
+};
+
