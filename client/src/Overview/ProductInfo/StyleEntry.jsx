@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import { StyleThumbnail } from '../Styled-Components/Styled-ProductInfo';
+import { ThumbImg, CheckMark, ThumbnailContainer} from '../Styled-Components/Styled-ProductInfo';
+import Check from '../../../../Lib/Check.png';
+
 
 
 var StyleEntry = ({style, setCurrStyle}) => {
@@ -8,7 +10,11 @@ var StyleEntry = ({style, setCurrStyle}) => {
     setCurrStyle(style);
   };
   return (
-    <StyleThumbnail src={style.photos[0].thumbnail_url} onClick = {handleClick}></StyleThumbnail>
+    <ThumbnailContainer>
+      <CheckMark src ={Check}></CheckMark>
+      <ThumbImg src={style.photos[0].thumbnail_url} onClick = {handleClick}>
+      </ThumbImg>
+    </ThumbnailContainer>
   );
 };
 

@@ -29,6 +29,7 @@ var ProductInfo = ({rating, category, name, styles, size, setCurrStyle, currStyl
           <br></br>
         </Price>
       }
+
       <Styles styles = {styles} setCurrStyle ={setCurrStyle} currStyle = {currStyle}/>
 
       <Size>Largee</Size>
