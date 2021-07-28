@@ -111,6 +111,11 @@ export const Price = styled.span`
   color: ${prop => prop.color || 'black'};
 `;
 
+export const Prices = styled.div`
+  padding: 0;
+  float: left;
+`;
+
 export const Rating = styled.div`
   position: absolute;
   bottom: 10px;

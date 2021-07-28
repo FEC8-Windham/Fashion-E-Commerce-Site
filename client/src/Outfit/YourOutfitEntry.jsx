@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardContainer, Card, Info, ImageContainer, Pic, Add, XButton, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
+import { CardContainer, Card, Info, ImageContainer, Pic, Add, XButton, Category, Title, Price, Prices, Rating } from './styles/CardEntry.style.js';
 import StarRating from '../Helper-Components/StarRating.jsx';
 import { calculateAverageRating } from '../HelperFunctions.js';
 
@@ -15,8 +15,8 @@ const YourOutfitEntry = (props) => {
     var url = props.item.url;
     var category = props.item.category;
     var name = props.item.name;
-    var price = props.item.default_price;
-    var salePrice = props.item.sale;
+    var price = props.item.price;
+    var salePrice = props.item.salePrice;
     var rating = props.item.rating;
 
     if (!url) {
@@ -37,12 +37,13 @@ const YourOutfitEntry = (props) => {
             <Title>{name}</Title>
             <br></br>
             {salePrice ?
-              <div>
+              <Prices>
                 <Price decoration='line-through'>${price}</Price>
-                <Price color='red'> ${salePrice}</Price> </div> :
+                <Price color='red'> ${salePrice}</Price>
+              </Prices> :
               <Price>${price}</Price>}
             <br></br>
-            <StarRating rating={rating} />
+            {rating ? <StarRating rating={rating} /> : 'No rating yet'}
           </Info>
         </Card>
         <br></br>
