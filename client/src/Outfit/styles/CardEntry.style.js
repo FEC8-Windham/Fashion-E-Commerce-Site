@@ -69,6 +69,8 @@ export const StarButton = styled.button`
   border: none;
   padding: 0px;
   font-size: 22px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: black;
   cursor: pointer;
   transition: .2s ease;
   &:hover {
