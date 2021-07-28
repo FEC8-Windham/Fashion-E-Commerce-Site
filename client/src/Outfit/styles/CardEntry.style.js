@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
 
 export const Card = styled.div`
   width: 180px;
-  height: 300px;
+  height: 315px;
   background-color: light-gray;
   border: 1px solid black;
   margin: 0px;
@@ -98,11 +98,13 @@ export const XButton = styled.button`
 
 export const Category = styled.span`
   font-size: 13px;
+  text-transform: uppercase;
 `;
 
 export const Title = styled.span`
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
+  position: relative;
 `;
 
 export const Price = styled.span`
@@ -134,4 +136,8 @@ export const Add = styled.img`
     opacity: 0.7;
     transform: scale(1.04);
   }
+`;
+
+export const AddOutfit = styled.h3`
+  text-align: center;
 `;

@@ -14,6 +14,7 @@ export const RowContainer = styled.div`
   width: 790px;
   height: 360px;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
   white-space: nowrap;
   scroll-behavior: smooth;
@@ -24,8 +25,10 @@ export const RowContainer = styled.div`
 `;
 
 export const SectionTitle = styled.h4`
-  margin-bottom: -10px;
+  margin-bottom: -5px;
+  margin-left: 74px;
   font-family: Arial, Helvetica, sans-serif;
+  color: dimgray;
 `;
 
 export const FadeoutRight = styled.div`
