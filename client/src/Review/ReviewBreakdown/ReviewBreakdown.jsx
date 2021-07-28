@@ -13,9 +13,10 @@ const ReviewBreakdown = (props) => {
   const totalRecommended = recommendationObj.total;
   const ratings = props.reviewMeta.ratings;
   const ratingArr = [];
+
   const ratingBars = () => {
     for (var key in ratings) {
-      ratingArr.unshift(<RatingBar rating={key} reviews={ratings[key]} percent={ratings[key] / totalRecommended} />);
+      ratingArr.unshift(<RatingBar changeFilters={props.changeFilters} rating={key} reviews={ratings[key]} percent={ratings[key] / totalRecommended} />);
     }
   };
 

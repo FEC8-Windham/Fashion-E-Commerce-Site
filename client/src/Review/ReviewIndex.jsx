@@ -7,38 +7,46 @@ import { ReviewModuleFlexContainer } from './Styles/ReviewStyles.js';
 import ReviewBreakdown from './ReviewBreakdown/ReviewBreakdown.jsx';
 
 const ReviewIndex = (props) => {
-  const [filteredRatings, setFilteredRatings] = useState([]);
+  const [filteredRatings, setFilteredRatings] = useState(props.reviews.results);
 
   const [oneStar, setOneStar] = useState(false);
-  const [twoStar, setTwoStar] = useState(true);
+  const [twoStar, setTwoStar] = useState(false);
   const [threeStar, setThreeStar] = useState(false);
-  const [fourStar, setFourStar] = useState(true);
+  const [fourStar, setFourStar] = useState(false);
   const [fiveStar, setFiveStar] = useState(false);
 
   const filters = [oneStar, twoStar, threeStar, fourStar, fiveStar];
-  console.log(props.reviews)
 
-
-
-  const filter = () => {
-
+  const filterReviews = (reviewsToFilter) => {
     if (!filters.includes(true)) {
-      return props.reviews;
+      console.log('if');
+      return reviewsToFilter;
+    } else {
+      return reviewsToFilter.filter(review => filters[review.rating - 1]);
+
     }
-
-    var temp = props.reviews.results.filter(review => filters[review.rating - 1]);
-
-    console.log(temp, 'reeee')
-
   };
 
-  filter()
+  const changeFilters = (rating) => {
+    if (rating === 1) {
+      setOneStar(!oneStar);
+    } else if (rating === 2) {
+      setTwoStar(!twoStar);
+    } else if (rating === 3) {
+      setThreeStar(!threeStar);
+    } else if (rating === 4) {
+      setFourStar(!fourStar);
+    } else if (rating === 5) {
+      setFiveStar(!fiveStar);
+    }
+  };
+
 
   return (
     <ReviewModuleFlexContainer>
-      <ReviewBreakdown height={'300px'} reviewMeta={props.reviewMeta} >
+      <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
-      <TileContainer reviewMeta={props.reviewMeta} reviews={props.reviews.results} productId={props.reviews.product}/>
+      <TileContainer reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(props.reviews.results)} productId={props.reviews.product}/>
     </ReviewModuleFlexContainer>
   );
 };

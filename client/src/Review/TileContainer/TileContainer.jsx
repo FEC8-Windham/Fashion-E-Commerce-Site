@@ -8,7 +8,8 @@ import { calculateRecommendation } from '../../HelperFunctions.js';
 
 const TileContainer = (props) => {
   const [counter, setCounter] = useState(2);
-  const [reviews, setReviews] = useState(props.reviews);
+  const reviews = props.reviews;
+  //const [reviews, setReviews] = useState(props.reviews);
   // const [reviews, setReviews] = useState(reviewData.results);
   const [sortBy, setSortBy] = useState('relevant');
 
@@ -28,7 +29,7 @@ const TileContainer = (props) => {
 
     getReviews(params)
       .then(results => {
-        setReviews(results.data.results);
+        props.filterReviews(results.data.results)
       })
       .catch(err => console.log(err));
   };
