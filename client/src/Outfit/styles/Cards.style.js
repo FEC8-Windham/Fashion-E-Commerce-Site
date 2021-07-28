@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin: auto;
   width: 1200px;
-  height: 460px;
+  height: 430px;
   padding: 0px;
   position: relative;
 `;
 
 export const RowContainer = styled.div`
   padding: 0px;
-  height: 422px;
+  height: 405px;
   padding-left: 1px;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -33,7 +33,7 @@ export const FadeoutRight = styled.div`
   margin: auto;
   padding: 0px;
   width: 1031px;
-  height: 421px;
+  height: 405px;
   mask-image: ${prop => prop.mask || 'linear-gradient(to right, black 70%, transparent)'};
   z-index: 1;
 `;
