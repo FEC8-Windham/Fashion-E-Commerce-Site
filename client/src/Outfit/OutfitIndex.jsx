@@ -4,12 +4,17 @@ import YourOutfit from './YourOutfit.jsx';
 import ComparisonModal from './ComparisonModal.jsx';
 
 var OutfitIndex = (props) => {
+  var currentProduct = props.metaData.productInfo;
+  currentProduct.numberStyles = props.metaData.productStyles.length;
+  currentProduct.rating = props.averageRating;
+  currentProduct.sale = props.metaData.productStyles.sale_price;
   var relatedProducts = props.metaData.relatedProducts;
   const [openp, setOpenP] = useState(false);
   const [modalData, setData] = useState(null);
 
-  var clickHandler = (data) => {
-    console.log('Click!');
+  var clickHandler = (data, numberStyles, rating) => {
+    data.numberStyles = numberStyles;
+    data.rating = rating;
     setData(data);
     setOpenP(true);
   };
@@ -17,7 +22,8 @@ var OutfitIndex = (props) => {
   return (
     <div>
       <ComparisonModal
-        message={modalData}
+        relatedData={modalData}
+        currentData={currentProduct}
         isOpen={openp}
         onClose={() => setOpenP(false)}
       />
