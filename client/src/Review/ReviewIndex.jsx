@@ -10,13 +10,13 @@ const ReviewIndex = (props) => {
   const [filteredRatings, setFilteredRatings] = useState([]);
 
   const [oneStar, setOneStar] = useState(false);
-  const [twoStar, setTwoStar] = useState(false);
+  const [twoStar, setTwoStar] = useState(true);
   const [threeStar, setThreeStar] = useState(false);
   const [fourStar, setFourStar] = useState(true);
   const [fiveStar, setFiveStar] = useState(false);
 
   const filters = [oneStar, twoStar, threeStar, fourStar, fiveStar];
-  console.log(filters)
+  console.log(props.reviews)
 
 
 
@@ -26,9 +26,9 @@ const ReviewIndex = (props) => {
       return props.reviews;
     }
 
-    var temp = props.reviews.filter(review => filters[review.rating]);
+    var temp = props.reviews.results.filter(review => filters[review.rating - 1]);
 
-    console.log(temp)
+    console.log(temp, 'reeee')
 
   };
 
@@ -38,7 +38,7 @@ const ReviewIndex = (props) => {
     <ReviewModuleFlexContainer>
       <ReviewBreakdown height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
-      <TileContainer reviewMeta={props.reviewMeta} reviews={props.reviews}/>
+      <TileContainer reviewMeta={props.reviewMeta} reviews={props.reviews.results} productId={props.reviews.product}/>
     </ReviewModuleFlexContainer>
   );
 };
