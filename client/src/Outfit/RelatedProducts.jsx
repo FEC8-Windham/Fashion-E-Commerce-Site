@@ -20,7 +20,6 @@ const RelatedProducts = (props) => {
     document.querySelector('#relatedContainer').scrollLeft += 202;
     const end = document.querySelector('#relatedContainer').scrollWidth - document.querySelector('#relatedContainer').scrollLeft - 990;
     if (end <= 0) {
-      console.log('End of scroll');
       setDisplay('none');
       setRightMost(true);
     }

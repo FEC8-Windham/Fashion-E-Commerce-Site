@@ -38,7 +38,7 @@ export const Table = styled.table`
 `;
 
 export const Title = styled.h4`
-  font-weight: bold;
+  font-weight: normal;
   padding: 0;
   padding-left: 3px;
   margin: 0;
@@ -46,6 +46,7 @@ export const Title = styled.h4`
 
 export const ProductNames = styled.th`
   width: 50%;
+  font-size: 18px;
   text-align: ${prop => prop.align || 'left'};
 `;
 
