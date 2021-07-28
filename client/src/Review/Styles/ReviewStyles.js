@@ -9,7 +9,7 @@ export const Container = styled.div`
   text-align: ${props => props.float};
   overflow-wrap: break-word;
   border: 1px solid;
-  margin: 5px;
+  padding: 5px;
 `;
 
 export const FlexContainer = styled.div`
@@ -19,10 +19,17 @@ export const FlexContainer = styled.div`
   align-self:stretch;
   background: gray;
   width: 500px;
-  margin: 5px;
   border-bottom: 1px solid black;
+`;
 
-
+export const TileFlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self:stretch;
+  background: gray;
+  width: fit-content;
+  border-bottom: 1px solid black;
 `;
 
 export const ImageFlexContainer = styled.div`
@@ -32,8 +39,27 @@ export const ImageFlexContainer = styled.div`
   justify-content: left;
   align-self:stretch;
   background: green;
-  margin: 5px;
-  border-bottom: 1px solid black;
 
 
 `;
+
+
+export const Float = styled.div`
+    display: flex; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+  `;
+
+export const Close = styled.button`
+    position: absolute;
+    left: 0;
+    top: 0;
+  `;
