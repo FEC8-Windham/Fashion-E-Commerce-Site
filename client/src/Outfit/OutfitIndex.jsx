@@ -8,6 +8,8 @@ var OutfitIndex = (props) => {
   currentProduct.numberStyles = props.metaData.productStyles.length;
   currentProduct.rating = props.averageRating;
   currentProduct.sale = props.metaData.productStyles.sale_price;
+  currentProduct.style1 = props.metaData.productStyles[0];
+  currentProduct.url = props.metaData.productStyles[0].photos[0].url;
   var relatedProducts = props.metaData.relatedProducts;
   const [openp, setOpenP] = useState(false);
   const [modalData, setData] = useState(null);
@@ -31,7 +33,7 @@ var OutfitIndex = (props) => {
       <h1>Related Items and Comparison</h1>
       <div id="modalHere"></div>
       <RelatedProducts data={relatedProducts} clickHandler={clickHandler} />
-      <YourOutfit />
+      <YourOutfit data={currentProduct}/>
       <hr></hr>
     </div>
   );

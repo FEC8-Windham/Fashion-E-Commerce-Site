@@ -3,18 +3,48 @@ import YourOutfitEntry from './YourOutfitEntry.jsx';
 import { Container, RowContainer, SectionTitle, NextButton, PreviousButton, FadeoutRight } from './styles/Cards.style.js';
 
 const YourOutfit = (props) => {
+  var currentProduct = props.data;
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);
   var [display, setDisplay] = useState(null);
-
-  var relatedProducts = [1, 2, 3, 4, 5];
+  var [yourOutfit, changeYourOutfit] = useState([1, 2, 3]);
 
   useEffect(() => {
-    if (relatedProducts.length <= 3) {
+    if (yourOutfit.length <= 3) {
       setDisplay('none');
       setRightMost(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (yourOutfit.length > 3) {
+      setDisplay('linear-gradient(to right, black 80%, transparent)');
+      setRightMost(false);
+    }
+  }, [yourOutfit]);
+
+  // Add current product to front of YOUR OUTFIT if not exist
+  var addClickHandler = (e) => {
+    e.preventDefault();
+    var containsObject = false;
+    for (var i = 0; i < yourOutfit.length; i++) {
+      if (typeof yourOutfit[i] === 'object') {
+        containsObject = true;
+        if (currentProduct.name !== yourOutfit[i].name) {
+          var temp = yourOutfit.slice();
+          temp.unshift(currentProduct);
+          changeYourOutfit(temp);
+        } else {
+          window.alert('Product already exists in "Your Outfit!"');
+        }
+      }
+    }
+    if (!containsObject) {
+      var temp = yourOutfit.slice();
+      temp.unshift(currentProduct);
+      changeYourOutfit(temp);
+    }
+  };
 
   var clickHandlerRight = async (e) => {
     document.querySelector('#outfitContainer').scrollLeft += 202;
@@ -42,12 +72,12 @@ const YourOutfit = (props) => {
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="outfitContainer">
-          <YourOutfitEntry first={true} />
-          {relatedProducts.map(item => {
-            if (relatedProducts[relatedProducts.length - 1] === item) {
-              return <YourOutfitEntry key={item} item={item} last={true} />;
+          <YourOutfitEntry first={true} click={addClickHandler} />
+          {yourOutfit.map(item => {
+            if (yourOutfit[yourOutfit.length - 1] === item) {
+              return <YourOutfitEntry key={item.toString()} item={item} last={true} />;
             } else {
-              return <YourOutfitEntry key={item} item={item} />;
+              return <YourOutfitEntry key={item.toString()} item={item} />;
             }
           })}
         </RowContainer>

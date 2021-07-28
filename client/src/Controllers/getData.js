@@ -12,7 +12,7 @@ export var getData = async () => {
   };
   var responseObj = await axios(config);
   var productsList = responseObj.data;
-  var productId = productsList[4].id;
+  var productId = productsList[0].id;
 
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productId}`;
   var responseObj = await axios(config);
@@ -22,11 +22,9 @@ export var getData = async () => {
   var responseObj = await axios(config);
   var productStyles = responseObj.data.results;
 
-
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productId}/related`;
   var responseObj = await axios(config);
   var relatedProducts = responseObj.data;
-
 
   config.params = {product_id: productId, count: '10', sort: 'relevant'};
   config.url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews';
