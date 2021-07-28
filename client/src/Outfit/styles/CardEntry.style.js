@@ -14,7 +14,7 @@ export const CardContainer = styled.div`
 
 export const Card = styled.div`
   width: 240px;
-  height: 400px;
+  height: 380px;
   background-color: light-gray;
   border: 1px solid black;
   margin: 0px;
@@ -28,7 +28,7 @@ export const Card = styled.div`
 
 export const Info = styled.div`
   weight: 240px;
-  height: 125px;
+  height: 120px;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 5px;
@@ -37,7 +37,7 @@ export const Info = styled.div`
 
 export const ImageContainer = styled.div`
   width: 240px;
-  height: 275px;
+  height: 260px;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
@@ -48,7 +48,7 @@ export const ImageContainer = styled.div`
 
 export const Pic = styled.img`
   width: 240px;
-  height: 275px;
+  height: 260px;
   border-bottom: 1px solid black;
   margin: 0px;
   padding: 0px;

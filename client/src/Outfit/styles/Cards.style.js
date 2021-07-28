@@ -44,20 +44,23 @@ export const PreviousButton = styled.button`
   margin: 0px;
   padding: 0;
   left: 66px;
-  top: 220px;
+  top: 200px;
   background: none;
   z-index: 1;
   font-weight: bold;
+  font-size: large;
+
 `;
 
 export const NextButton = styled.button`
   position: absolute;
   border: none;
   margin: 0px;
-  bottom: 220px;
+  bottom: 240px;
   right: 66px;
   float: right;
   background: none;
   z-index: 1;
   font-weight: bold;
+  font-size: large;
 `;
