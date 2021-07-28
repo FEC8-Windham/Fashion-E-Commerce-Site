@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { render } from 'react-dom';
 import StarRating from '../../Helper-Components/StarRating.jsx';
 import Styles from './Styles.jsx';
 import ShareButton from './ShareButton.jsx';
@@ -31,10 +30,14 @@ var ProductInfo = ({rating, category, name, styles, size, description, slogan, o
       }
 
       <Styles styles = {styles} setCurrStyleIndex ={setCurrStyleIndex} currStyleIndex= {currStyleIndex} />
+      {/* <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
 
-      <Size>Largee</Size>
       <Slogan>{slogan}</Slogan>
-      <Description>{description}</Description>
+      <Description>{description}</Description> */}
       <ShareButton/>
     </div>
   );

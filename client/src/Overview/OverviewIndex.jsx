@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import Cart from './Cart/Cart.jsx';
+import ImageGallery from './ImageGallery/ImageGallery.jsx';
+import { Overview, ProductInfoContainer } from './Styled-Components/Styled-ProductInfo.js';
 import axios from 'axios';
 
 
@@ -16,12 +18,15 @@ var OverviewIndex = ({productInfo, averageRating, styles}) => {
   });
 
   return (
-    <div>
+    <Overview>
+      <ImageGallery currStyle = {styles[currStyleIndex]}/>
+      <ProductInfoContainer>
       <ProductInfo rating = {averageRating} category = {productInfo.category} name = {productInfo.name} styles = {styles} description= {productInfo.description} slogan = {productInfo.slogan} originalPrice = {originalPrice} salePrice = {salePrice} currStyleIndex = {currStyleIndex} setCurrStyleIndex = {setCurrStyleIndex}
       />
       <Cart currStyle = {styles[currStyleIndex]}/>
+      </ProductInfoContainer>
 
-    </div>
+    </Overview>
   );
 };
 

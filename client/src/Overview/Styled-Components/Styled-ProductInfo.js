@@ -1,5 +1,37 @@
 import styled from 'styled-components';
 
+export var Overview = styled.div`
+  margin: auto;
+  left: 0;
+  right:0;
+  width:110vh;
+  height: 100vh;
+`;
+
+export var ProductInfoContainer = styled.div`
+  float:left;
+  height: 70vh;
+  width: 35vh;
+`;
+
+export var MainImage = styled.img`
+  float:left;
+  height:100%;
+  width: 100%;
+  object-fit: contain;
+  position:relative;
+
+`;
+
+export var MainImageContainer = styled.div`
+ float:left;
+ width: 70vh;
+ height: 70vh;
+  background-color: black;
+  margin-right: 5vh;
+  position: relative;
+`;
+
 export var Star = styled.span`
   background: linear-gradient(90deg, gold ${(props) => props.yellowPercentage}%, darkgray ${(props) => props.yellowPercentage}% ${props => 100 - props.yellowPercentage}%);
   color:black;
@@ -43,12 +75,15 @@ export var ThumbImg = styled.img`
   width:40px;
   height: 40px;
   padding: 5px;
-  float: left;
+
 `;
 
 export var StylesContainer = styled.div`
   width:200px;
-  height: 120px;
+  /* position: absolute; */
+
+
+
 `;
 
 
@@ -130,3 +165,38 @@ export var SizeMessage = styled.span`
   color: red;
 
 `;
+
+
+
+export var PrevArrow = styled.a`
+   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  left : 0;
+`;
+
+export var NextArrow = styled.a`
+   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px 0 0 3px;
+  user-select: none;
+  right:0;
+`;
+
