@@ -34,7 +34,7 @@ var App = (props) => {
 
       {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating}/></div> : null}
 
-      {loaded ? <div><ReviewIndex reviewMeta={metaData.reviewMeta }reviews={metaData.reviewList}/></div> : null}
+      {loaded ? <div><ReviewIndex reviewMeta={metaData.reviewMeta } reviews={metaData.reviewList}/></div> : null}
     </div>
   );
 };

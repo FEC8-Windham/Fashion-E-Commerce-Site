@@ -8,7 +8,18 @@ import RatingBar from './RatingBar.jsx';
 const ReviewBreakdown = (props) => {
 
   const avgRating = calculateAverageRating(props.reviewMeta.ratings).toFixed(1);
-  const recommended = calculateRecommendation(props.reviewMeta.recommended);
+  const recommendationObj = calculateRecommendation(props.reviewMeta.recommended);
+  const recommended = recommendationObj.recomended;
+  const totalRecommended = recommendationObj.total;
+  const ratings = props.reviewMeta.ratings;
+  const ratingArr = [];
+  const ratingBars = () => {
+    for (var key in ratings) {
+      ratingArr.unshift(<RatingBar rating={key} reviews={ratings[key]} percent={ratings[key] / totalRecommended} />);
+    }
+  };
+
+  ratingBars();
   return (
     <BreakdownFlexContainer height={'200px'}>
       <BreakdownContainer>
@@ -20,8 +31,9 @@ const ReviewBreakdown = (props) => {
       </BreakdownContainer>
       <BreakdownContainer>
         {recommended + '% of reviews recommend this product'}
-        <RatingBar/>
+        {ratingArr.map(rating => rating)}
       </BreakdownContainer>
+
     </BreakdownFlexContainer>
 
   );

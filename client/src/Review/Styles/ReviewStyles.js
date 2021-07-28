@@ -54,11 +54,17 @@ export const ReviewModuleFlexContainer = styled.div`
 export const RatingDiv = styled.div`
   height: ${props => props.height};
   width: ${props => props.width};
-  background: black;
+  background: green;
+  color: white;
 `;
 export const RatingDivText = styled.div`
   height: ${props => props.height};
   width: ${props => props.width};
+`;
+
+export const ZSpan = styled.span`
+  position: absolute;
+  color: black;
 `;
 
 export const RatingDivCont = styled.div`
@@ -67,7 +73,6 @@ export const RatingDivCont = styled.div`
   justify-content: left;
   height: ${props => props.height};
   width: ${props => props.width};
-  background-color: blanchedalmond;
 `;
 
 export const FullWidthDiv = styled.div`

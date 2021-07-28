@@ -13,8 +13,11 @@ export var calculateAverageRating = (ratingsObj) => {
 export var calculateRecommendation = (recommendedObj) => {
   var wouldRec = Number(recommendedObj.true);
   var notRec = Number(recommendedObj.false);
+  var totalRec = wouldRec + notRec;
 
-  return Math.floor((wouldRec / (wouldRec + notRec)) * 100);
+
+
+  return {recomended: Math.floor((wouldRec / (totalRec)) * 100), total: totalRec };
 
 };
 
