@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardContainer, Card, Info, ImageContainer, Pic, Add, XButton, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
 import StarRating from '../Helper-Components/StarRating.jsx';
+import { calculateAverageRating } from '../HelperFunctions.js';
 
 const YourOutfitEntry = (props) => {
   var isLast = false;
@@ -10,11 +11,44 @@ const YourOutfitEntry = (props) => {
     marginx = '0px';
   }
 
-  if (props.first) {
+  if (typeof props.item === 'object') {
+    var url = props.item.url;
+    var category = props.item.category;
+    var name = props.item.name;
+    var price = props.item.default_price;
+    var salePrice = props.item.sale;
+    var rating = props.item.rating;
+
     return (
       <CardContainer margin={marginx}>
         <br></br>
         <Card>
+          <ImageContainer>
+            <XButton>ⓧ</XButton>
+            <Pic src={url} />
+          </ImageContainer>
+          <Info>
+            <Category>{category}</Category>
+            <br></br>
+            <Title>{name}</Title>
+            <br></br>
+            {salePrice ?
+              <div>
+                <Price decoration='line-through'>${price}</Price>
+                <Price color='red'> ${salePrice}</Price> </div> :
+              <Price>${price}</Price>}
+            <br></br>
+            <StarRating rating={rating} />
+          </Info>
+        </Card>
+        <br></br>
+      </CardContainer>
+    );
+  } else if (props.first) {
+    return (
+      <CardContainer margin={marginx}>
+        <br></br>
+        <Card onClick={props.click}>
           <ImageContainer>
             <Add src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Feather-core-plus-circle.svg/1024px-Feather-core-plus-circle.svg.png'></Add>
           </ImageContainer>
