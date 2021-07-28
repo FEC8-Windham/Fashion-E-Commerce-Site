@@ -3,28 +3,16 @@ import ReviewTile from './ReviewTile/ReviewTile.jsx';
 import { getReviews } from '../Controllers/reviewController.js';
 import reviewData from '../../../APIExamples/reviews.js';
 import TileContainer from './TileContainer/TileContainer.jsx';
-
-
-
+import { ReviewModuleFlexContainer } from './Styles/ReviewStyles.js';
+import ReviewBreakdown from './ReviewBreakdown/ReviewBreakdown.jsx';
 
 const ReviewIndex = (props) => {
-  // const [reviews, setReviews] = useState(props.reviews.results);
-  // // const [reviews, setReviews] = useState(reviewData.results);
-
-
-
-  // const refresh = () => {
-  //   getReviews(props.reviews.product)
-  //     .then(results => {
-  //       setReviews(results.data.results);
-  //     })
-  //     .catch(err => console.log(err));
-  // };
-
   return (
-    <div>
+    <ReviewModuleFlexContainer>
+      <ReviewBreakdown height={'300px'} reviewMeta={props.reviewMeta} >
+      </ReviewBreakdown>
       <TileContainer reviewMeta={props.reviewMeta} reviews={props.reviews}/>
-    </div>
+    </ReviewModuleFlexContainer>
   );
 };
 

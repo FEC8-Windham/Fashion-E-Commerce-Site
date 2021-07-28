@@ -10,6 +10,14 @@ export var calculateAverageRating = (ratingsObj) => {
 
 };
 
+export var calculateRecommendation = (recommendedObj) => {
+  var wouldRec = Number(recommendedObj.true);
+  var notRec = Number(recommendedObj.false);
+
+  return Math.floor((wouldRec / (wouldRec + notRec)) * 100);
+
+};
+
 export var setDefaultAsFirstStyle = (styles) => {
   var newStyleList = styles.slice();
   for (var i = 0; i < newStyleList.length; i++) {

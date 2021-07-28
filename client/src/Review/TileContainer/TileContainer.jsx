@@ -20,7 +20,7 @@ const TileContainer = (props) => {
   };
 
   const refresh = (sortType = sortBy) => {
-    console.log(sortBy,'in refresh')
+    console.log(sortBy, 'in refresh');
     setSortBy(sortType);
 
     var params = {product_id: props.reviews.product, count: '10', sort: sortType};
