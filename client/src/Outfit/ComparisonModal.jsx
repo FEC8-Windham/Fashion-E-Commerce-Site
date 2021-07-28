@@ -68,7 +68,7 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
             })}
             {currentData.features.map((feature, i) => {
               var value2 = '';
-              if (feature.feature !== relatedData.features[i].feature) {
+              if (relatedData.features[i] && feature.feature !== relatedData.features[i].feature) {
                 if (relatedData.features[i] && relatedData.features[i].feature === feature.feature) {
                   value2 = relatedData.features[i].value;
                 } else {

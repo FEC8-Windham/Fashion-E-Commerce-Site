@@ -19,6 +19,10 @@ const YourOutfitEntry = (props) => {
     var salePrice = props.item.sale;
     var rating = props.item.rating;
 
+    if (!url) {
+      url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png';
+    }
+
     return (
       <CardContainer margin={marginx}>
         <br></br>
@@ -48,8 +52,8 @@ const YourOutfitEntry = (props) => {
     return (
       <CardContainer margin={marginx}>
         <br></br>
-        <Card onClick={props.click}>
-          <ImageContainer>
+        <Card>
+          <ImageContainer onClick={props.click}>
             <Add src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Feather-core-plus-circle.svg/1024px-Feather-core-plus-circle.svg.png'></Add>
           </ImageContainer>
           <Info>

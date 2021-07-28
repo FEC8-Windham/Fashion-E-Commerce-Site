@@ -32,9 +32,15 @@ const RelatedProductsEntry = (props) => {
       setSalePrice(metaData.productStyles[0].sale_price);
       setUrl(metaData.productStyles[0].photos[0].url);
       setRating(calculateAverageRating(metaData.reviewMeta.ratings));
-      setLoaded(true);
     }
   }, [metaData]);
+
+  useEffect(() => {
+    if (!url) {
+      setUrl('https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png');
+    }
+    setLoaded(true);
+  }, [url]);
 
   var isLast = false;
   var marginx = '20px';
