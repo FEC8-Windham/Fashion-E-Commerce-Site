@@ -37,17 +37,12 @@ const YourOutfit = (props) => {
     if (yourOutfit.length <= 3) {
       setDisplay('none');
       setRightMost(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (yourOutfit.length > 3) {
+    } else {
       setDisplay('linear-gradient(to right, black 80%, transparent)');
       setRightMost(false);
     }
   }, [yourOutfit]);
 
-  // Add current product to front of YOUR OUTFIT if not exist
   var addClickHandler = (e) => {
     e.preventDefault();
     var containsObject = false;
@@ -70,11 +65,17 @@ const YourOutfit = (props) => {
     }
   };
 
+  var deleteClickHandler = (e, item) => {
+    e.preventDefault();
+    var temp = yourOutfit.slice();
+    temp.splice(temp.indexOf(item), 1);
+    changeYourOutfit(temp);
+  };
+
   var clickHandlerRight = async (e) => {
     document.querySelector('#outfitContainer').scrollLeft += 202;
     const end = document.querySelector('#outfitContainer').scrollWidth - document.querySelector('#outfitContainer').scrollLeft - 990;
     if (end <= 0) {
-      console.log('End of scroll');
       setDisplay('none');
       setRightMost(true);
     }
@@ -99,9 +100,9 @@ const YourOutfit = (props) => {
           <YourOutfitEntry first={true} click={addClickHandler} />
           {yourOutfit.map(item => {
             if (yourOutfit[yourOutfit.length - 1] === item) {
-              return <YourOutfitEntry key={item.name} item={item} last={true} />;
+              return <YourOutfitEntry key={item.name} delete={deleteClickHandler}item={item} last={true} />;
             } else {
-              return <YourOutfitEntry key={item.name} item={item} />;
+              return <YourOutfitEntry key={item.name} delete={deleteClickHandler}item={item} />;
             }
           })}
         </RowContainer>

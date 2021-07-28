@@ -28,7 +28,7 @@ const YourOutfitEntry = (props) => {
         <br></br>
         <Card>
           <ImageContainer>
-            <XButton>ⓧ</XButton>
+            <XButton onClick={(e) => props.delete(e, props.item) }>ⓧ</XButton>
             <Pic src={url} />
           </ImageContainer>
           <Info>
