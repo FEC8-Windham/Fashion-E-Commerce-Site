@@ -2,20 +2,18 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: auto;
-  width: 900px;
-  height: 360px;
+  width: 1200px;
+  height: 460px;
   padding: 0px;
   position: relative;
 `;
 
 export const RowContainer = styled.div`
-  margin: auto;
   padding: 0px;
-  width: 790px;
-  height: 360px;
+  height: 422px;
+  padding-left: 1px;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: relative;
   white-space: nowrap;
   scroll-behavior: smooth;
   ::-webkit-scrollbar {
@@ -26,7 +24,7 @@ export const RowContainer = styled.div`
 
 export const SectionTitle = styled.h4`
   margin-bottom: -5px;
-  margin-left: 74px;
+  margin-left: 82px;
   font-family: Arial, Helvetica, sans-serif;
   color: dimgray;
 `;
@@ -34,9 +32,9 @@ export const SectionTitle = styled.h4`
 export const FadeoutRight = styled.div`
   margin: auto;
   padding: 0px;
-  width: 750px;
-  height: 360px;
-  mask-image: ${prop => prop.mask || 'linear-gradient(to right, black 80%, transparent)'};
+  width: 1031px;
+  height: 421px;
+  mask-image: ${prop => prop.mask || 'linear-gradient(to right, black 70%, transparent)'};
   z-index: 1;
 `;
 
@@ -45,8 +43,8 @@ export const PreviousButton = styled.button`
   border: none;
   margin: 0px;
   padding: 0;
-  left: 58px;
-  top: 160px;
+  left: 66px;
+  top: 220px;
   background: none;
   z-index: 1;
   font-weight: bold;
@@ -56,8 +54,8 @@ export const NextButton = styled.button`
   position: absolute;
   border: none;
   margin: 0px;
-  bottom: 180px;
-  right: 58px;
+  bottom: 220px;
+  right: 66px;
   float: right;
   background: none;
   z-index: 1;

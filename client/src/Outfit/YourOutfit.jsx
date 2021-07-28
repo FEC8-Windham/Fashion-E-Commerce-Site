@@ -46,22 +46,23 @@ const YourOutfit = (props) => {
   var addClickHandler = (e) => {
     e.preventDefault();
     var containsObject = false;
+    var names = [];
     for (var i = 0; i < yourOutfit.length; i++) {
       if (typeof yourOutfit[i] === 'object') {
         containsObject = true;
-        if (currentProduct.name !== yourOutfit[i].name) {
-          var temp = yourOutfit.slice();
-          temp.unshift(currentProduct);
-          changeYourOutfit(temp);
-        } else {
-          window.alert('Product already exists in "Your Outfit!"');
-        }
+        names.push(yourOutfit[i].name);
       }
     }
-    if (!containsObject) {
+    if (!names.includes(currentProduct.name)) {
       var temp = yourOutfit.slice();
       temp.unshift(currentProduct);
       changeYourOutfit(temp);
+    } else if (!containsObject) {
+      var temp = yourOutfit.slice();
+      temp.unshift(currentProduct);
+      changeYourOutfit(temp);
+    } else {
+      window.alert('Product already exists in "Your Outfit!"');
     }
   };
 
@@ -73,9 +74,12 @@ const YourOutfit = (props) => {
   };
 
   var clickHandlerRight = async (e) => {
-    document.querySelector('#outfitContainer').scrollLeft += 202;
-    const end = document.querySelector('#outfitContainer').scrollWidth - document.querySelector('#outfitContainer').scrollLeft - 990;
+    document.querySelector('#outfitContainer').scrollLeft += 260;
+
+    const end = document.querySelector('#outfitContainer').scrollWidth - document.querySelector('#outfitContainer').scrollLeft - 1294;
+    console.log(end);
     if (end <= 0) {
+      console.log('End:', end);
       setDisplay('none');
       setRightMost(true);
     }
@@ -83,8 +87,8 @@ const YourOutfit = (props) => {
   };
 
   var clickHandlerLeft = () => {
-    document.querySelector('#outfitContainer').scrollLeft -= 202;
-    if (document.querySelector('#outfitContainer').scrollLeft < 203) {
+    document.querySelector('#outfitContainer').scrollLeft -= 260;
+    if (document.querySelector('#outfitContainer').scrollLeft <= 260) {
       setLeftMost(true);
     }
     setRightMost(false);
@@ -93,7 +97,6 @@ const YourOutfit = (props) => {
 
   return (
     <Container>
-      {console.log(currentProduct)}
       <SectionTitle>YOUR OUTFIT</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight mask={display}>
