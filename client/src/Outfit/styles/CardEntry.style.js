@@ -6,24 +6,29 @@ export const CardContainer = styled.div`
   white-space: normal;
   overflow: hidden;
   z-index: 0;
+  transition: .2s ease;
+  &:hover {
+    transform: scale(1.005);
+  }
 `;
 
 export const Card = styled.div`
-  width: 180px;
-  height: 300px;
+  width: 240px;
+  height: 380px;
   background-color: light-gray;
   border: 1px solid black;
   margin: 0px;
   padding: 0px;
-  cursor: pointer;
+  cursor: ${prop => prop.cursor || 'pointer'};
   position: relative;
   overflow: hidden;
   z-index: 0;
+
 `;
 
 export const Info = styled.div`
-  weight: 180px;
-  height: 100px;
+  weight: 240px;
+  height: 120px;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 5px;
@@ -31,8 +36,8 @@ export const Info = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 180px;
-  height: 200px;
+  width: 240px;
+  height: 260px;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
@@ -42,8 +47,8 @@ export const ImageContainer = styled.div`
   `;
 
 export const Pic = styled.img`
-  width: 180px;
-  height: 200px;
+  width: 240px;
+  height: 260px;
   border-bottom: 1px solid black;
   margin: 0px;
   padding: 0px;
@@ -72,11 +77,7 @@ export const StarButton = styled.button`
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   color: black;
   cursor: pointer;
-  transition: .2s ease;
-  &:hover {
-    transform: scale(1.05);
-    font-weight: bold;
-  }
+
 `;
 
 export const XButton = styled.button`
@@ -86,29 +87,39 @@ export const XButton = styled.button`
   position: absolute;
   background: none;
   border: none;
-  padding: 0px;
-  font-size: 22px;
+  padding: 10px;
   cursor: pointer;
   transition: .2s ease;
+  color: darkgray;
   &:hover {
     transform: scale(1.05);
     font-weight: bold;
+    color: black;
   }
 `;
 
 export const Category = styled.span`
   font-size: 13px;
+  text-transform: uppercase;
 `;
 
 export const Title = styled.span`
   font-weight: bold;
-  font-size: 13px;
+  font-size: 18px;
+  position: relative;
 `;
 
 export const Price = styled.span`
   font-size: small;
+  top: 25px;
+  position: relative;
   text-decoration: ${prop => prop.decoration || 'none'};
   color: ${prop => prop.color || 'black'};
+`;
+
+export const Prices = styled.div`
+  padding: 0;
+  float: left;
 `;
 
 export const Rating = styled.div`
@@ -119,8 +130,8 @@ export const Rating = styled.div`
 
 export const Add = styled.img`
   width: 90px;
-  left: 50px;
-  top: 55px;
+  left: 80px;
+  top: 95px;
   margin: auto;
   transition: .2s ease;
   overflow: hidden;
@@ -129,4 +140,10 @@ export const Add = styled.img`
     opacity: 0.7;
     transform: scale(1.04);
   }
+`;
+
+export const AddOutfit = styled.h2`
+  text-align: center;
+  position: relative;
+  top: 15px;
 `;

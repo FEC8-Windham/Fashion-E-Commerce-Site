@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CardContainer, Card, Info, ImageContainer, Pic, StarButton, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
+import { CardContainer, Card, Info, ImageContainer, Pic, StarButton, Category, Title, Price, Prices, Rating } from './styles/CardEntry.style.js';
 import StarRating from '../Helper-Components/StarRating.jsx';
 import { getRelatedData } from '../Controllers/outfitData.js';
 import { calculateAverageRating } from '../HelperFunctions.js';
@@ -64,9 +64,10 @@ const RelatedProductsEntry = (props) => {
             <Title>{name}</Title>
             <br></br>
             {salePrice ?
-              <div>
+              <Prices>
                 <Price decoration='line-through'>${price}</Price>
-                <Price color='red'> ${salePrice}</Price> </div> :
+                <Price color='red'> ${salePrice}</Price>
+              </Prices> :
               <Price>${price}</Price>}
             <br></br>
             <Rating>
