@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { SizeSelect } from '../Styled-Components/Styled-ProductInfo';
 import { getQuantityBySize } from '../../HelperFunctions';
 
-var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize}) => {
+var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize }) => {
   var [xsCount, SetXsCount] = useState(0);
   var [sCount, SetSCount] = useState(0);
   var [mCount, SetMCount] = useState(0);
@@ -13,6 +13,7 @@ var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfS
   var changeHandler = (e) => {
     if (e.target.value === 'DEFAULT') {
       setIsSizeSelected(false);
+      setSelectedCount(null);
       return;
     }
     var index = e.target.selectedIndex;
@@ -49,26 +50,26 @@ var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfS
   return (
     <div>
       {(!totalCount) ?
-        <SizeSelect defaultValue = {'DEFAULT'} disabled>
-          <option value = 'DEFAULT'>OUT OF STOCK</option>
+        <SizeSelect defaultValue={'DEFAULT'} disabled>
+          <option value='DEFAULT'>OUT OF STOCK</option>
         </SizeSelect>
         :
-        <SizeSelect defaultValue = {'DEFAULT'} onChange = {changeHandler} >
+        <SizeSelect defaultValue={'DEFAULT'} onChange={changeHandler} >
           <option value='DEFAULT' >Select Size</option>
           {
-            xsCount ? <option value = {xsCount}>XS</option> : null
+            xsCount ? <option value={xsCount}>XS</option> : null
           }
           {
-            sCount ? <option value = {sCount}>S</option> : null
+            sCount ? <option value={sCount}>S</option> : null
           }
           {
-            mCount ? <option value = {mCount}>M</option> : null
+            mCount ? <option value={mCount}>M</option> : null
           }
           {
-            lCount ? <option value = {lCount}>L</option> : null
+            lCount ? <option value={lCount}>L</option> : null
           }
           {
-            xlCount ? <option value = {xlCount}>XL</option> : null
+            xlCount ? <option value={xlCount}>XL</option> : null
           }
         </SizeSelect>
       }
