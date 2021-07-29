@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export var Overview = styled.div`
   margin: auto;
   left: 0;
@@ -25,6 +26,7 @@ export var MainImage = styled.img`
   width: 100%;
   object-fit: contain;
   position:relative;
+cursor: url('/Lib/MagnifyingGlass.png'), auto;
 
 `;
 
@@ -102,9 +104,6 @@ export var StyleName = styled.span``;
 export var StylesContainer = styled.div`
   width:200px;
   overflow:auto;
-  /* position: absolute; */
-
-
 
 `;
 
@@ -230,23 +229,12 @@ export var MainThumbImg = styled.img`
   opacity: ${props => props.selected ? '0.5' : '1'};
   cursor: pointer;
 
-  /* top : 10%;
-  left : 5%;
-  border: 1px solid #ddd; */
   `;
 
 export var MainThumbImgContainer = styled.div`
 position: relative;
 width: 100%;
 height: ${100 / 7}%;
-
-
-
-/* display:inline-flex;
-align-items: center;
-justify-content: center;
-background-color: green;
-color: #fff; */
 
 `;
 

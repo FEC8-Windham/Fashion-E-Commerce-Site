@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { MainImage, MainImageContainer, PrevArrow, NextArrow } from '../Styled-Components/Styled-ProductInfo';
 import Thumbnail from './Thumbnail.jsx';
 
+
 var DefaultView = ({currStyle}) => {
   var [photoIndex, setPhotoIndex] = useState(0);
   var [thumbIndex, setThumbIndex] = useState(0);
@@ -17,7 +18,7 @@ var DefaultView = ({currStyle}) => {
 
   return (
     <MainImageContainer>
-      <MainImage src = {currStyle.photos[photoIndex].url}></MainImage>
+      <MainImage src = {currStyle.photos[photoIndex].url} ></MainImage>
 
       {(photoIndex > 0) ? <PrevArrow data-value = 'prev' onClick = {arrowHandler}>&#10140;</PrevArrow> : null}
       {(photoIndex < currStyle.photos.length - 1) ? <NextArrow data-value = 'next' onClick = {arrowHandler}>&#10140;</NextArrow> : null}

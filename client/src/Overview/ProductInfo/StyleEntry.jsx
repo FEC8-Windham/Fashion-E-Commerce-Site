@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { ThumbImg, CheckMark, ThumbnailContainer} from '../Styled-Components/Styled-ProductInfo';
-import Check from '../../../../Lib/Check.png';
+import Check from '../../../../public/Lib/Check.png';
+
 
 var StyleEntry = ({style, setCurrStyleIndex, index, currStyleIndex}) => {
 
