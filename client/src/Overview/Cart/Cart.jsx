@@ -12,9 +12,7 @@ var Cart = ({currStyle}) => {
   var [showSelectSizeMessage, setShowSelectSizeMessage] = useState(false);
   var [currSize, setCurrSize] = useState(null);
 
-
   //Todo: size selector needs to open when size is not selected and button is clicked
-
   return (
     <CartContainer>
       {(showSelectSizeMessage) ?

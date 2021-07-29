@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { QuantitySelect } from '../Styled-Components/Styled-ProductInfo';
 
 
-var QuantitySelector = ({currStyle, selectedCount}) => {
+var QuantitySelector = ({selectedCount}) => {
   return (
     <div>
       {

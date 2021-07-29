@@ -50,19 +50,3 @@ export var getSKU = (style, size) => {
     }
   }
 };
-
-export var getMainPhotos = (style) => {
-  var mainPhotos = [];
-  for (var i = 0; i < style.photos.length; i++) {
-    mainPhotos.push(style.photos[i].url);
-  }
-  return mainPhotos;
-};
-
-export var getThumbnails = (style) => {
-  var thumbnails = [];
-  for (var i = 0; i < style.photos.length; i++) {
-    thumbnails.push(style.photos[i].thumbnail_url);
-  }
-  return thumbnails;
-};

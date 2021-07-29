@@ -3,7 +3,6 @@ import { SizeSelect } from '../Styled-Components/Styled-ProductInfo';
 import { getQuantityBySize } from '../../HelperFunctions';
 
 var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize}) => {
-
   var [xsCount, SetXsCount] = useState(0);
   var [sCount, SetSCount] = useState(0);
   var [mCount, SetMCount] = useState(0);
@@ -19,9 +18,11 @@ var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfS
     var index = e.target.selectedIndex;
     var size = e.target[index].text;
     var count = Number(e.target.value);
+
     if (count > 15) {
       count = 15;
     }
+
     setCurrSize(size);
     setSelectedCount(count);
     setIsSizeSelected(true);
@@ -32,12 +33,14 @@ var SizeSelector = ({currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfS
 
   useEffect(() => {
     var quantityObj = getQuantityBySize(currStyle);
+
     SetXsCount(quantityObj.XS);
     SetSCount(quantityObj.S);
     SetMCount(quantityObj.M);
     SetLCount(quantityObj.L);
     SetXlCount(quantityObj.XL);
     SetTotalCount(quantityObj.totalCount);
+
     if (!quantityObj.totalCount) {
       setIsOutOfStock(true);
     }
