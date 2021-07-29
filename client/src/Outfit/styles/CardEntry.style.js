@@ -6,10 +6,6 @@ export const CardContainer = styled.div`
   white-space: normal;
   overflow: hidden;
   z-index: 0;
-  transition: .2s ease;
-  &:hover {
-    transform: scale(1.005);
-  }
 `;
 
 export const Card = styled.div`
@@ -77,7 +73,10 @@ export const StarButton = styled.button`
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   color: black;
   cursor: pointer;
-
+  transform: 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const XButton = styled.button`

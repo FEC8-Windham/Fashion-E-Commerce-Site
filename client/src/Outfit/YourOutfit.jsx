@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import YourOutfitEntry from './YourOutfitEntry.jsx';
 import { Container, RowContainer, SectionTitle, NextButton, PreviousButton, FadeoutRight } from './styles/Cards.style.js';
-import { getIP } from './tracking.js';
+// import { getIP } from './tracking.js';
 import { dummyData } from './dummyData.js';
 
 const YourOutfit = (props) => {
@@ -10,17 +10,13 @@ const YourOutfit = (props) => {
   var [rightMost, setRightMost] = useState(false);
   var [display, setDisplay] = useState(null);
   var [yourOutfit, changeYourOutfit] = useState(null);
+  // var [yourOutfit, changeYourOutfit] = useState(dummyData);
 
+  // Get data from Local Storage if exists
   useEffect(() => {
-    // if IP Address isn't already in local storage, add
-    if (!localStorage.getItem('ip')) {
-      getIP();
-      console.log('IP address saved to local storage.');
-    } else { // If IP exists, then retrieve outfit
-      if (localStorage.getItem('yourOutfit')) {
-        var localOutfits = JSON.parse(localStorage.getItem('yourOutfit'));
-        changeYourOutfit(localOutfits);
-      }
+    if (localStorage.getItem('yourOutfit')) {
+      var localOutfits = JSON.parse(localStorage.getItem('yourOutfit'));
+      changeYourOutfit(localOutfits);
     }
   }, []);
 
@@ -36,11 +32,17 @@ const YourOutfit = (props) => {
       setRightMost(true);
     }
 
+    // If yourOutfit exists, then save it to Local Storage
     if (yourOutfit) {
       var stringifiedOutfits = JSON.stringify(yourOutfit);
       localStorage.setItem('yourOutfit', stringifiedOutfits);
     }
   }, [yourOutfit]);
+
+  var clearCache = () => {
+    // Use to clear Local Storage
+    localStorage.clear();
+  };
 
   var addClickHandler = (e) => {
     e.preventDefault();
@@ -78,13 +80,11 @@ const YourOutfit = (props) => {
     changeYourOutfit(temp);
   };
 
-  var clickHandlerRight = async (e) => {
+  var clickHandlerRight = () => {
     document.querySelector('#outfitContainer').scrollLeft += 260;
 
     const end = document.querySelector('#outfitContainer').scrollWidth - document.querySelector('#outfitContainer').scrollLeft - 1294;
-    console.log(end);
     if (end <= 0) {
-      console.log('End:', end);
       setDisplay('none');
       setRightMost(true);
     }
@@ -103,6 +103,7 @@ const YourOutfit = (props) => {
   return (
     <Container>
       <SectionTitle>YOUR OUTFIT</SectionTitle>
+      {/* <button onClick={clearCache}>Clear</button> */}
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="outfitContainer">
@@ -114,8 +115,8 @@ const YourOutfit = (props) => {
               } else {
                 return <YourOutfitEntry key={item.name} delete={deleteClickHandler} item={item} />;
               }
-            }) : null}
-
+            }) : null
+          }
         </RowContainer>
       </FadeoutRight>
       {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}

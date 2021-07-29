@@ -16,7 +16,7 @@ const RelatedProducts = (props) => {
     }
   }, []);
 
-  var clickHandlerRight = async (e) => {
+  var clickHandlerRight = () => {
     document.querySelector('#relatedContainer').scrollLeft += 260;
     const end = document.querySelector('#relatedContainer').scrollWidth - document.querySelector('#relatedContainer').scrollLeft - 1294;
     if (end <= 0) {
