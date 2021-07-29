@@ -18,6 +18,17 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
 
   if (!isOpen) {
     return null;
+  } {
+    document.addEventListener('keyup', event => {
+      if (event.keyCode === 27) {
+        event.preventDefault();
+        try {
+          document.querySelector('#closeModal').click();
+        } catch (error) {
+          null;
+        }
+      }
+    });
   }
   return ReactDOM.createPortal(
     <Modal>
@@ -92,7 +103,7 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
             </Row>
           </tbody>
         </Table>
-        <CloseBtn onClick={onClose}>Close</CloseBtn>
+        <CloseBtn id='closeModal' onClick={onClose}>Close</CloseBtn>
       </Data>
     </Modal>,
     document.getElementById('modalHere')
