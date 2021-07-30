@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CardContainer, Card, Info, ImageContainer, Pic, StarButton, Category, Title, Price, Rating } from './styles/CardEntry.style.js';
+import { CardContainer, Card, Info, ImageContainer, Pic, StarButton, Category, Title, Price, Prices, Rating } from './styles/CardEntry.style.js';
 import StarRating from '../Helper-Components/StarRating.jsx';
 import { getRelatedData } from '../Controllers/outfitData.js';
 import { calculateAverageRating } from '../HelperFunctions.js';
@@ -8,10 +8,13 @@ const RelatedProductsEntry = (props) => {
   var relatedId = props.id;
 
   var [metaData, setMetaData] = useState(null);
-  var [name, setName] = useState('');
-  var [category, setCategory] = useState('');
-  var [price, setPrice] = useState('');
-  var [url, setUrl] = useState('');
+  var [relatedData, setRelatedData] = useState(null);
+  var [numberStyles, setNumberStyles] = useState(null);
+  var [name, setName] = useState(null);
+  var [category, setCategory] = useState(null);
+  var [price, setPrice] = useState(null);
+  var [salePrice, setSalePrice] = useState(null);
+  var [url, setUrl] = useState(null);
   var [rating, setRating] = useState(null);
   var [loaded, setLoaded] = useState(false);
 
@@ -21,14 +24,23 @@ const RelatedProductsEntry = (props) => {
 
   useEffect(() => {
     if (metaData) {
+      setRelatedData(metaData.productInfo);
+      setNumberStyles(metaData.productStyles.length);
       setName(metaData.productInfo.name);
       setCategory(metaData.productInfo.category);
       setPrice(metaData.productInfo.default_price);
+      setSalePrice(metaData.productStyles[0].sale_price);
       setUrl(metaData.productStyles[0].photos[0].url);
       setRating(calculateAverageRating(metaData.reviewMeta.ratings));
-      setLoaded(true);
     }
   }, [metaData]);
+
+  useEffect(() => {
+    if (!url) {
+      setUrl('https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png');
+    }
+    setLoaded(true);
+  }, [url]);
 
   var isLast = false;
   var marginx = '20px';
@@ -41,7 +53,7 @@ const RelatedProductsEntry = (props) => {
     <CardContainer margin={marginx}>
       <br></br>
       {loaded ?
-        <Card onClick={() => { props.clickHandler(name); }}>
+        <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
           <ImageContainer>
             <StarButton>✩</StarButton>
             <Pic src={url} alt='no image' />
@@ -51,9 +63,16 @@ const RelatedProductsEntry = (props) => {
             <br></br>
             <Title>{name}</Title>
             <br></br>
-            <Price>${price}</Price>
+            {salePrice ?
+              <Prices>
+                <Price decoration='line-through'>${price}</Price>
+                <Price color='red'> ${salePrice}</Price>
+              </Prices> :
+              <Price>${price}</Price>}
             <br></br>
-            {rating ? <StarRating rating={rating} /> : 'No rating yet' }
+            <Rating>
+              {rating ? <StarRating rating={rating} /> : 'No rating yet'}
+            </Rating>
           </Info>
         </Card>
         : null}

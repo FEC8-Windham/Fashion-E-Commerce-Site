@@ -16,11 +16,10 @@ const RelatedProducts = (props) => {
     }
   }, []);
 
-  var clickHandlerRight = async (e) => {
-    document.querySelector('#relatedContainer').scrollLeft += 202;
-    const end = document.querySelector('#relatedContainer').scrollWidth - document.querySelector('#relatedContainer').scrollLeft - 990;
+  var clickHandlerRight = () => {
+    document.querySelector('#relatedContainer').scrollLeft += 260;
+    const end = document.querySelector('#relatedContainer').scrollWidth - document.querySelector('#relatedContainer').scrollLeft - 1294;
     if (end <= 0) {
-      console.log('End of scroll');
       setDisplay('none');
       setRightMost(true);
     }
@@ -28,12 +27,12 @@ const RelatedProducts = (props) => {
   };
 
   var clickHandlerLeft = () => {
-    document.querySelector('#relatedContainer').scrollLeft -= 202;
-    if (document.querySelector('#relatedContainer').scrollLeft < 203) {
+    document.querySelector('#relatedContainer').scrollLeft -= 260;
+    if (document.querySelector('#relatedContainer').scrollLeft <= 260) {
       setLeftMost(true);
       setRightMost(false);
     }
-    setDisplay('linear-gradient(to right, black 80%, transparent)');
+    setDisplay('linear-gradient(to right, black 70%, transparent)');
   };
 
   return (

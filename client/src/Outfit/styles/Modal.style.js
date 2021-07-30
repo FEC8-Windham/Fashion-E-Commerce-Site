@@ -7,8 +7,8 @@ export const Modal = styled.div`
   right: 0;
   border-style: solid;
   background: #fff;
-  width: 450px;
   position: absolute;
+  width: 45%;
   z-index: 1;
   box-shadow: 0px 0px 1px 1px;
 `;
@@ -28,12 +28,17 @@ export const CloseBtn = styled.button`
   color: #333;
 `;
 
-export const Table = styled.table`
+export const Top = styled.table`
   width: 100%;
 `;
 
+export const Table = styled.table`
+  width: 100%;
+  overflow: scroll;
+`;
+
 export const Title = styled.h4`
-  font-weight: bold;
+  font-weight: normal;
   padding: 0;
   padding-left: 3px;
   margin: 0;
@@ -41,20 +46,24 @@ export const Title = styled.h4`
 
 export const ProductNames = styled.th`
   width: 50%;
+  font-size: 18px;
   text-align: ${prop => prop.align || 'left'};
 `;
 
 export const Column1 = styled.th`
-  width: 10%;
+  width: 20%;
+  font-weight: normal;
+  color: ${prop => prop.color || 'black'};
 `;
 
 export const Column2 = styled.th`
-  width: 80%;
+  width: 60%;
   text-align: center;
 `;
 
 export const Column3 = styled.th`
-  width: 10%;
+  width: 20%;
+  font-weight: normal;
 `;
 
 export const Row = styled.tr`

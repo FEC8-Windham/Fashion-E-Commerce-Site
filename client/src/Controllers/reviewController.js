@@ -19,14 +19,17 @@ export const helpfulClick = (reviewID, string) => {
   // });
 };
 
-export const getReviews = (productID) => {
+export const getReviews = (params) => {
+  //console.log(params)
   let config = {
     method: 'get',
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/?product_id=${productID}`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/`,
     headers: {
       'Authorization': API_KEY
     }
   };
+
+  config.params = params;
 
   return axios(config);
   // .then((response) => {
