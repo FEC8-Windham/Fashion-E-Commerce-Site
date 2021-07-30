@@ -12,6 +12,16 @@ export const Container = styled.div`
   padding: 5px;
 `;
 
+export const BreakdownContainer = styled.div`
+  width: ${props => props.width};
+  height: ${props => props.height};
+  padding: ${props => props.padding};
+  background: ${props => props.bgColor};
+  float: ${props => props.float};
+  text-align: ${props => props.float};
+  padding: 5px;
+`;
+
 export const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,6 +42,45 @@ export const TileFlexContainer = styled.div`
   border-bottom: 1px solid black;
 `;
 
+export const ReviewModuleFlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-self:stretch;
+  background: green;
+`;
+
+export const RatingDiv = styled.div`
+  height: ${props => props.height};
+  width: ${props => props.width};
+  background: green;
+  color: white;
+`;
+export const RatingDivText = styled.div`
+  height: ${props => props.height};
+  width: ${props => props.width};
+`;
+
+export const ZSpan = styled.span`
+  position: absolute;
+  color: black;
+`;
+
+export const RatingDivCont = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  height: ${props => props.height};
+  width: ${props => props.width};
+`;
+
+export const FullWidthDiv = styled.div`
+ height: ${props => props.height};
+  width: ${props => props.width};
+  background-color: lightgray;
+`;
+
 export const ImageFlexContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -39,10 +88,19 @@ export const ImageFlexContainer = styled.div`
   justify-content: left;
   align-self:stretch;
   background: green;
-
-
 `;
 
+export const BreakdownFlexContainer = styled.div`
+  width: ${props => props.width};
+  height: ${props => props.height};
+  padding: ${props => props.padding};
+  background: ${props => props.bgColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  background: gray;
+`;
 
 export const Float = styled.div`
     display: flex; /* Hidden by default */
@@ -63,3 +121,46 @@ export const Close = styled.button`
     left: 0;
     top: 0;
   `;
+
+export const charCont = styled.div`
+    background-color: black;
+`;
+
+
+export const CharIndicator = styled.div`
+z-index: 1;
+position:relative;
+left: ${props => props.position}};
+background-color: black;
+height: 5px;
+width: 5px;
+`;
+
+export const NoPadContainer = styled.div`
+width: ${props => props.width};
+height: ${props => props.height};
+padding: ${props => props.padding};
+background: ${props => props.bgColor};
+float: ${props => props.float};
+text-align: ${props => props.float};
+overflow-wrap: break-word;
+`;
+
+export const CharLabelFlex = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: left;
+height: ${props => props.height};
+width: ${props => props.width};
+`;
+
+export const CharLabelDiv = styled.div`
+width:33.33%;
+text-align: ${props => props.align};
+`;
+
+export const CharBackG = styled.div`
+height: 5px;
+width: 100%;
+background-color: lightgray;
+`;
