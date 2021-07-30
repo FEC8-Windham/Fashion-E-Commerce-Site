@@ -31,15 +31,15 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
     });
   }
   return ReactDOM.createPortal(
-    <Modal>
-      <Data>
-        <Title>Comparing</Title>
+    <Modal id='comparisonModal'>
+      <Data id='comparisonModal'>
+        <Title id='comparisonTitle'>Comparing</Title>
         <Top>
           <tbody>
             <Row>
-              <ProductNames>{currentData.name}</ProductNames>
-              <ProductNames width='60%'></ProductNames>
-              <ProductNames>{relatedData.name}</ProductNames>
+              <ProductNames id='comparisonModal'>{currentData.name}</ProductNames>
+              <ProductNames id='comparisonModal' width='60%'></ProductNames>
+              <ProductNames id='comparisonModal'>{relatedData.name}</ProductNames>
             </Row>
           </tbody>
         </Top>
@@ -47,19 +47,19 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
         <Table>
           <tbody>
             <Row>
-              <Column1>{currentData.category}</Column1>
-              <Column2>Category</Column2>
-              <Column3>{relatedData.category}</Column3>
+              <Column1 id='comparisonModal'>{currentData.category}</Column1>
+              <Column2 id='comparisonModal'>Category</Column2>
+              <Column3 id='comparisonModal'>{relatedData.category}</Column3>
             </Row>
             <Row>
-              {currentData.sale ? <Column1 color='red'>${currentData.sale}</Column1> : <Column1>${currentData.default_price}</Column1>}
-              <Column2>Default Price</Column2>
-              <Column3>${relatedData.default_price}</Column3>
+              {currentData.sale ? <Column1 id='comparisonModal' color='red'>${currentData.sale}</Column1> : <Column1 id='comparisonModal'>${currentData.default_price}</Column1>}
+              <Column2 id='comparisonModal'>Default Price</Column2>
+              <Column3 id='comparisonModal'>${relatedData.default_price}</Column3>
             </Row>
             <Row>
-              <Column1>{currentData.numberStyles}</Column1>
-              <Column2>Number of Styles</Column2>
-              <Column3>{relatedData.numberStyles}</Column3>
+              <Column1 id='comparisonModal'>{currentData.numberStyles}</Column1>
+              <Column2 id='comparisonModal'>Number of Styles</Column2>
+              <Column3 id='comparisonModal'>{relatedData.numberStyles}</Column3>
             </Row>
           </tbody>
           <tbody>
@@ -72,9 +72,9 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
               }
               return (
                 <Row key={feature.value}>
-                  <Column1>{value}</Column1>
-                  <Column2>{feature.feature}</Column2>
-                  <Column3>{feature.value || 'N/A'}</Column3>
+                  <Column1 id='comparisonModal'>{value}</Column1>
+                  <Column2 id='comparisonModal'>{feature.feature}</Column2>
+                  <Column3 id='comparisonModal'>{feature.value || 'N/A'}</Column3>
                 </Row>
               );
             })}
@@ -88,9 +88,9 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
                 }
                 return (
                   <Row key={feature.value}>
-                    <Column1>{feature.value || 'N/A'}</Column1>
-                    <Column2>{feature.feature}</Column2>
-                    <Column3>{value2}</Column3>
+                    <Column1 id='comparisonModal' id='comparisonModal'>{feature.value || 'N/A'}</Column1>
+                    <Column2 id='comparisonModal' id='comparisonModal'>{feature.feature}</Column2>
+                    <Column3 id='comparisonModal' id='comparisonModal'>{value2}</Column3>
                   </Row>
                 );
               }
@@ -98,13 +98,13 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
           </tbody>
           <tbody>
             <Row>
-              <Column1><StarRating rating={currentData.rating} /></Column1>
-              <Column2>Average rating</Column2>
-              <Column3>{relatedData.rating ? <StarRating rating={relatedData.rating} /> : 'No ratings'}</Column3>
+              <Column1 id='comparisonModal'><StarRating rating={currentData.rating} /></Column1>
+              <Column2 id='comparisonModal'>Average rating</Column2>
+              <Column3 id='comparisonModal'>{relatedData.rating ? <StarRating rating={relatedData.rating} /> : 'No ratings'}</Column3>
             </Row>
           </tbody>
         </Table>
-        <CloseBtn id='closeModal' onClick={onClose}>Close</CloseBtn>
+        <CloseBtn id='closeModalButton' onClick={onClose}>Close</CloseBtn>
       </Data>
     </Modal>,
     document.getElementById('modal')
