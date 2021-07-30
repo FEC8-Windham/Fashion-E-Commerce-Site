@@ -55,22 +55,22 @@ const RelatedProductsEntry = (props) => {
       {loaded ?
         <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
           <ImageContainer>
-            <StarButton>✩</StarButton>
-            <Pic src={url} alt='no image' />
+            <StarButton id='relatedProudctStarButton'>✩</StarButton>
+            <Pic id='relatedProductImage' src={url} alt='no image' />
           </ImageContainer>
           <Info>
-            <Category>{category}</Category>
+            <Category id='relatedProductCategory'>{category}</Category>
             <br></br>
-            <Title>{name}</Title>
+            <Title id='relatedProductTitle'>{name}</Title>
             <br></br>
             {salePrice ?
               <Prices>
-                <Price decoration='line-through'>${price}</Price>
-                <Price color='red'> ${salePrice}</Price>
+                <Price id='relatedProductDefaultPrice' decoration='line-through'>${price}</Price>
+                <Price id='relatedProductSalePrice' color='red'> ${salePrice}</Price>
               </Prices> :
-              <Price>${price}</Price>}
+              <Price id='relatedProductDefaultPrice'>${price}</Price>}
             <br></br>
-            <Rating>
+            <Rating id='relatedProductStarRating'>
               {rating ? <StarRating rating={rating} /> : 'No rating yet'}
             </Rating>
           </Info>
