@@ -145,6 +145,7 @@ export var Icons = styled.span`
 
 export var StarContainer = styled.div`
   margin-top: 5%;
+  overflow: hidden;
 `;
 
 export var Star = styled.span`
@@ -153,6 +154,19 @@ font-size: small;
   color:black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  float: left;
+`;
+
+export var SeeAllReviews = styled.div`
+
+  font-size: x-small;
+  padding-top: 0.5%;
+  margin-left: 15%;
+  padding-left: 5%;
+  vertical-align: middle;
+  text-decoration: underline;
+  cursor: pointer;
+
 `;
 
 

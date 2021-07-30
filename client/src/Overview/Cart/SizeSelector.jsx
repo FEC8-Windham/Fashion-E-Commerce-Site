@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SizeSelect } from '../Styled-Components/Styled-ProductInfo';
 import { getQuantityBySize } from '../../HelperFunctions';
 
-var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize }) => {
+var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize, setSizeSelectRef}) => {
   var [xsCount, SetXsCount] = useState(0);
   var [sCount, SetSCount] = useState(0);
   var [mCount, SetMCount] = useState(0);
   var [lCount, SetLCount] = useState(0);
   var [xlCount, SetXlCount] = useState(0);
   var [totalCount, SetTotalCount] = useState(0);
+
 
   var changeHandler = (e) => {
     if (e.target.value === 'DEFAULT') {
@@ -33,6 +34,7 @@ var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOf
 
 
   useEffect(() => {
+
     var quantityObj = getQuantityBySize(currStyle);
 
     SetXsCount(quantityObj.XS);

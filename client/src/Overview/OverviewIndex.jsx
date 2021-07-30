@@ -6,7 +6,7 @@ import { Overview, ProductInfoContainer, Slogan, Description } from './Styled-Co
 import axios from 'axios';
 
 
-var OverviewIndex = ({ productInfo, averageRating, styles }) => {
+var OverviewIndex = ({ productInfo, averageRating, styles, reviewDiv }) => {
 
   var [currStyleIndex, setCurrStyleIndex] = useState(0);
   var [originalPrice, setOriginalPrice] = useState(styles[0].original_price);
@@ -21,7 +21,7 @@ var OverviewIndex = ({ productInfo, averageRating, styles }) => {
     <Overview>
       <ImageGallery currStyle={styles[currStyleIndex]} />
       <ProductInfoContainer>
-        <ProductInfo rating={averageRating} category={productInfo.category} name={productInfo.name} styles={styles} description={productInfo.description} slogan={productInfo.slogan} originalPrice={originalPrice} salePrice={salePrice} currStyleIndex={currStyleIndex} setCurrStyleIndex={setCurrStyleIndex}
+        <ProductInfo rating={averageRating} category={productInfo.category} name={productInfo.name} styles={styles} description={productInfo.description} slogan={productInfo.slogan} originalPrice={originalPrice} salePrice={salePrice} currStyleIndex={currStyleIndex} setCurrStyleIndex={setCurrStyleIndex} reviewDiv ={reviewDiv}
         />
         <Cart currStyle={styles[currStyleIndex]} />
       </ProductInfoContainer>
