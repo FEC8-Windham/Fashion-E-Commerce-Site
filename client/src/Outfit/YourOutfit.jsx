@@ -111,9 +111,9 @@ const YourOutfit = (props) => {
           {yourOutfit ?
             yourOutfit.map((item, i) => {
               if (yourOutfit[yourOutfit.length - 1] === item) {
-                return <YourOutfitEntry key={item.name} i={(i + 1).toString()} delete={deleteClickHandler} item={item} last={true} />;
+                return <YourOutfitEntry key={item.name} id={'yourOutfitEntry' + i} delete={deleteClickHandler} item={item} last={true} />;
               } else {
-                return <YourOutfitEntry key={item.name} i={(i + 1).toString()} delete={deleteClickHandler} item={item} />;
+                return <YourOutfitEntry key={item.name} id={'yourOutfitEntry' + i} delete={deleteClickHandler} item={item} />;
               }
             }) : null
           }

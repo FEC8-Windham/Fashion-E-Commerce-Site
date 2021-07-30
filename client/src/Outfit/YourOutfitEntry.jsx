@@ -24,7 +24,7 @@ const YourOutfitEntry = (props) => {
     }
 
     return (
-      <CardContainer id={'yourOutfitEntry' + props.i} margin={marginx}>
+      <CardContainer margin={marginx}>
         <br></br>
         <Card cursor='auto'>
           <ImageContainer>
@@ -53,7 +53,7 @@ const YourOutfitEntry = (props) => {
     );
   } else if (props.first) {
     return (
-      <CardContainer id={'yourOutfitEntryAdd'} margin={marginx}>
+      <CardContainer margin={marginx}>
         <br></br>
         <Card>
           <ImageContainer onClick={props.click}>
@@ -68,7 +68,7 @@ const YourOutfitEntry = (props) => {
     );
   } else {
     return (
-      <CardContainer id={'yourOutfitEntry' + props.i} margin={marginx}>
+      <CardContainer margin={marginx}>
         <br></br>
         <Card cursor='auto'>
           <ImageContainer>

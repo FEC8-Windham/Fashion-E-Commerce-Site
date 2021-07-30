@@ -22,7 +22,7 @@ const ReviewIndex = (props) => {
   // };
 
   return (
-    <div id='moduleReviews'>
+    <div>
       <TileContainer reviewMeta={props.reviewMeta} reviews={props.reviews}/>
     </div>
   );
