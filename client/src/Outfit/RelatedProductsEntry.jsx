@@ -5,7 +5,7 @@ import { getRelatedData } from '../Controllers/outfitData.js';
 import { calculateAverageRating } from '../HelperFunctions.js';
 
 const RelatedProductsEntry = (props) => {
-  var relatedId = props.id;
+  var relatedId = props.relatedId;
 
   var [metaData, setMetaData] = useState(null);
   var [relatedData, setRelatedData] = useState(null);
@@ -50,7 +50,7 @@ const RelatedProductsEntry = (props) => {
   }
 
   return (
-    <CardContainer id={'relatedProductsEntry' + props.i} margin={marginx}>
+    <CardContainer margin={marginx}>
       <br></br>
       {loaded ?
         <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>

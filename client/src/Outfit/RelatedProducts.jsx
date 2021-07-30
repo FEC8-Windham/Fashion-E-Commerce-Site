@@ -43,9 +43,11 @@ const RelatedProducts = (props) => {
         <RowContainer id="relatedContainer">
           {relatedProducts.map((item, i) => {
             if (relatedProducts[relatedProducts.length - 1] === item) {
-              return <RelatedProductsEntry key={item} id={item} i={i.toString()} clickHandler={props.clickHandler} last={true} />;
+              // return <RelatedProductsEntry key={item} id={item} i={i} clickHandler={props.clickHandler} last={true} />;
+              return <RelatedProductsEntry key={item} relatedId={item} id={'relatedProductsEntry' + i} clickHandler={props.clickHandler} last={true} />;
             } else {
-              return <RelatedProductsEntry key={item} id={item} i={i.toString()} clickHandler={props.clickHandler} />;
+              // return <RelatedProductsEntry key={item} id={item} i={i} clickHandler={props.clickHandler} />;
+              return <RelatedProductsEntry key={item} relatedId={item} id={'relatedProductsEntry' + i} clickHandler={props.clickHandler} />;
             }
           })}
         </RowContainer>

@@ -22,10 +22,11 @@ var App = (props) => {
     // Way to get exact element that is clicked and module it is contained in
     // Module will only show if the module div has an id 'moduleOverview / moduleOutfit / moduleReview'
     document.addEventListener('click', event => {
-      console.log('Clicked:', event.path[0]);
+      console.log('Clicked: #', event.path[0].id);
       event.path.forEach(element => {
         if (element.id && element.id.startsWith('module')) {
           console.log('Module:', element.id.slice(6));
+
         }
       });
     });
