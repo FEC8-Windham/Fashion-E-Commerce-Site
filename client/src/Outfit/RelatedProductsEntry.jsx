@@ -50,7 +50,7 @@ const RelatedProductsEntry = (props) => {
   }
 
   return (
-    <CardContainer margin={marginx}>
+    <CardContainer id={'relatedProductsEntry' + props.i} margin={marginx}>
       <br></br>
       {loaded ?
         <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
@@ -75,7 +75,7 @@ const RelatedProductsEntry = (props) => {
             </Rating>
           </Info>
         </Card>
-        : null}
+        : <div></div>}
     </CardContainer>
   );
 };

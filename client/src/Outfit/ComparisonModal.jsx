@@ -38,7 +38,8 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
           <tbody>
             <Row>
               <ProductNames>{currentData.name}</ProductNames>
-              <ProductNames align={'right'}>{relatedData.name}</ProductNames>
+              <ProductNames width='60%'></ProductNames>
+              <ProductNames>{relatedData.name}</ProductNames>
             </Row>
           </tbody>
         </Top>
@@ -106,7 +107,7 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
         <CloseBtn id='closeModal' onClick={onClose}>Close</CloseBtn>
       </Data>
     </Modal>,
-    document.getElementById('modalHere')
+    document.getElementById('modal')
   );
 };
 

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CardContainer, Card, Info, ImageContainer, AddContainer, Pic, Add, XButton, Category, Title, Price, Prices, Rating, AddOutfit } from './styles/CardEntry.style.js';
 import StarRating from '../Helper-Components/StarRating.jsx';
-import { calculateAverageRating } from '../HelperFunctions.js';
+import { calculateAverageRating, clickTracker } from '../HelperFunctions.js';
 
 const YourOutfitEntry = (props) => {
   var isLast = false;
@@ -24,7 +24,7 @@ const YourOutfitEntry = (props) => {
     }
 
     return (
-      <CardContainer margin={marginx}>
+      <CardContainer id={'yourOutfitEntry' + props.i} margin={marginx}>
         <br></br>
         <Card cursor='auto'>
           <ImageContainer>
@@ -53,7 +53,7 @@ const YourOutfitEntry = (props) => {
     );
   } else if (props.first) {
     return (
-      <CardContainer margin={marginx}>
+      <CardContainer id={'yourOutfitEntryAdd'} margin={marginx}>
         <br></br>
         <Card>
           <ImageContainer onClick={props.click}>
@@ -68,7 +68,7 @@ const YourOutfitEntry = (props) => {
     );
   } else {
     return (
-      <CardContainer margin={marginx}>
+      <CardContainer id={'yourOutfitEntry' + props.i} margin={marginx}>
         <br></br>
         <Card cursor='auto'>
           <ImageContainer>
