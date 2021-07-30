@@ -12,8 +12,7 @@ var App = (props) => {
   var [metaData, setMetaData] = useState(null);
   var [styles, setStyles] = useState(null);
   var [averageRating, setAverageRating] = useState(0);
-  var [originalPrice, setOriginalPrice] = useState(0);
-  var [salePrice, setSalePrice] = useState(0);
+  var [reviewDiv, setReviewDiv] = useState(null);
 
 
   useEffect( async () => {
@@ -28,13 +27,17 @@ var App = (props) => {
     }
   }, [metaData]);
 
+  var getReviewDiv = (reviewRef) => {
+    setReviewDiv(reviewRef.current);
+  };
+
   return (
     <div>
-      {loaded ? <OverviewIndex productInfo = {metaData.productInfo} averageRating= {averageRating} styles = {styles}/> : <div>Loading...</div>}
+      {loaded ? <OverviewIndex productInfo = {metaData.productInfo} averageRating= {averageRating} styles = {styles} reviewDiv ={reviewDiv}/> : <div>Loading...</div>}
 
       {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating}/></div> : null}
 
-      {loaded ? <div><ReviewIndex reviewMeta={metaData.reviewMeta }reviews={metaData.reviewList}/></div> : null}
+      {loaded ? <div><ReviewIndex reviews={metaData.reviewList} getReviewDiv = {getReviewDiv}/></div> : null}
     </div>
   );
 };

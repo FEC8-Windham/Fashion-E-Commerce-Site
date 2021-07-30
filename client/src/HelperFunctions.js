@@ -50,4 +50,3 @@ export var getSKU = (style, size) => {
     }
   }
 };
-

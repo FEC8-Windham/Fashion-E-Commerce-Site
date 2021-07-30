@@ -1,10 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Star} from '../Overview/Styled-Components/Styled-ProductInfo.js';
 
 var StarRating = (props) => {
-
-
   var roundedRating = Math.ceil(4 * props.rating) / 4;
   var fullStars = Math.floor(roundedRating);
   var remainder = roundedRating - fullStars;
@@ -25,6 +22,7 @@ var StarRating = (props) => {
       stars.push(0);
     }
   }
+
   var key = 0;
 
   return (
@@ -36,7 +34,6 @@ var StarRating = (props) => {
       }
     </div>
   );
-
 };
 
 export default StarRating;

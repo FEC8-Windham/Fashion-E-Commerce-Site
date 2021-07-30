@@ -4,7 +4,6 @@ import StyleEntry from './StyleEntry.jsx';
 
 var Styles = ({styles, setCurrStyleIndex, currStyleIndex}) => {
 
-
   return (
     <StylesContainer>
       {styles.map((style, i) => {
