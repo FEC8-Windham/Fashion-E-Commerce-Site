@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { CartButton } from '../Styled-Components/Styled-ProductInfo';
 import { getSKU } from '../../HelperFunctions';
 import axios from 'axios';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReviewTile from './ReviewTile/ReviewTile.jsx';
 import { getReviews } from '../Controllers/reviewController.js';
 import reviewData from '../../../APIExamples/reviews.js';
@@ -14,7 +14,7 @@ const ReviewIndex = (props) => {
   const [fiveStar, setFiveStar] = useState(false);
   const [sortBy, setSortBy] = useState('relevant');
   const [reviews, setReviews] = useState(props.reviews.results);
-
+  const reviewRef = useRef();
   const filters = [oneStar, twoStar, threeStar, fourStar, fiveStar];
 
   const filterReviews = (reviewsToFilter) => {
@@ -28,9 +28,8 @@ const ReviewIndex = (props) => {
 
   const refresh = (sortType = sortBy) => {
     setSortBy(sortType);
-
+  // const [reviews, setReviews] = useState(reviewData.results);
     var params = {product_id: props.reviews.product, count: '10', sort: sortType};
-
     getReviews(params)
       .then(results => {
         setReviews(results.data.results);
@@ -52,13 +51,18 @@ const ReviewIndex = (props) => {
     }
   };
 
+  useEffect(() => {
+    props.getReviewDiv(reviewRef);
+  }, [reviewRef]);
+
   return (
-    <ReviewModuleFlexContainer>
+    <ReviewModuleFlexContainer ref = {reviewRef}>
       <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
       <TileContainer reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
     </ReviewModuleFlexContainer>
   );
 };
+
 
 export default ReviewIndex;
