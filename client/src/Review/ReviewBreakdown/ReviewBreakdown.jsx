@@ -3,6 +3,7 @@ import StarRating from '../../Helper-Components/StarRating.jsx';
 import { Container, BreakdownFlexContainer, BreakdownContainer } from '../Styles/ReviewStyles.js';
 import { calculateAverageRating, calculateRecommendation } from '../../HelperFunctions.js';
 import RatingBar from './RatingBar.jsx';
+import Characteristics from './Characteristics.jsx';
 
 
 const ReviewBreakdown = (props) => {
@@ -12,17 +13,25 @@ const ReviewBreakdown = (props) => {
   const recommended = recommendationObj.recomended;
   const totalRecommended = recommendationObj.total;
   const ratings = props.reviewMeta.ratings;
+  const characteristics = props.reviewMeta.characteristics;
   const ratingArr = [];
+  const charArr = [];
+
+  const charDivs = () => {
+    for (var key in characteristics) {
+      charArr.unshift(<Characteristics char={key} obj ={characteristics[key]} key={characteristics[key].id}/>);
+    }
+  };
 
   const ratingBars = () => {
     for (var key in ratings) {
       ratingArr.unshift(<RatingBar key={key} changeFilters={props.changeFilters} rating={key} reviews={ratings[key]} percent={ratings[key] / totalRecommended} />);
     }
   };
-
+  charDivs();
   ratingBars();
   return (
-    <BreakdownFlexContainer height={'200px'}>
+    <BreakdownFlexContainer height={'500px'}>
       <BreakdownContainer>
         RATINGS & REVIEWS
       </BreakdownContainer>
@@ -34,7 +43,9 @@ const ReviewBreakdown = (props) => {
         {recommended + '% of reviews recommend this product'}
         {ratingArr.map(rating => rating)}
       </BreakdownContainer>
-
+      <BreakdownContainer>
+        {charArr.map(char => char)}
+      </BreakdownContainer>
     </BreakdownFlexContainer>
 
   );

@@ -122,4 +122,45 @@ export const Close = styled.button`
     top: 0;
   `;
 
+export const charCont = styled.div`
+    background-color: black;
+`;
 
+
+export const CharIndicator = styled.div`
+z-index: 1;
+position:relative;
+left: ${props => props.position}};
+background-color: black;
+height: 5px;
+width: 5px;
+`;
+
+export const NoPadContainer = styled.div`
+width: ${props => props.width};
+height: ${props => props.height};
+padding: ${props => props.padding};
+background: ${props => props.bgColor};
+float: ${props => props.float};
+text-align: ${props => props.float};
+overflow-wrap: break-word;
+`;
+
+export const CharLabelFlex = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: left;
+height: ${props => props.height};
+width: ${props => props.width};
+`;
+
+export const CharLabelDiv = styled.div`
+width:33.33%;
+text-align: ${props => props.align};
+`;
+
+export const CharBackG = styled.div`
+height: 5px;
+width: 100%;
+background-color: lightgray;
+`;
