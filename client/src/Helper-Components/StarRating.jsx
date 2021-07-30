@@ -1,14 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import {Star} from '../Overview/Styled-Components/Styled-ProductInfo.js';
 
 var StarRating = (props) => {
-  var Star = styled.span`
-  background: linear-gradient(90deg, gold ${(props) => props.yellowPercentage}%, darkgray ${(props) => props.yellowPercentage}% ${props => 100 - props.yellowPercentage}%);
-  color:black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
   var roundedRating = Math.ceil(4 * props.rating) / 4;
   var fullStars = Math.floor(roundedRating);
   var remainder = roundedRating - fullStars;
@@ -29,6 +22,7 @@ var StarRating = (props) => {
       stars.push(0);
     }
   }
+
   var key = 0;
 
   return (
@@ -40,7 +34,6 @@ var StarRating = (props) => {
       }
     </div>
   );
-
 };
 
 export default StarRating;

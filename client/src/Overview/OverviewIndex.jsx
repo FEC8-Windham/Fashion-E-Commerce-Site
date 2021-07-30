@@ -1,32 +1,34 @@
-import React, {useState, useEffect}from 'react';
-import ProductInfo from './ProductInfo.jsx';
+import React, { useState, useEffect } from 'react';
+import ProductInfo from './ProductInfo/ProductInfo.jsx';
+import Cart from './Cart/Cart.jsx';
+import ImageGallery from './ImageGallery/ImageGallery.jsx';
+import { Overview, ProductInfoContainer, Slogan, Description } from './Styled-Components/Styled-ProductInfo.js';
 import axios from 'axios';
-import API_KEY from '../config/config.js';
 
 
+var OverviewIndex = ({ productInfo, averageRating, styles, reviewDiv }) => {
 
+  var [currStyleIndex, setCurrStyleIndex] = useState(0);
+  var [originalPrice, setOriginalPrice] = useState(styles[0].original_price);
+  var [salePrice, setSalePrice] = useState(styles[0].sale_price);
 
-var OverviewIndex = ({productInfo}) => {
-  var [currProductId, setCurrProductId] = useState(0);
-  var [rating, setRating] = useState(5);
-  // var [category, setCategory] = useState('Dipers');
-  var [name, setName] = useState('exampleName');
-  var [price, setPrice] = useState(99.99);
-  var [styles, setStyles] = useState([]);
-  var [size, setSize] = useState('L');
-  var [description, setDescription] = useState
-  ('exampleDescription');
-  var [features, setFeatures] = useState({});
-
-  console.log(productInfo);
-  console.log(productInfo.category);
-
-
+  useEffect(() => {
+    setOriginalPrice(styles[currStyleIndex].original_price);
+    setSalePrice(styles[currStyleIndex].sale_price);
+  });
 
   return (
-    <div>
-      <ProductInfo rating = {rating} category = {productInfo.category} name = {productInfo.name} price = {productInfo.price} styles = {styles} size = {size} description = {productInfo.description}/>
-    </div>
+    <Overview>
+      <ImageGallery currStyle={styles[currStyleIndex]} />
+      <ProductInfoContainer>
+        <ProductInfo rating={averageRating} category={productInfo.category} name={productInfo.name} styles={styles} description={productInfo.description} slogan={productInfo.slogan} originalPrice={originalPrice} salePrice={salePrice} currStyleIndex={currStyleIndex} setCurrStyleIndex={setCurrStyleIndex} reviewDiv ={reviewDiv}
+        />
+        <Cart currStyle={styles[currStyleIndex]} />
+      </ProductInfoContainer>
+      <Slogan>{productInfo.slogan}</Slogan>
+      <Description>{productInfo.description}</Description>
+
+    </Overview>
   );
 };
 
