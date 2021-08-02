@@ -36,16 +36,16 @@ const RelatedProducts = (props) => {
   };
 
   return (
-    <Container>
+    <Container id='relatedProductsContainer'>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="relatedContainer">
-          {relatedProducts.map(item => {
+          {relatedProducts.map((item, i) => {
             if (relatedProducts[relatedProducts.length - 1] === item) {
-              return <RelatedProductsEntry key={item} id={item} clickHandler={props.clickHandler} last={true} />;
+              return <RelatedProductsEntry key={item} relatedId={item} id={'relatedProductsEntry' + i} clickHandler={props.clickHandler} last={true} />;
             } else {
-              return <RelatedProductsEntry key={item} id={item} clickHandler={props.clickHandler} />;
+              return <RelatedProductsEntry key={item} relatedId={item} id={'relatedProductsEntry' + i} clickHandler={props.clickHandler} />;
             }
           })}
         </RowContainer>

@@ -101,19 +101,19 @@ const YourOutfit = (props) => {
   };
 
   return (
-    <Container>
+    <Container id='yourOutfitContainer'>
       <SectionTitle>YOUR OUTFIT</SectionTitle>
       {/* <button onClick={clearCache}>Clear</button> */}
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="outfitContainer">
-          <YourOutfitEntry first={true} click={addClickHandler} />
+          <YourOutfitEntry first={true} i='Add' click={addClickHandler} />
           {yourOutfit ?
-            yourOutfit.map(item => {
+            yourOutfit.map((item, i) => {
               if (yourOutfit[yourOutfit.length - 1] === item) {
-                return <YourOutfitEntry key={item.name} delete={deleteClickHandler} item={item} last={true} />;
+                return <YourOutfitEntry key={item.name} id={'yourOutfitEntry' + i} delete={deleteClickHandler} item={item} last={true} />;
               } else {
-                return <YourOutfitEntry key={item.name} delete={deleteClickHandler} item={item} />;
+                return <YourOutfitEntry key={item.name} id={'yourOutfitEntry' + i} delete={deleteClickHandler} item={item} />;
               }
             }) : null
           }
