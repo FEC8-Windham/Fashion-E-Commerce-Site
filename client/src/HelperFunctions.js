@@ -10,6 +10,10 @@ export var calculateAverageRating = (ratingsObj) => {
 
 };
 
+export var sum = (a, b) => {
+  return a + b;
+};
+
 export var calculateRecommendation = (recommendedObj) => {
   var wouldRec = Number(recommendedObj.true);
   var notRec = Number(recommendedObj.false);
