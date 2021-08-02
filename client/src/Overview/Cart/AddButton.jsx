@@ -13,7 +13,7 @@ var AddButton = (({isSizeSelected, setShowSelectSizeMessage, currSize, currStyle
       var sku = getSKU(currStyle, currSize);
       var config = {
         method: 'POST',
-        url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/cart',
+        url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/cart',
         data:
         {
           sku_id: sku
