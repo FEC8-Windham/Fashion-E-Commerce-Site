@@ -76,7 +76,7 @@ export const RatingDivCont = styled.div`
 `;
 
 export const FullWidthDiv = styled.div`
- height: ${props => props.height};
+  height: ${props => props.height};
   width: ${props => props.width};
   background-color: lightgray;
 `;

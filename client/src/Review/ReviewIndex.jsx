@@ -5,6 +5,7 @@ import reviewData from '../../../APIExamples/reviews.js';
 import TileContainer from './TileContainer/TileContainer.jsx';
 import { ReviewModuleFlexContainer } from './Styles/ReviewStyles.js';
 import ReviewBreakdown from './ReviewBreakdown/ReviewBreakdown.jsx';
+import NewReview from './NewReview.jsx/NewReview.jsx';
 
 const ReviewIndex = (props) => {
   const [oneStar, setOneStar] = useState(false);
@@ -60,6 +61,7 @@ const ReviewIndex = (props) => {
       <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
       <TileContainer reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
+      <NewReview/>
     </ReviewModuleFlexContainer>
   );
 };
