@@ -40,14 +40,14 @@ export const Table = styled.table`
 export const Title = styled.h4`
   font-weight: normal;
   padding: 0;
-  padding-left: 3px;
+  padding-left: 12px;
   margin: 0;
 `;
 
 export const ProductNames = styled.th`
-  width: 50%;
+  width: ${prop => prop.width || '20%'};
   font-size: 18px;
-  text-align: ${prop => prop.align || 'left'};
+  text-align: center;
 `;
 
 export const Column1 = styled.th`
