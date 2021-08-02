@@ -4,7 +4,7 @@ import API_KEY from '../config/config';
 const postClicks = (data) => {
   var config = {
     method: 'post',
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/interactions/',
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/interactions/',
     headers: {
       'Authorization': API_KEY,
       'Content-Type': 'application/json'
