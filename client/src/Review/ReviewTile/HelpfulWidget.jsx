@@ -4,7 +4,7 @@ import axios from 'axios';
 import StarRating from '../../Helper-Components/StarRating.jsx';
 import { Container, FlexContainer } from '../Styles/ReviewStyles.js';
 import reviewData from '../../../../APIExamples/reviews.js';
-import {helpfulClick} from '../../Controllers/reviewController.js'; //'../src/Controllers/reviewControllers.js';
+import {helpfulClick} from '../../Controllers/reviewController.js';
 import API_KEY from '../../config/config.js';
 
 const HelpfulWidget = (props) => {
