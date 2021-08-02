@@ -4,7 +4,7 @@ import API_KEY from '../config/config';
 export const helpfulClick = (reviewID, string) => {
   let config = {
     method: 'put',
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/${string}`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/${reviewID}/${string}`,
     headers: {
       'Authorization': API_KEY
     }
@@ -16,7 +16,7 @@ export const getReviews = (params) => {
   //console.log(params)
   let config = {
     method: 'get',
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/`,
     headers: {
       'Authorization': API_KEY
     }
