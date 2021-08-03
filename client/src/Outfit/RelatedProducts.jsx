@@ -39,6 +39,7 @@ const RelatedProducts = (props) => {
     <Container id='relatedProductsContainer'>
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
+      {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="relatedContainer">
           {relatedProducts.map((item, i) => {
@@ -50,7 +51,6 @@ const RelatedProducts = (props) => {
           })}
         </RowContainer>
       </FadeoutRight>
-      {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
     </Container>
   );
 };
