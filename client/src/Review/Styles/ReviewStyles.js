@@ -164,3 +164,54 @@ height: 5px;
 width: 100%;
 background-color: lightgray;
 `;
+
+
+export const Form = styled.div`
+display: flex;
+flex-direction: column;
+align-content: center;
+width: 500px;
+height: 500px;
+background-color: white;
+`;
+
+export const StarCont = styled.div`
+width: 10px;
+height: 10px;
+background-color: purple;
+`;
+
+export const FullWidthForm = styled.form`
+height: ${props => props.height};
+width: ${props => props.width};
+background-color: lightgray;
+border: solid 1px;
+`;
+
+export const RadioBox = styled.div`
+display: flex;
+flex-direction: column;
+align-content: center;
+width: 200px;
+height: 75px;
+`;
+
+export const RadioInput = styled.input`
+text-align: center;
+align-content: center;
+width: 100%;
+margin: 0;
+`;
+
+export const RadioLabel = styled.div`
+width: 100%;
+height: 55px;
+align-content: center;
+text-align: center;
+
+`;
+
+export const RadioContainer = styled.div`
+display: flex;
+flex-direction: row;
+`;

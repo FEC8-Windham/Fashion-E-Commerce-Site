@@ -14,9 +14,11 @@ const ReviewIndex = (props) => {
   const [fourStar, setFourStar] = useState(false);
   const [fiveStar, setFiveStar] = useState(false);
   const [sortBy, setSortBy] = useState('relevant');
+  // const [reviews, setReviews] = useState(reviewData.results);
   const [reviews, setReviews] = useState(props.reviews.results);
   const reviewRef = useRef();
   const filters = [oneStar, twoStar, threeStar, fourStar, fiveStar];
+  const [showNewReview, setNew] = useState(false);
 
   const filterReviews = (reviewsToFilter) => {
     if (!filters.includes(true)) {
@@ -27,9 +29,13 @@ const ReviewIndex = (props) => {
     }
   };
 
+  const openNew = () => {
+    setNew(!showNewReview);
+  };
+
   const refresh = (sortType = sortBy) => {
     setSortBy(sortType);
-  // const [reviews, setReviews] = useState(reviewData.results);
+
     var params = {product_id: props.reviews.product, count: '10', sort: sortType};
     getReviews(params)
       .then(results => {
@@ -60,8 +66,8 @@ const ReviewIndex = (props) => {
     <ReviewModuleFlexContainer ref = {reviewRef}>
       <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
-      <TileContainer reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
-      <NewReview/>
+      <TileContainer open={openNew} reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
+      {showNewReview ? <NewReview refresh ={refresh} close={openNew} reviewMeta={props.reviewMeta} productName={props.productInfo.name}/> : null}
     </ReviewModuleFlexContainer>
   );
 };
