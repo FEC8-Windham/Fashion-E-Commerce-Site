@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReviewTile from './ReviewTile/ReviewTile.jsx';
-import { getReviews } from '../Controllers/reviewController.js';
+import { getReviews, postReview } from '../Controllers/reviewController.js';
 import reviewData from '../../../APIExamples/reviews.js';
 import TileContainer from './TileContainer/TileContainer.jsx';
 import { ReviewModuleFlexContainer } from './Styles/ReviewStyles.js';
@@ -33,8 +33,21 @@ const ReviewIndex = (props) => {
     setNew(!showNewReview);
   };
 
+  const closeAndSubmit = (body) => {
+    postReview(body)
+      .then(res => {
+        console.log(res);
+        refresh();
+        openNew();
+        alert('Post successful');
+      })
+      .catch(err => alert(err));
+  };
+
   const refresh = (sortType = sortBy) => {
+    // if (sortType !== sortBy) {
     setSortBy(sortType);
+    // }
 
     var params = {product_id: props.reviews.product, count: '10', sort: sortType};
     getReviews(params)
@@ -67,7 +80,7 @@ const ReviewIndex = (props) => {
       <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
       <TileContainer open={openNew} reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
-      {showNewReview ? <NewReview refresh ={refresh} close={openNew} reviewMeta={props.reviewMeta} productName={props.productInfo.name}/> : null}
+      {showNewReview ? <NewReview closeAndSubmit ={closeAndSubmit} close={openNew} reviewMeta={props.reviewMeta} productName={props.productInfo.name}/> : null}
     </ReviewModuleFlexContainer>
   );
 };

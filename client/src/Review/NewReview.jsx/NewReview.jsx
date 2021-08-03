@@ -137,15 +137,7 @@ const NewReview = (props) => {
       return;
     }
 
-    console.log(JSON.stringify(submissionBody));
-
-    postReview(submissionBody)
-      .then(res => {
-        props.close();
-        alert('Post successful');
-        props.refresh();
-      })
-      .catch(err => alert(err));
+    props.closeAndSubmit(submissionBody);
 
   };
 
