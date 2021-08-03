@@ -26,3 +26,18 @@ export const getReviews = (params) => {
 
   return axios(config);
 };
+
+export const postReview = formData => {
+  let data = JSON.stringify(formData);
+  let config = {
+    method: 'post',
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews',
+    headers: {
+      'Authorization': API_KEY,
+      'Content-Type': 'application/json'
+    },
+    data: data
+  };
+
+  return axios(config);
+};

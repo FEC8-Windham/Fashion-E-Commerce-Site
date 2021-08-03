@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReviewTile from './ReviewTile/ReviewTile.jsx';
-import { getReviews } from '../Controllers/reviewController.js';
+import { getReviews, postReview } from '../Controllers/reviewController.js';
 import reviewData from '../../../APIExamples/reviews.js';
 import TileContainer from './TileContainer/TileContainer.jsx';
 import { ReviewModuleFlexContainer } from './Styles/ReviewStyles.js';
 import ReviewBreakdown from './ReviewBreakdown/ReviewBreakdown.jsx';
+import NewReview from './NewReview.jsx/NewReview.jsx';
 
 const ReviewIndex = (props) => {
   const [oneStar, setOneStar] = useState(false);
@@ -13,9 +14,11 @@ const ReviewIndex = (props) => {
   const [fourStar, setFourStar] = useState(false);
   const [fiveStar, setFiveStar] = useState(false);
   const [sortBy, setSortBy] = useState('relevant');
+  // const [reviews, setReviews] = useState(reviewData.results);
   const [reviews, setReviews] = useState(props.reviews.results);
   const reviewRef = useRef();
   const filters = [oneStar, twoStar, threeStar, fourStar, fiveStar];
+  const [showNewReview, setNew] = useState(false);
 
   const filterReviews = (reviewsToFilter) => {
     if (!filters.includes(true)) {
@@ -26,9 +29,26 @@ const ReviewIndex = (props) => {
     }
   };
 
+  const openNew = () => {
+    setNew(!showNewReview);
+  };
+
+  const closeAndSubmit = (body) => {
+    postReview(body)
+      .then(res => {
+        console.log(res);
+        refresh();
+        openNew();
+        alert('Post successful');
+      })
+      .catch(err => alert(err));
+  };
+
   const refresh = (sortType = sortBy) => {
+    // if (sortType !== sortBy) {
     setSortBy(sortType);
-  // const [reviews, setReviews] = useState(reviewData.results);
+    // }
+
     var params = {product_id: props.reviews.product, count: '10', sort: sortType};
     getReviews(params)
       .then(results => {
@@ -59,7 +79,8 @@ const ReviewIndex = (props) => {
     <ReviewModuleFlexContainer ref = {reviewRef}>
       <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
       </ReviewBreakdown>
-      <TileContainer reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
+      <TileContainer open={openNew} reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
+      {showNewReview ? <NewReview closeAndSubmit ={closeAndSubmit} close={openNew} reviewMeta={props.reviewMeta} productName={props.productInfo.name}/> : null}
     </ReviewModuleFlexContainer>
   );
 };

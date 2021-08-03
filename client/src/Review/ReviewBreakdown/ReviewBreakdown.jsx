@@ -30,6 +30,8 @@ const ReviewBreakdown = (props) => {
   };
   charDivs();
   ratingBars();
+
+  console.log(props.reviewMeta)
   return (
     <BreakdownFlexContainer height={'500px'}>
       <BreakdownContainer>

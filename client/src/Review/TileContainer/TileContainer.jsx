@@ -21,6 +21,7 @@ const TileContainer = (props) => {
       <Container>{reviewTotal} Reviews, sorted by <SortSelect refresh ={props.refresh} /></Container>
       {reviews.slice(0, counter).map(review => <ReviewTile refresh ={props.refresh} key={review.review_id} review={review}/>)}
       <button onClick={moreReview}> More Reviews</button>
+      <button onClick={props.open}> Add New Review</button>
     </TileFlexContainer>
   );
 };
