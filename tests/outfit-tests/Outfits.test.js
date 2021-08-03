@@ -714,24 +714,22 @@ var metaData = {
   }
 };
 
-describe('OutfitIndex Basic Tests', () => {
-  it('should find the moduleOutfit div', () => {
-    const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5'/>);
-    expect(wrapper.exists('#moduleOutfit')).toEqual(true);
-  });
+it('should find the moduleOutfit div', function () {
+  const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5' />);
+  expect(wrapper.exists('#moduleOutfit')).toEqual(true);
+});
 
-  it('should find the modal component', () => {
-    const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5'/>);
-    expect(wrapper.exists('#comparisonModal')).toEqual(true);
-  });
+it('should find the modal component', function () {
+  const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5' />);
+  expect(wrapper.exists('#comparisonModal')).toEqual(true);
+});
 
-  it('should find the relatedProducts component', () => {
-    const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5'/>);
-    expect(wrapper.exists('#relatedProductsComponent')).toEqual(true);
-  });
+it('should find the relatedProducts component', function () {
+  const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5' />);
+  expect(wrapper.exists('#relatedProductsComponent')).toEqual(true);
+});
 
-  it('should find the yourOutfit component', () => {
-    const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5'/>);
-    expect(wrapper.exists('#yourOutfitsComponent')).toEqual(true);
-  });
+it('should find the yourOutfit component', function () {
+  const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5' />);
+  expect(wrapper.exists('#yourOutfitsComponent')).toEqual(true);
 });
