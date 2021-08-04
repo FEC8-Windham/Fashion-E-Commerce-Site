@@ -13,10 +13,10 @@ test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
 
-describe('<MyComponent />', () => {
-  it('renders <Overview /> components', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('Overview').exists()).toBeFalsy();
-  });
+test('<MyComponent />', () => {
+
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('Overview').exists()).toBeFalsy();
+
 
 });
