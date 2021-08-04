@@ -6,7 +6,7 @@ const RatingBar = (props) => {
   const reviews = props.reviews;
   const percent = Number(props.percent) * 100;
   const [underline, setUnderline] = useState(false);
-  const stars = rating > 1 ? rating + ' Stars' : rating + ' Star';
+  const stars = rating > 1 ? rating + ' Stars' : rating + ' Star ';
 
   const toggle = () => {
     setUnderline(!underline);
@@ -14,7 +14,7 @@ const RatingBar = (props) => {
 
   return (
     <RatingDivCont onClick={()=>props.changeFilters(Number(rating))} width={'100%'}>
-      <RatingDivText onClick={toggle} height={'15px'} width={'20%'}>{!underline ? stars : <b>{stars}</b>}</RatingDivText>
+      <RatingDivText onClick={toggle} height={'15px'} width={'20%'}>{!underline ? <u>{stars}</u> : <b>{stars}</b>}</RatingDivText>
       <FullWidthDiv height={'15px'} width={'80%'}>
         <RatingDiv height={'15px'} width={`${percent}%`}>
           <ZSpan z-index = {1} >{reviews + ' Ratings'}</ZSpan>
