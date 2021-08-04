@@ -27,9 +27,9 @@ const ReviewTile = (props) => {
 
 
   return (
-    <FlexContainer>
+    <FlexContainer margin={'5px'}>
       <Container >
-        <Container float = 'left'>
+        <Container padding={true} float = 'left'>
           <StarRating rating={review.rating}/>
         </Container>
         <Container float = 'right'>
@@ -42,7 +42,7 @@ const ReviewTile = (props) => {
       <ReviewTileBody review={review}/>
       {recommendation}
       {response}
-      <Container>
+      <Container border={'1px solid black'}>
         <HelpfulWidget refresh={props.refresh} review={review}/>
       </Container>
     </FlexContainer>
