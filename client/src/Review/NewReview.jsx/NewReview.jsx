@@ -111,7 +111,7 @@ const NewReview = (props) => {
 
   const submitCheck = () => {
     var warning = '';
-    if (radioArr.length !== charArray.length) {
+    if (Object.keys(props.reviewMeta.characteristics).length !== Object.keys(charObj).length) {
       warning += 'Please rate all characterstics\n';
     }
     if (counter < 50) {
@@ -218,9 +218,11 @@ const NewReview = (props) => {
         <FullWidthDiv border={'1px solid black'}>
           {'About ' + props.productName}
         </FullWidthDiv>
-        <FullWidthDiv border={'1px solid black'}>
-          {stars[selectedRating].map((rating, index) => <Star onClick={()=>setRating(index + 1)}key={index + 1} yellowPercentage={rating}>&#9733;</Star>)}
-          <span>{ratings[selectedRating]}</span>
+        <FullWidthDiv border={'1px solid black'}> <span>Select Rating:&nbsp;</span>
+          <div>
+            <span>&nbsp;{ratings[selectedRating]}</span>
+            {stars[selectedRating].map((rating, index) => <Star onClick={()=>setRating(index + 1)}key={index + 1} yellowPercentage={rating}>&#9733;</Star>)}
+          </div>
         </FullWidthDiv >
         <FullWidthForm border={'1px solid black'} onChange={e=> setRecommend(e.target.value)}width={'100%'}> Would your recommend this product?*
           <input type="radio" value="true" name="Yes" onChange={()=>{}} checked={recommend === 'true'}/> Yes
