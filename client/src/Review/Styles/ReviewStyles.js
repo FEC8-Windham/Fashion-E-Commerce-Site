@@ -1,25 +1,26 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
-  padding: ${props => props.padding};
-  background: ${props => props.bgColor};
+  padding: ${props => props.padding ? 0 : '5px'};
   float: ${props => props.float};
   text-align: ${props => props.float};
   overflow-wrap: break-word;
-  border: 1px solid;
-  padding: 5px;
+  border-bottom: ${props => props.border};
 `;
 
 export const BreakdownContainer = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
   padding: ${props => props.padding};
-  background: ${props => props.bgColor};
   float: ${props => props.float};
   text-align: ${props => props.float};
-  padding: 5px;
+  font-weight: ${props => props.weight};;
+  padding: ${props => props.padding ? '0px' : '5px'};
+  margin-bottom: 4px;
+
 `;
 
 export const FlexContainer = styled.div`
@@ -27,35 +28,35 @@ export const FlexContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-self:stretch;
-  background: gray;
   width: 500px;
-  border-bottom: 1px solid black;
+  margin-bottom: ${props => props.margin};;
 `;
 
 export const TileFlexContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-self:stretch;
-  background: gray;
   width: fit-content;
-  border-bottom: 1px solid black;
+  min-height: 550px;
+  min-width: 500px;
 `;
 
 export const ReviewModuleFlexContainer = styled.div`
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   align-self:stretch;
-  background: green;
 `;
 
 export const RatingDiv = styled.div`
   height: ${props => props.height};
   width: ${props => props.width};
-  background: green;
+  background: lightgray;
   color: white;
+  text-decoration: underline;
 `;
 export const RatingDivText = styled.div`
   height: ${props => props.height};
@@ -64,6 +65,9 @@ export const RatingDivText = styled.div`
 
 export const ZSpan = styled.span`
   position: absolute;
+  padding: 3px;
+  font-size: 11px;
+  font-weight: bold;
   color: black;
 `;
 
@@ -73,12 +77,19 @@ export const RatingDivCont = styled.div`
   justify-content: left;
   height: ${props => props.height};
   width: ${props => props.width};
+  margin-bottom: 4px;
+  font-size: ${props => props.fontSize};
 `;
 
 export const FullWidthDiv = styled.div`
   height: ${props => props.height};
   width: ${props => props.width};
-  background-color: lightgray;
+  border-bottom: ${props => props.border};
+  font-size: ${props => props.fontSize};
+  vertical-align: text-top;
+  background-color: white;
+  padding: 3px;
+
 `;
 
 export const ImageFlexContainer = styled.div`
@@ -87,7 +98,9 @@ export const ImageFlexContainer = styled.div`
   flex-wrap: wrap;
   justify-content: left;
   align-self:stretch;
-  background: green;
+  background-color: white;
+  border-bottom: ${props => props.border};
+
 `;
 
 export const BreakdownFlexContainer = styled.div`
@@ -97,30 +110,29 @@ export const BreakdownFlexContainer = styled.div`
   background: ${props => props.bgColor};
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-self: stretch;
-  background: gray;
 `;
 
 export const Float = styled.div`
-    display: flex; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    justify-content: center;
+  display: flex; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  justify-content: center;
   `;
 
 export const Close = styled.button`
-    position: absolute;
-    left: 0;
-    top: 0;
-  `;
+  position: absolute;
+  left: 0;
+  top: 0;
+`;
 
 export const charCont = styled.div`
     background-color: black;
@@ -128,90 +140,124 @@ export const charCont = styled.div`
 
 
 export const CharIndicator = styled.div`
-z-index: 1;
-position:relative;
-left: ${props => props.position}};
-background-color: black;
-height: 5px;
-width: 5px;
+  z-index: 1;
+  position:relative;
+  left: ${props => props.position}};
+  height: 0px;
+  width: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid black;
 `;
 
 export const NoPadContainer = styled.div`
-width: ${props => props.width};
-height: ${props => props.height};
-padding: ${props => props.padding};
-background: ${props => props.bgColor};
-float: ${props => props.float};
-text-align: ${props => props.float};
-overflow-wrap: break-word;
+  width: ${props => props.width};
+  height: ${props => props.height};
+  padding: ${props => props.padding};
+  background: ${props => props.bgColor};
+  float: ${props => props.float};
+  text-align: ${props => props.float};
+  overflow-wrap: break-word;
 `;
 
 export const CharLabelFlex = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: left;
-height: ${props => props.height};
-width: ${props => props.width};
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  height: ${props => props.height};
+  width: ${props => props.width};
+  margin-top: 5px;
 `;
 
 export const CharLabelDiv = styled.div`
-width:33.33%;
-text-align: ${props => props.align};
+  font-size: 12px;
+  width:33.33%;
+  text-align: ${props => props.align};
 `;
 
 export const CharBackG = styled.div`
-height: 5px;
-width: 100%;
-background-color: lightgray;
+  height: 5px;
+  width: 100%;
+  background-color: lightgray;
 `;
 
 
 export const Form = styled.div`
-display: flex;
-flex-direction: column;
-align-content: center;
-width: 500px;
-height: 500px;
-background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 500px;
+  height: fit-content;
+  background-color: white;
+  padding: 0 10px 0 10px;
 `;
 
 export const StarCont = styled.div`
-width: 10px;
-height: 10px;
-background-color: purple;
+  width: 10px;
+  height: 10px;
 `;
 
 export const FullWidthForm = styled.form`
-height: ${props => props.height};
-width: ${props => props.width};
-background-color: lightgray;
-border: solid 1px;
+vertical-align: text-top;
+  height: ${props => props.height};
+  width: ${props => props.width};
+  border-bottom: ${props => props.border};
+  font-size: ${props => props.fontSize};
+  padding: 3px;
+  background-color: white;
 `;
 
 export const RadioBox = styled.div`
-display: flex;
-flex-direction: column;
-align-content: center;
-width: 200px;
-height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 200px;
+  height: 75px;
+  border-bottom: 1px solid black;
 `;
 
 export const RadioInput = styled.input`
-text-align: center;
-align-content: center;
-width: 100%;
-margin: 0;
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  margin: 0;
 `;
 
 export const RadioLabel = styled.div`
-width: 100%;
-height: 55px;
-align-content: center;
-text-align: center;
-
+  width: 100%;
+  height: 55px;
+  align-content: center;
+  text-align: center;
 `;
 
 export const RadioContainer = styled.div`
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const RatingSpan = styled.span`
+  font-size: 45px;
+`;
+export const ButtonCont = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self:stretch;
+  width: 500px;
+`;
+export const Button = styled.button`
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 1px solid black;
+  text-shadow: 0px 0px 0px transparent;
+  font-size: 12px;
+  font-weight: bold;
+  width: 110px;
+  height: 50px;
+  margin-right: 30px;
+  margin: ${props => props.margin};
+`;
+
+export const HelpfulSpan = styled.span`
+  font-size: 7px;
 `;

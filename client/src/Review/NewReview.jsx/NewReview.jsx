@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Float, FullWidthDiv, Form, StarCont, FullWidthForm, RadioBox, RadioInput, RadioLabel, RadioContainer, ImageFlexContainer, Close } from '../Styles/ReviewStyles';
+import { Float, FullWidthDiv, Form, StarCont, FullWidthForm, RadioBox, RadioInput, RadioLabel, RadioContainer, ImageFlexContainer, Close, Button, ButtonCont } from '../Styles/ReviewStyles';
 import { Star } from '../../Overview/Styled-Components/Styled-ProductInfo';
 import { postReview } from '../../Controllers/reviewController';
 
@@ -66,7 +66,7 @@ const NewReview = (props) => {
         var charID = props.reviewMeta.characteristics[key].id;
 
         radioArr.push(
-          <FullWidthForm onChange={e=>charRadios(e.target.name, e.target.value)}>
+          <FullWidthForm key={charID} onChange={e=>charRadios(e.target.name, e.target.value)}>
             <RadioContainer>
               <RadioBox>
                 {key}
@@ -203,9 +203,6 @@ const NewReview = (props) => {
     5: 'Great',
   };
 
-
-
-
   const radioArr = [];
 
 
@@ -213,44 +210,42 @@ const NewReview = (props) => {
 
 
   return (
-
-
     <Float>
       <Form>
         <FullWidthDiv>
         Write Your Review
         </FullWidthDiv>
-        <FullWidthDiv>
+        <FullWidthDiv border={'1px solid black'}>
           {'About ' + props.productName}
         </FullWidthDiv>
-        <FullWidthDiv>
+        <FullWidthDiv border={'1px solid black'}>
           {stars[selectedRating].map((rating, index) => <Star onClick={()=>setRating(index + 1)}key={index + 1} yellowPercentage={rating}>&#9733;</Star>)}
           <span>{ratings[selectedRating]}</span>
         </FullWidthDiv >
-        <FullWidthForm onClick={e=> setRecommend(e.target.value)}width={'100%'}> Would your recommend this product?*
-          <input type="radio" value="true" name="Yes" checked={recommend === 'true'}/> Yes
-          <input type="radio" value="false" name="No" checked={recommend === 'false'}/> No
+        <FullWidthForm border={'1px solid black'} onChange={e=> setRecommend(e.target.value)}width={'100%'}> Would your recommend this product?*
+          <input type="radio" value="true" name="Yes" onChange={()=>{}} checked={recommend === 'true'}/> Yes
+          <input type="radio" value="false" name="No" onChange={()=>{}} checked={recommend === 'false'}/> No
         </FullWidthForm>
         <FullWidthDiv>
         Characteristics*
         </FullWidthDiv>
         {radioArr.map(form=>form)}
-        <FullWidthForm>
+        <FullWidthForm border={'1px solid black'}>
           <label>
             Summary:
             <textarea key={'summaryform'} value={summary} placeholder={'Example: Best purchase ever!'} onChange={e=>setSummary(e.target.value.slice(0, 60))}/>
           </label>
         </FullWidthForm>
-        <FullWidthForm>
+        <FullWidthForm border={'1px solid black'}>
           <label>
             Body*:
             <textarea key={'bodyform'} value={body} placeholder={'Why did you like the product or not'} onChange={e=>setBody(e.target.value.slice(0, 1000))}/>
           </label>
-          <FullWidthDiv>
+          <FullWidthDiv fontSize={'12px'}>
             {counter < 50 ? `Minimum required characters left: ${50 - counter}` : 'Minimum reached'}
           </FullWidthDiv>
         </FullWidthForm>
-        <FullWidthForm>
+        <FullWidthForm border={'1px solid black'}>
           <label>
             Attach Picture:
             <input type='text' key={'photoform'} value={url} placeholder={'Example: imgur.com/image'} onChange={e=>setUrl(e.target.value)} />
@@ -261,29 +256,31 @@ const NewReview = (props) => {
             }} type="button" value="Clear Photos" />
           </label>
         </FullWidthForm>
-        <ImageFlexContainer>
+        <ImageFlexContainer border={'1px solid black'}>
           Photos:
-          {photosArr.map(photo => <img height ={80} width={80} src ={photo}></img>)}
+          {photosArr.length > 0 ? photosArr.map(photo => <img height ={80} width={80} src ={photo}></img>) : ' No photos saved'}
         </ImageFlexContainer>
         <FullWidthForm>
           <label>
-            Enter Your Name*:
+            Enter Your Name*:{' '}
             <input type='text' key={'nameform'} value={name} placeholder={'Example: jackson11!'} onChange={e=>setName(e.target.value.slice(0, 60))}/>
           </label>
-          <FullWidthForm>
+          <FullWidthDiv fontSize={'12px'} border={'1px solid black'}>
              For privacy reasons, do not use your full name or email address
-          </FullWidthForm>
+          </FullWidthDiv>
         </FullWidthForm>
         <FullWidthForm>
           <label>
-            Enter Your Email*:
+            Enter Your Email*:&nbsp;
             <input type='text' key={'emailform'} value={email} placeholder={'Example: jackson11@email.com'} onChange={e=>setEmail(e.target.value.slice(0, 60))}/>
           </label>
-          <FullWidthForm>
+          <FullWidthDiv fontSize={'12px'} border={'1px solid black'}>
             For authentication reasons, you will not be emailed
-          </FullWidthForm>
+          </FullWidthDiv>
         </FullWidthForm>
-        <input onClick={()=>submitForm()} type="submit" value="Submit" />
+        <ButtonCont>
+          <Button margin={'15px'} onClick={()=>submitForm()} type="submit" value="Submit" >Submit Review</Button>
+        </ButtonCont>
       </Form>
       <Close onClick={props.close}>Close</Close>
     </Float>
