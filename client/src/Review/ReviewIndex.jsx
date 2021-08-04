@@ -76,11 +76,13 @@ const ReviewIndex = (props) => {
   }, [reviewRef]);
 
   return (
-    <ReviewModuleFlexContainer ref = {reviewRef}>
-      <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
-      </ReviewBreakdown>
-      <TileContainer open={openNew} reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
-      {showNewReview ? <NewReview closeAndSubmit ={closeAndSubmit} close={openNew} reviewMeta={props.reviewMeta} productName={props.productInfo.name}/> : null}
+    <ReviewModuleFlexContainer>
+      <ReviewModuleFlexContainer width ={'1200px'}ref = {reviewRef}>
+        <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
+        </ReviewBreakdown>
+        <TileContainer open={openNew} reviewMeta={props.reviewMeta} filterReviews={filterReviews} reviews={filterReviews(reviews)} productId={props.reviews.product} refresh ={refresh}/>
+        {showNewReview ? <NewReview closeAndSubmit ={closeAndSubmit} close={openNew} reviewMeta={props.reviewMeta} productName={props.productInfo.name}/> : null}
+      </ReviewModuleFlexContainer>
     </ReviewModuleFlexContainer>
   );
 };
