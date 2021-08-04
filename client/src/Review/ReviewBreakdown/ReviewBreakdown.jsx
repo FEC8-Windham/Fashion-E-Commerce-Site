@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StarRating from '../../Helper-Components/StarRating.jsx';
-import { Container, BreakdownFlexContainer, BreakdownContainer } from '../Styles/ReviewStyles.js';
+import { Container, BreakdownFlexContainer, BreakdownContainer, RatingSpan } from '../Styles/ReviewStyles.js';
 import { calculateAverageRating, calculateRecommendation } from '../../HelperFunctions.js';
 import RatingBar from './RatingBar.jsx';
 import Characteristics from './Characteristics.jsx';
@@ -30,17 +30,20 @@ const ReviewBreakdown = (props) => {
   };
   charDivs();
   ratingBars();
+
   return (
     <BreakdownFlexContainer height={'500px'}>
-      <BreakdownContainer>
+      <BreakdownContainer weight={'bold'}>
         RATINGS & REVIEWS
       </BreakdownContainer>
       <BreakdownContainer>
-        {avgRating.toString()}
+        <RatingSpan>{avgRating.toString()}</RatingSpan>
         <StarRating rating={avgRating}/>
       </BreakdownContainer>
       <BreakdownContainer>
-        {recommended + '% of reviews recommend this product'}
+        <BreakdownContainer padding={true}>
+          {recommended + '% of reviews recommend this product'}
+        </BreakdownContainer>
         {ratingArr.map(rating => rating)}
       </BreakdownContainer>
       <BreakdownContainer>
