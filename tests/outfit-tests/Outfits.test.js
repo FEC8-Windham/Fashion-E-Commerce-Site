@@ -6,11 +6,14 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 Enzyme.configure({ adapter: new Adapter() });
 import { shallow, configure, mount } from 'enzyme';
 
-import { beforeEach } from 'jest-circus';
+import { beforeEach, it } from 'jest-circus';
 import App from '../App.test.js';
 import OutfitIndex from '../../client/src/Outfit/OutfitIndex.jsx';
 import RelatedProducts from '../../client/src/Outfit/RelatedProducts.jsx';
+import RelatedProductsEntry from '../../client/src/Outfit/RelatedProductsEntry.jsx';
 import YourOutfit from '../../client/src/Outfit/YourOutfit.jsx';
+import YourOutfitEntry from '../../client/src/Outfit/YourOutfitEntry.jsx';
+import ComparisonModal from '../../client/src/Outfit/ComparisonModal.jsx';
 import { exportAllDeclaration } from '@babel/types';
 import { describe } from 'yargs';
 
@@ -714,6 +717,15 @@ var metaData = {
   }
 };
 
+var outfit = {
+  url: '',
+  category: '',
+  name: '',
+  price: 0,
+  rating: ''
+};
+
+// OutfitIndex
 it('should find the moduleOutfit div', function () {
   const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5' />);
   expect(wrapper.exists('#moduleOutfit')).toEqual(true);
@@ -732,4 +744,54 @@ it('should find the relatedProducts component', function () {
 it('should find the yourOutfit component', function () {
   const wrapper = shallow(<OutfitIndex metaData={metaData} averageRating='4.5' />);
   expect(wrapper.exists('#yourOutfitsComponent')).toEqual(true);
+});
+
+// RelatedProducts
+it('should find the relatedProductsContainer', function () {
+  const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
+  expect(wrapper.exists('#relatedProductsContainer')).toEqual(true);
+});
+
+it('should find the fadeout', function () {
+  const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
+  expect(wrapper.exists('#fadeout')).toEqual(true);
+});
+
+it('should find the relatedContainer', function () {
+  const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
+  expect(wrapper.exists('#relatedContainer')).toEqual(true);
+});
+
+// RelatedProductsEntry
+it('should find the cardContainer', function () {
+  const wrapper = shallow(<RelatedProductsEntry relatedId={1} />);
+  expect(wrapper.exists('#relatedProductsCard')).toEqual(true);
+});
+
+// YourOutfit
+it('should find the cardContainer', function () {
+  const wrapper = shallow(<YourOutfit metaData={metaData} />);
+  expect(wrapper.exists('#yourOutfitContainer')).toEqual(true);
+});
+
+it('should find the outfitContainer', function () {
+  const wrapper = shallow(<YourOutfit metaData={metaData} />);
+  expect(wrapper.exists('#outfitContainer')).toEqual(true);
+});
+
+it('should find the Add', function () {
+  const wrapper = shallow(<YourOutfit metaData={metaData} />);
+  expect(wrapper.exists('#Add')).toEqual(true);
+});
+
+// YourOutfitEntry
+it('should find the cardContainer', function () {
+  const wrapper = shallow(<YourOutfitEntry item={outfit} />);
+  expect(wrapper.exists('#yourOutfitCardContainer')).toEqual(true);
+});
+
+// ComparisonModal
+it('should find the comparisonModal', function () {
+  const wrapper = shallow(<ComparisonModal relatedData={modalData} currentData={modalData} isOpen={true}/>);
+  expect(wrapper.exists('#comparisonModal')).toEqual(true);
 });

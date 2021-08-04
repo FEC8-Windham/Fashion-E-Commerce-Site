@@ -40,7 +40,7 @@ const RelatedProducts = (props) => {
       <SectionTitle>RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
-      <FadeoutRight mask={display}>
+      <FadeoutRight id='fadeout' mask={display}>
         <RowContainer id="relatedContainer">
           {relatedProducts.map((item, i) => {
             if (relatedProducts[relatedProducts.length - 1] === item) {
