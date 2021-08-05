@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
 import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
+import higherOrderComponent from '../../src/HigherOrderComponent.jsx';
 
 const RelatedProducts = (props) => {
   var relatedProducts = props.data;
@@ -9,7 +10,15 @@ const RelatedProducts = (props) => {
   var [rightMost, setRightMost] = useState(false);
   var [display, setDisplay] = useState(null);
 
-  useEffect (() => {
+  /* useRef */
+  // const inputEl = useRef(null);
+
+  // const onButtonClick = () => {
+  //   console.log('Click!');
+  //   console.log(props.inputEl.current);
+  // };
+
+  useEffect(() => {
     if (relatedProducts.length <= 4) {
       setDisplay('none');
       setRightMost(true);
@@ -55,4 +64,4 @@ const RelatedProducts = (props) => {
   );
 };
 
-export default RelatedProducts;
+export default higherOrderComponent(RelatedProducts);
