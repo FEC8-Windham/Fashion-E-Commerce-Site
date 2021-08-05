@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Select } from '../Styles/ReviewStyles';
 
 const SortSelect = (props) => {
   return (
-    <select onChange={e=>props.refresh(e.target.value)}>
+    <Select onChange={e=>props.refresh(e.target.value)}>
       <option value="relevant">Relevance</option>
       <option value="helpful">Helpfulness</option>
       <option value="newest">Newest</option>
-    </select>
+    </Select>
   );
 };
 

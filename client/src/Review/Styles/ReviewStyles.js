@@ -9,6 +9,7 @@ export const Container = styled.div`
   text-align: ${props => props.float};
   overflow-wrap: break-word;
   border-bottom: ${props => props.border};
+  color: ${props => props.color};
 `;
 
 export const BreakdownContainer = styled.div`
@@ -42,6 +43,11 @@ export const TileFlexContainer = styled.div`
   min-width: 700px;
 `;
 
+export const Select = styled.select`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 export const ReviewModuleFlexContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -62,6 +68,9 @@ export const RatingDiv = styled.div`
 export const RatingDivText = styled.div`
   height: ${props => props.height};
   width: ${props => props.width};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ZSpan = styled.span`
@@ -101,7 +110,15 @@ export const ImageFlexContainer = styled.div`
   align-self:stretch;
   background-color: white;
   border-bottom: ${props => props.border};
+  margin: 15px;
+`;
 
+export const Image = styled.img`
+  height: 80px;
+  width: 80px;
+  &:hover {
+    cursor: zoom-in;
+  }
 `;
 
 export const BreakdownFlexContainer = styled.div`
@@ -131,8 +148,11 @@ export const Float = styled.div`
 
 export const Close = styled.button`
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const charCont = styled.div`
@@ -256,8 +276,14 @@ export const Button = styled.button`
   height: 50px;
   margin-right: ${props => props.marginright ? '30px' : 0};
   margin: ${props => props.margin};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HelpfulSpan = styled.span`
-  font-size: 7px;
+  font-size: 12px;
+  &:hover {
+    cursor: pointer;
+  }
 `;

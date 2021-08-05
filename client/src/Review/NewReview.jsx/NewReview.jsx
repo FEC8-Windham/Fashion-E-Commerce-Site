@@ -284,7 +284,7 @@ const NewReview = (props) => {
           <Button margin={'15px'} onClick={()=>submitForm()} type="submit" value="Submit" >Submit Review</Button>
         </ButtonCont>
       </Form>
-      <Close onClick={props.close}>Close</Close>
+      <Close onClick={props.close}>X Close</Close>
     </Float>
 
 
