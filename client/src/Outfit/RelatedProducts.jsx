@@ -23,6 +23,7 @@ const RelatedProducts = (props) => {
       setDisplay('none');
       setRightMost(true);
     }
+
     setLeftMost(false);
   };
 
@@ -30,8 +31,9 @@ const RelatedProducts = (props) => {
     document.querySelector('#relatedContainer').scrollLeft -= 260;
     if (document.querySelector('#relatedContainer').scrollLeft <= 260) {
       setLeftMost(true);
-      setRightMost(false);
     }
+
+    setRightMost(false);
     setDisplay('linear-gradient(to right, black 70%, transparent)');
   };
 
