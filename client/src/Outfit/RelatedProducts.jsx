@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
 import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 
@@ -9,7 +9,7 @@ const RelatedProducts = (props) => {
   var [rightMost, setRightMost] = useState(false);
   var [display, setDisplay] = useState(null);
 
-  useEffect (() => {
+  useEffect(() => {
     if (relatedProducts.length <= 4) {
       setDisplay('none');
       setRightMost(true);
@@ -23,6 +23,7 @@ const RelatedProducts = (props) => {
       setDisplay('none');
       setRightMost(true);
     }
+
     setLeftMost(false);
   };
 
@@ -30,14 +31,15 @@ const RelatedProducts = (props) => {
     document.querySelector('#relatedContainer').scrollLeft -= 260;
     if (document.querySelector('#relatedContainer').scrollLeft <= 260) {
       setLeftMost(true);
-      setRightMost(false);
     }
+
+    setRightMost(false);
     setDisplay('linear-gradient(to right, black 70%, transparent)');
   };
 
   return (
-    <Container id='relatedProductsContainer'>
-      <SectionTitle>RELATED PRODUCTS</SectionTitle>
+    <Container onClick={props.click} id='relatedProductsContainer'>
+      <SectionTitle >RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
       <FadeoutRight id='fadeout' mask={display}>

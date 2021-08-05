@@ -26,7 +26,6 @@ export const SectionTitle = styled.h4`
   margin-bottom: -5px;
   margin-left: 82px;
   font-family: Arial, Helvetica, sans-serif;
-  color: dimgray;
 `;
 
 export const FadeoutRight = styled.div`
