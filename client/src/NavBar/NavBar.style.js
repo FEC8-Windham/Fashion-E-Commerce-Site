@@ -13,7 +13,7 @@ export const NavList = styled.ul`
   margin: 0;
   padding: 0;
   right: 310px;
-  top: 23px;
+  top: 24px;
   position: absolute;
 `;
 
