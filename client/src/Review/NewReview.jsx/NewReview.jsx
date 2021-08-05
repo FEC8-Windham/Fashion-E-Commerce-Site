@@ -214,7 +214,7 @@ const NewReview = (props) => {
       <Form>
         <FullWidthDiv>
         Write Your Review
-        <RevClose onClick={props.close}>X Close</RevClose>
+          <RevClose onClick={props.close}>X Close</RevClose>
         </FullWidthDiv>
         <FullWidthDiv border={'1px solid black'}>
           {'About ' + props.productName}
