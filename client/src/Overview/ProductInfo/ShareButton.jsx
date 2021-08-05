@@ -48,7 +48,7 @@ var ShareButton = () => {
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-show-count="false" d data-url="https://dev.twitter.com/web/tweet-button" >Tweet</a>
       </Twitter>
       <Pinterest>
-        <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/" style={{padding: '0px'}}></a>
+        <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/" style={{ padding: '0px' }}></a>
       </Pinterest>
     </ShareButtons>
 

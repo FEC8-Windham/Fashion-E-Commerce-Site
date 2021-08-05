@@ -21,7 +21,7 @@ var OverviewIndex = ({ productInfo, averageRating, styles, reviewDiv }) => {
     <Overview id='moduleOverview'>
       <ImageGallery currStyle={styles[currStyleIndex]} />
       <ProductInfoContainer>
-        <ProductInfo rating={averageRating} category={productInfo.category} name={productInfo.name} styles={styles} description={productInfo.description} slogan={productInfo.slogan} originalPrice={originalPrice} salePrice={salePrice} currStyleIndex={currStyleIndex} setCurrStyleIndex={setCurrStyleIndex} reviewDiv ={reviewDiv}
+        <ProductInfo rating={averageRating} category={productInfo.category} name={productInfo.name} styles={styles} description={productInfo.description} slogan={productInfo.slogan} originalPrice={originalPrice} salePrice={salePrice} currStyleIndex={currStyleIndex} setCurrStyleIndex={setCurrStyleIndex} reviewDiv={reviewDiv}
         />
         <Cart currStyle={styles[currStyleIndex]} />
       </ProductInfoContainer>

@@ -739,6 +739,22 @@ it('should find the relatedProductsContainer', function () {
   const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
   expect(wrapper.exists('#relatedProductsContainer')).toEqual(true);
   expect(wrapper.exists('#fadeout')).toEqual(true);
+<<<<<<< HEAD:tests/outfit-tests/Outfits.test.js
+});
+
+<<<<<<< HEAD
+// describe('<MyComponent />', () => {
+//   it('OUTFIT <RelatedProducts /> components', () => {
+//     const wrapper = shallow(<OutfitIndex />);
+//     expect(wrapper.find('RelatedProducts').exists()).toBeFalsy();
+//   });
+
+// });
+=======
+it('should find the relatedContainer', function () {
+  const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
+=======
+>>>>>>> dev:tests/Outfits.test.js
   expect(wrapper.exists('#relatedContainer')).toEqual(true);
 });
 
@@ -767,3 +783,4 @@ it('should find the comparisonModal', function () {
   const wrapper = shallow(<ComparisonModal relatedData={modalData} currentData={modalData} isOpen={true}/>);
   expect(wrapper.exists('#comparisonModal')).toEqual(true);
 });
+>>>>>>> dev
