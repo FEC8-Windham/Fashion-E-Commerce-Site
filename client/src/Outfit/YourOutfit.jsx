@@ -96,6 +96,7 @@ const YourOutfit = (props) => {
     if (document.querySelector('#outfitContainer').scrollLeft <= 260) {
       setLeftMost(true);
     }
+
     setRightMost(false);
     setDisplay('linear-gradient(to right, black 70%, transparent)');
   };

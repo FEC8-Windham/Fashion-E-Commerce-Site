@@ -76,7 +76,7 @@ const ReviewIndex = (props) => {
   }, [reviewRef]);
 
   return (
-    <ReviewModuleFlexContainer>
+    <ReviewModuleFlexContainer id='moduleReview'>
       <ReviewModuleFlexContainer width ={'1200px'}ref = {reviewRef}>
         <ReviewBreakdown changeFilters={changeFilters} height={'300px'} reviewMeta={props.reviewMeta} >
         </ReviewBreakdown>
