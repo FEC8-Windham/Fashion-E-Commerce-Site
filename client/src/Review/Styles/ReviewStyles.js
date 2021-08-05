@@ -132,6 +132,7 @@ export const BreakdownFlexContainer = styled.div`
   flex-direction: column;
   justify-content: top;
   align-self: stretch;
+  margin-right: 30px;
 `;
 
 export const Float = styled.div`
