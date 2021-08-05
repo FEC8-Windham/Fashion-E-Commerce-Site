@@ -9,10 +9,10 @@ import { shallow, configure, mount } from 'enzyme';
 import { beforeEach, it } from 'jest-circus';
 import App from './App.test.js';
 import OutfitIndex from '../client/src/Outfit/OutfitIndex.jsx';
-import RelatedProducts from '../client/src/Outfit/RelatedProducts.jsx';
-import RelatedProductsEntry from '../client/src/Outfit/RelatedProductsEntry.jsx';
-import YourOutfit from '../client/src/Outfit/YourOutfit.jsx';
-import YourOutfitEntry from '../client/src/Outfit/YourOutfitEntry.jsx';
+import RelatedProducts from '../client/src/Outfit/RelatedProducts/RelatedProducts.jsx';
+import RelatedProductsEntry from '../client/src/Outfit/RelatedProducts/RelatedProductsEntry.jsx';
+import YourOutfit from '../client/src/Outfit/YourOutfit/YourOutfit.jsx';
+import YourOutfitEntry from '../client/src/Outfit/YourOutfit/YourOutfitEntry.jsx';
 import ComparisonModal from '../client/src/Outfit/ComparisonModal.jsx';
 import { exportAllDeclaration } from '@babel/types';
 import { describe } from 'yargs';
@@ -739,22 +739,10 @@ it('should find the relatedProductsContainer', function () {
   const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
   expect(wrapper.exists('#relatedProductsContainer')).toEqual(true);
   expect(wrapper.exists('#fadeout')).toEqual(true);
-<<<<<<< HEAD:tests/outfit-tests/Outfits.test.js
 });
 
-<<<<<<< HEAD
-// describe('<MyComponent />', () => {
-//   it('OUTFIT <RelatedProducts /> components', () => {
-//     const wrapper = shallow(<OutfitIndex />);
-//     expect(wrapper.find('RelatedProducts').exists()).toBeFalsy();
-//   });
-
-// });
-=======
 it('should find the relatedContainer', function () {
   const wrapper = shallow(<RelatedProducts data={[1, 2, 3]} />);
-=======
->>>>>>> dev:tests/Outfits.test.js
   expect(wrapper.exists('#relatedContainer')).toEqual(true);
 });
 
@@ -783,4 +771,3 @@ it('should find the comparisonModal', function () {
   const wrapper = shallow(<ComparisonModal relatedData={modalData} currentData={modalData} isOpen={true}/>);
   expect(wrapper.exists('#comparisonModal')).toEqual(true);
 });
->>>>>>> dev
