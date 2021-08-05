@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Float, FullWidthDiv, Form, StarCont, FullWidthForm, RadioBox, RadioInput, RadioLabel, RadioContainer, ImageFlexContainer, Close, Button, ButtonCont } from '../Styles/ReviewStyles';
+import { Float, FullWidthDiv, Form, StarCont, FullWidthForm, RadioBox, RadioInput, RadioLabel, RadioContainer, ImageFlexContainer, RevClose, Button, ButtonCont } from '../Styles/ReviewStyles';
 import { Star } from '../../Overview/Styled-Components/Styled-ProductInfo';
 import { postReview } from '../../Controllers/reviewController';
 
@@ -214,6 +214,7 @@ const NewReview = (props) => {
       <Form>
         <FullWidthDiv>
         Write Your Review
+          <RevClose onClick={props.close}>X Close</RevClose>
         </FullWidthDiv>
         <FullWidthDiv border={'1px solid black'}>
           {'About ' + props.productName}
@@ -283,8 +284,9 @@ const NewReview = (props) => {
         <ButtonCont>
           <Button margin={'15px'} onClick={()=>submitForm()} type="submit" value="Submit" >Submit Review</Button>
         </ButtonCont>
+
       </Form>
-      <Close onClick={props.close}>X Close</Close>
+
     </Float>
 
 

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 export var Overview = styled.div`
   margin: auto;
-  margin-left: 200px;
+  padding-top: 50px;
+  /* margin-left: 200px; */
   width:1500px;
   height: 850px;
 `;

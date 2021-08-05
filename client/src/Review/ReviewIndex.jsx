@@ -49,7 +49,7 @@ const ReviewIndex = (props) => {
     setSortBy(sortType);
     // }
 
-    var params = {product_id: props.reviews.product, count: '10', sort: sortType};
+    var params = {product_id: props.reviews.product, count: '20', sort: sortType};
     getReviews(params)
       .then(results => {
         setReviews(results.data.results);
