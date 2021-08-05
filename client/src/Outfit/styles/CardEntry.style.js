@@ -109,7 +109,7 @@ export const Title = styled.span`
 
 export const Price = styled.span`
   font-size: small;
-  top: 25px;
+  margin-left: 2px;
   position: relative;
   text-decoration: ${prop => prop.decoration || 'none'};
   color: ${prop => prop.color || 'black'};
