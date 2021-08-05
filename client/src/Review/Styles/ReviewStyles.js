@@ -92,6 +92,8 @@ export const RatingDivCont = styled.div`
 `;
 
 export const FullWidthDiv = styled.div`
+  position: relative;
+
   height: ${props => props.height};
   width: ${props => props.width};
   border-bottom: ${props => props.border};
@@ -150,6 +152,15 @@ export const Close = styled.button`
   position: absolute;
   right: 0;
   top: 0;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const RevClose = styled.button`
+  position: absolute;
+  top: 3px;
+  right: 0;
   &:hover {
     cursor: pointer;
   }
