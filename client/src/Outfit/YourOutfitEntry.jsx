@@ -24,7 +24,7 @@ const YourOutfitEntry = (props) => {
     }
 
     return (
-      <CardContainer margin={marginx}>
+      <CardContainer id='yourOutfitCardContainer' margin={marginx}>
         <br></br>
         <Card cursor='auto'>
           <ImageContainer>

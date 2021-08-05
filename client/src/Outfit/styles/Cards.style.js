@@ -56,7 +56,7 @@ export const NextButton = styled.button`
   position: absolute;
   border: none;
   margin: 0px;
-  bottom: 240px;
+  bottom: 200px;
   right: 66px;
   float: right;
   background: none;
