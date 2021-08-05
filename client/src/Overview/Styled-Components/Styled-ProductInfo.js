@@ -174,6 +174,7 @@ export var Category = styled.div`
   margin-top: 2%;
   text-transform: uppercase;
   font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
 
 `;
 
@@ -181,11 +182,13 @@ export var Name = styled.div`
   font-size: xx-large;
   font-weight: bold;
   margin-bottom: 2%;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 export var Price = styled.div`
 margin-top: 2%;
   margin-bottom: 4%;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 
@@ -195,11 +198,13 @@ font-size: small;
 float: ${props => props.sale ? 'left' : 'none'};
 margin-right:15px;
 text-decoration: ${props => props.sale ? 'line-through' : 'none'};
+font-family: Arial, Helvetica, sans-serif;
 `;
 
 export var SalePrice = styled.div`
 color: red;
 font-size: small;
+font-family: Arial, Helvetica, sans-serif;
 
 `;
 
@@ -237,6 +242,7 @@ export var Description = styled.div`
 padding-top: 1%;
   padding-left: 5%;
   width: 60%;
+  font-family: Arial, Helvetica, sans-serif;
 
 `;
 
@@ -246,6 +252,7 @@ clear:both;
   color: black;
   padding-top: 5%;
   padding-left: 5%;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 export var Facebook = styled.div`
@@ -339,7 +346,7 @@ export var PrevArrow = styled.a`
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  left : 15%;
+  left : 10%;
   transform: rotate(180deg);
 `;
 
