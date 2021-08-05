@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NavBar from './NavBar/NavBar.jsx';
 import OverviewIndex from './Overview/OverviewIndex.jsx';
 import OutfitIndex from './Outfit/OutfitIndex.jsx';
 import ReviewIndex from './Review/ReviewIndex.jsx';
@@ -33,6 +34,7 @@ var App = (props) => {
 
   return (
     <div onClick={props.click}>
+      <NavBar />
       {loaded ? <OverviewIndex productInfo = {metaData.productInfo} averageRating= {averageRating} styles = {styles} reviewDiv ={reviewDiv}/> : <div>Loading...</div>}
 
       {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating} /></div> : null}
