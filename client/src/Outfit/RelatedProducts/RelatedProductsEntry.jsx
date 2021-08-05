@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { CardContainer, Card, Info, ImageContainer, Pic, StarButton, Category, Title, Price, Prices, Rating } from './styles/CardEntry.style.js';
-import StarRating from '../Helper-Components/StarRating.jsx';
-import { getRelatedData } from '../Controllers/outfitData.js';
-import { calculateAverageRating } from '../HelperFunctions.js';
+import { CardContainer, Card, Info, ImageContainer, Pic, StarButton, Category, Title, Price, Prices, Rating } from '../Styles/CardEntry.style.js';
+import StarRating from '../../Helper-Components/StarRating.jsx';
+import { getRelatedData } from '../../Controllers/outfitData.js';
+import { calculateAverageRating } from '../../HelperFunctions.js';
 
 const RelatedProductsEntry = (props) => {
   var relatedId = props.relatedId;
@@ -50,27 +50,27 @@ const RelatedProductsEntry = (props) => {
   }
 
   return (
-    <CardContainer id='relatedProductsCard' margin={marginx}>
+    <CardContainer margin={marginx}>
       <br></br>
       {loaded ?
         <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
           <ImageContainer>
-            <StarButton id='relatedProudctStarButton'>✩</StarButton>
-            <Pic id='relatedProductImage' src={url} alt='no image' />
+            <StarButton>✩</StarButton>
+            <Pic src={url} alt='no image' />
           </ImageContainer>
           <Info>
-            <Category id='relatedProductCategory'>{category}</Category>
+            <Category>{category}</Category>
             <br></br>
-            <Title id='relatedProductTitle'>{name}</Title>
+            <Title>{name}</Title>
             <br></br>
             {salePrice ?
-              <Prices id='prices'>
-                <Price id='relatedProductDefaultPrice' decoration='line-through'>${price}</Price>
-                <Price id='relatedProductSalePrice' color='red'> ${salePrice}</Price>
+              <Prices>
+                <Price decoration='line-through'>${price}</Price>
+                <Price color='red'> ${salePrice}</Price>
               </Prices> :
-              <Price id='relatedProductDefaultPrice'>${price}</Price>}
+              <Price>${price}</Price>}
             <br></br>
-            <Rating id='relatedProductStarRating'>
+            <Rating>
               {rating ? <StarRating rating={rating} /> : 'No rating yet'}
             </Rating>
           </Info>

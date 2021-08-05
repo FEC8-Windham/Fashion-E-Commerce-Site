@@ -9,7 +9,7 @@ export const Modal = styled.div`
   background: #fff;
   position: absolute;
   width: 500px;
-  height: 250px;
+  height: 300px;
   z-index: 1;
   box-shadow: 0px 0px 1px 1px;
   overflow: scroll;
@@ -48,7 +48,7 @@ export const Title = styled.h4`
   font-weight: normal;
   padding: 0;
   margin: 0;
-  padding-left: 17px;
+  padding-left: 3px;
 `;
 
 export const ProductNames = styled.th`

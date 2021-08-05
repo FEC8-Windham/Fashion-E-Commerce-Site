@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import YourOutfitEntry from './YourOutfitEntry.jsx';
-import { Container, RowContainer, SectionTitle, NextButton, PreviousButton, FadeoutRight } from './styles/Cards.style.js';
-// import { getIP } from './tracking.js';
-import { dummyData } from './dummyData.js';
+import { Container, RowContainer, SectionTitle, NextButton, PreviousButton, FadeoutRight } from '../Styles/Cards.style.js';
 
 const YourOutfit = (props) => {
   var currentProduct = props.data;
@@ -10,9 +8,7 @@ const YourOutfit = (props) => {
   var [rightMost, setRightMost] = useState(false);
   var [display, setDisplay] = useState(null);
   var [yourOutfit, changeYourOutfit] = useState(null);
-  // var [yourOutfit, changeYourOutfit] = useState(dummyData);
 
-  // Get data from Local Storage if exists
   useEffect(() => {
     if (localStorage.getItem('yourOutfit')) {
       var localOutfits = JSON.parse(localStorage.getItem('yourOutfit'));
@@ -25,24 +21,18 @@ const YourOutfit = (props) => {
       setDisplay('none');
       setRightMost(true);
     } else if (yourOutfit && yourOutfit.length > 3) {
-      setDisplay('linear-gradient(to right, black 80%, transparent)');
+      setDisplay('linear-gradient(to right, black 85%, transparent)');
       setRightMost(false);
     } else {
       setDisplay('none');
       setRightMost(true);
     }
 
-    // If yourOutfit exists, then save it to Local Storage
     if (yourOutfit) {
       var stringifiedOutfits = JSON.stringify(yourOutfit);
       localStorage.setItem('yourOutfit', stringifiedOutfits);
     }
   }, [yourOutfit]);
-
-  var clearCache = () => {
-    // Use to clear Local Storage
-    localStorage.clear();
-  };
 
   var addClickHandler = (e) => {
     e.preventDefault();
@@ -98,13 +88,12 @@ const YourOutfit = (props) => {
     }
 
     setRightMost(false);
-    setDisplay('linear-gradient(to right, black 80%, transparent)');
+    setDisplay('linear-gradient(to right, black 85%, transparent)');
   };
 
   return (
-    <Container id='yourOutfitContainer'>
+    <Container>
       <SectionTitle>YOUR OUTFIT</SectionTitle>
-      {/* <button onClick={clearCache}>Clear</button> */}
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>&#10094;</PreviousButton> : null}
       {!rightMost ? <NextButton onClick={clickHandlerRight}>&#10095;</NextButton> : null}
       <FadeoutRight mask={display}>
@@ -113,9 +102,9 @@ const YourOutfit = (props) => {
           {yourOutfit ?
             yourOutfit.map((item, i) => {
               if (yourOutfit[yourOutfit.length - 1] === item) {
-                return <YourOutfitEntry key={item.name} id={'yourOutfitEntry' + i} delete={deleteClickHandler} item={item} last={true} />;
+                return <YourOutfitEntry key={item.name} delete={deleteClickHandler} item={item} last={true} />;
               } else {
-                return <YourOutfitEntry key={item.name} id={'yourOutfitEntry' + i} delete={deleteClickHandler} item={item} />;
+                return <YourOutfitEntry key={item.name} delete={deleteClickHandler} item={item} />;
               }
             }) : null
           }

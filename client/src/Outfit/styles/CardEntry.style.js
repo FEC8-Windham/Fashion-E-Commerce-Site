@@ -19,7 +19,6 @@ export const Card = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 0;
-
 `;
 
 export const Info = styled.div`
