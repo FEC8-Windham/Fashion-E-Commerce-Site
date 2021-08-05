@@ -4,7 +4,7 @@ import { getSKU } from '../../HelperFunctions';
 import axios from 'axios';
 import API_KEY from '../../config/config';
 
-var AddButton = (({isSizeSelected, setShowSelectSizeMessage, currSize, currStyle}) => {
+var AddButton = (({ isSizeSelected, setShowSelectSizeMessage, currSize, currStyle }) => {
 
   var clickHandler = () => {
     if (!isSizeSelected) {
@@ -27,8 +27,8 @@ var AddButton = (({isSizeSelected, setShowSelectSizeMessage, currSize, currStyle
   };
 
   return (
-    <CartButton onClick = {clickHandler}>
-      Add to Cart
+    <CartButton onClick={clickHandler}>
+      &nbsp;&nbsp;&nbsp;&nbsp;Add to Cart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+
     </CartButton>
   );
 });

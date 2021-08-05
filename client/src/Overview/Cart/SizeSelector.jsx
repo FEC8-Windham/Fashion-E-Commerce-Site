@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { SizeSelect } from '../Styled-Components/Styled-ProductInfo';
 import { getQuantityBySize } from '../../HelperFunctions';
 
-var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize, setSizeSelectRef}) => {
+var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOfStock, setShowSelectSizeMessage, setCurrSize, setSizeSelectRef }) => {
   var [xsCount, SetXsCount] = useState(0);
   var [sCount, SetSCount] = useState(0);
   var [mCount, SetMCount] = useState(0);
@@ -29,9 +29,7 @@ var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOf
     setSelectedCount(count);
     setIsSizeSelected(true);
     setShowSelectSizeMessage(false);
-
   };
-
 
   useEffect(() => {
 
@@ -57,7 +55,7 @@ var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOf
         </SizeSelect>
         :
         <SizeSelect defaultValue={'DEFAULT'} onChange={changeHandler} >
-          <option value='DEFAULT' >Select Size</option>
+          <option value='DEFAULT' >&nbsp;&nbsp;&nbsp;&nbsp;Select Size</option>
           {
             xsCount ? <option value={xsCount}>XS</option> : null
           }
