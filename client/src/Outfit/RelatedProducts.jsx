@@ -3,20 +3,14 @@ import RelatedProductsEntry from './RelatedProductsEntry.jsx';
 import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
 import higherOrderComponent from '../../src/HigherOrderComponent.jsx';
 
-const RelatedProducts = (props) => {
+/*  Added forwardRef  */
+/* https://stackoverflow.com/questions/60295357/how-to-get-the-ref-value-in-higher-order-component */
+const RelatedProducts = React.forwardRef((props, ref) => {
   var relatedProducts = props.data;
 
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);
   var [display, setDisplay] = useState(null);
-
-  /* useRef */
-  // const inputEl = useRef(null);
-
-  // const onButtonClick = () => {
-  //   console.log('Click!');
-  //   console.log(props.inputEl.current);
-  // };
 
   useEffect(() => {
     if (relatedProducts.length <= 4) {
@@ -45,8 +39,8 @@ const RelatedProducts = (props) => {
   };
 
   return (
-    <Container id='relatedProductsContainer'>
-      <SectionTitle>RELATED PRODUCTS</SectionTitle>
+    <Container ref={ref} id='relatedProductsContainer'>
+      <SectionTitle >RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
       <FadeoutRight id='fadeout' mask={display}>
@@ -62,6 +56,6 @@ const RelatedProducts = (props) => {
       </FadeoutRight>
     </Container>
   );
-};
+});
 
 export default higherOrderComponent(RelatedProducts);
