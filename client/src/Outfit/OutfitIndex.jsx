@@ -28,11 +28,12 @@ var OutfitIndex = (props) => {
         currentData={currentProduct}
         isOpen={openp}
         onClose={() => setOpenP(false)}
+        id='comparisonModal'
       />
       <hr></hr>
       <div id='modal'></div>
-      <RelatedProducts data={relatedProducts} clickHandler={clickHandler} />
-      <YourOutfit data={currentProduct}/>
+      <RelatedProducts id='relatedProductsComponent' data={relatedProducts} clickHandler={clickHandler} />
+      <YourOutfit id='yourOutfitsComponent' data={currentProduct}/>
       <hr></hr>
     </div>
   );

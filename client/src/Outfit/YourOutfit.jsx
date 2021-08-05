@@ -107,7 +107,7 @@ const YourOutfit = (props) => {
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="outfitContainer">
-          <YourOutfitEntry first={true} i='Add' click={addClickHandler} />
+          <YourOutfitEntry first={true} id='Add' click={addClickHandler} />
           {yourOutfit ?
             yourOutfit.map((item, i) => {
               if (yourOutfit[yourOutfit.length - 1] === item) {

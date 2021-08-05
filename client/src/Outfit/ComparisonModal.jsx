@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {
   Modal, Data, CloseBtn,
-  Top, Table, Title, ProductNames, Row, Column1, Column2, Column3
+  Top, Table, Title, ProductNames, Row, Column, MiddleColumn, ColumnStar
 } from './styles/Modal.style';
 import StarRating from '../Helper-Components/StarRating.jsx';
 
@@ -38,7 +38,7 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
           <tbody>
             <Row>
               <ProductNames id='comparisonModalCurrentDataName'>{currentData.name}</ProductNames>
-              <ProductNames id='comparisonModalName' width='60%'></ProductNames>
+              <ProductNames id='comparisonModalName' width='40%'>Name</ProductNames>
               <ProductNames id='comparisonModalRelatedDataName'>{relatedData.name}</ProductNames>
             </Row>
           </tbody>
@@ -47,19 +47,19 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
         <Table>
           <tbody>
             <Row>
-              <Column1 id='comparisonModalCurrentDataCategory'>{currentData.category}</Column1>
-              <Column2 id='comparisonModalCategory'>Category</Column2>
-              <Column3 id='comparisonModalRelatedDataCategory'>{relatedData.category}</Column3>
+              <Column id='comparisonModalCurrentDataCategory'>{currentData.category}</Column>
+              <MiddleColumn id='comparisonModalCategory'>Category</MiddleColumn>
+              <Column id='comparisonModalRelatedDataCategory'>{relatedData.category}</Column>
             </Row>
             <Row>
-              {currentData.sale ? <Column1 id='comparisonModalCurrentDataSalePrice' color='red'>${currentData.sale}</Column1> : <Column1 id='comparisonModalCurrentDataPrice'>${currentData.default_price}</Column1>}
-              <Column2 id='comparisonModalPrice'>Default Price</Column2>
-              <Column3 id='comparisonModalRelatedDataPrice'>${relatedData.default_price}</Column3>
+              {currentData.sale ? <Column id='comparisonModalCurrentDataSalePrice' color='red'>${currentData.sale}</Column> : <Column id='comparisonModalCurrentDataPrice'>${currentData.default_price}</Column>}
+              <MiddleColumn id='comparisonModalPrice'>Default Price</MiddleColumn>
+              <Column id='comparisonModalRelatedDataPrice'>${relatedData.default_price}</Column>
             </Row>
             <Row>
-              <Column1 id='comparisonModalCurrentDataStyles'>{currentData.numberStyles}</Column1>
-              <Column2 id='comparisonModalStyles'>Number of Styles</Column2>
-              <Column3 id='comparisonModalRelatedDataStyles'>{relatedData.numberStyles}</Column3>
+              <Column id='comparisonModalCurrentDataStyles'>{currentData.numberStyles}</Column>
+              <MiddleColumn id='comparisonModalStyles'>Number of Styles</MiddleColumn>
+              <Column id='comparisonModalRelatedDataStyles'>{relatedData.numberStyles}</Column>
             </Row>
           </tbody>
           <tbody>
@@ -72,9 +72,9 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
               }
               return (
                 <Row key={feature.value}>
-                  <Column1 id='comparisonModalCurrentDataFeature'>{value}</Column1>
-                  <Column2 id='comparisonModalFeature'>{feature.feature}</Column2>
-                  <Column3 id='comparisonModalRelatedDataFeature'>{feature.value || 'N/A'}</Column3>
+                  <Column id='comparisonModalCurrentDataFeature'>{value}</Column>
+                  <MiddleColumn id='comparisonModalFeature'>{feature.feature}</MiddleColumn>
+                  <Column id='comparisonModalRelatedDataFeature'>{feature.value || 'N/A'}</Column>
                 </Row>
               );
             })}
@@ -88,9 +88,9 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
                 }
                 return (
                   <Row key={feature.value}>
-                    <Column1 id='comparisonModalCurrentDataFeature'>{feature.value || 'N/A'}</Column1>
-                    <Column2 id='comparisonModalFeature'>{feature.feature}</Column2>
-                    <Column3 id='comparisonModalRelatedDataFeature'>{value2}</Column3>
+                    <Column id='comparisonModalCurrentDataFeature'>{feature.value || 'N/A'}</Column>
+                    <MiddleColumn id='comparisonModalFeature'>{feature.feature}</MiddleColumn>
+                    <Column id='comparisonModalRelatedDataFeature'>{value2}</Column>
                   </Row>
                 );
               }
@@ -98,9 +98,9 @@ const ComparisonModal = ({ relatedData, currentData, isOpen, onClose }) => {
           </tbody>
           <tbody>
             <Row>
-              <Column1 >{currentData.rating ? <StarRating rating={currentData.rating} /> : 'No ratings'}</Column1>
-              <Column2 id='comparisonModalRating'>Average rating</Column2>
-              <Column3>{relatedData.rating ? <StarRating rating={relatedData.rating} /> : 'No ratings'}</Column3>
+              <Column >{currentData.rating ? <ColumnStar><StarRating rating={currentData.rating} /></ColumnStar> : 'No ratings'}</Column>
+              <MiddleColumn id='comparisonModalRating'>Average rating</MiddleColumn>
+              <Column >{relatedData.rating ? <ColumnStar><StarRating rating={relatedData.rating} /></ColumnStar> : 'No ratings'}</Column>
             </Row>
           </tbody>
         </Table>

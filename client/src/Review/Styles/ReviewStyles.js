@@ -28,8 +28,8 @@ export const FlexContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-self:stretch;
-  width: 500px;
-  margin-bottom: ${props => props.margin};;
+  width: 700px;
+  margin-bottom: ${props => props.margin};
 `;
 
 export const TileFlexContainer = styled.div`
@@ -39,7 +39,7 @@ export const TileFlexContainer = styled.div`
   align-self:stretch;
   width: fit-content;
   min-height: 550px;
-  min-width: 500px;
+  min-width: 700px;
 `;
 
 export const ReviewModuleFlexContainer = styled.div`
@@ -49,6 +49,7 @@ export const ReviewModuleFlexContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-self:stretch;
+  width:  ${props => props.width};
 `;
 
 export const RatingDiv = styled.div`
@@ -243,7 +244,6 @@ export const ButtonCont = styled.div`
   flex-direction: row;
   justify-content: center;
   align-self:stretch;
-  width: 500px;
 `;
 export const Button = styled.button`
   background: transparent;
@@ -254,7 +254,7 @@ export const Button = styled.button`
   font-weight: bold;
   width: 110px;
   height: 50px;
-  margin-right: 30px;
+  margin-right: ${props => props.marginright ? '30px' : 0};
   margin: ${props => props.margin};
 `;
 

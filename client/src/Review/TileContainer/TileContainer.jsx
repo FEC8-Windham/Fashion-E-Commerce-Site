@@ -18,10 +18,10 @@ const TileContainer = (props) => {
 
   return (
     <TileFlexContainer>
-      <Container>{reviewTotal} Reviews, sorted by <SortSelect refresh ={props.refresh} /></Container>
+      <Container width={'700px'}>{reviewTotal} Reviews, sorted by <SortSelect refresh ={props.refresh} /></Container>
       {reviews.slice(0, counter).map(review => <ReviewTile refresh ={props.refresh} key={review.review_id} review={review}/>)}
       <ButtonCont>
-        <Button onClick={moreReview}> More Reviews</Button>
+        <Button marginright={true} onClick={moreReview}> More Reviews</Button>
         <Button onClick={props.open}> Add A Review +</Button>
       </ButtonCont>
     </TileFlexContainer>

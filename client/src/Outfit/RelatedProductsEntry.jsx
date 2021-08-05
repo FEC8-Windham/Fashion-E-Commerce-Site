@@ -50,7 +50,7 @@ const RelatedProductsEntry = (props) => {
   }
 
   return (
-    <CardContainer margin={marginx}>
+    <CardContainer id='relatedProductsCard' margin={marginx}>
       <br></br>
       {loaded ?
         <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
@@ -64,7 +64,7 @@ const RelatedProductsEntry = (props) => {
             <Title id='relatedProductTitle'>{name}</Title>
             <br></br>
             {salePrice ?
-              <Prices>
+              <Prices id='prices'>
                 <Price id='relatedProductDefaultPrice' decoration='line-through'>${price}</Price>
                 <Price id='relatedProductSalePrice' color='red'> ${salePrice}</Price>
               </Prices> :
