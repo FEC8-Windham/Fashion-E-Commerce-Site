@@ -33,7 +33,7 @@ export const FadeoutRight = styled.div`
   padding: 0px;
   width: 1031px;
   height: 405px;
-  mask-image: ${prop => prop.mask || 'linear-gradient(to right, black 70%, transparent)'};
+  mask-image: ${prop => prop.mask || 'linear-gradient(to right, black 80%, transparent)'};
   z-index: 1;
 `;
 
@@ -42,12 +42,12 @@ export const PreviousButton = styled.button`
   border: none;
   margin: 0px;
   padding: 0;
-  left: 66px;
+  left: 60px;
   top: 200px;
   background: none;
   z-index: 1;
   font-weight: bold;
-  font-size: large;
+  font-size: 30px;
 
 `;
 
@@ -56,10 +56,10 @@ export const NextButton = styled.button`
   border: none;
   margin: 0px;
   bottom: 200px;
-  right: 66px;
+  right: 60px;
   float: right;
   background: none;
   z-index: 1;
   font-weight: bold;
-  font-size: large;
+  font-size: 30px;
 `;

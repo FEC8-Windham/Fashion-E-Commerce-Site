@@ -22,7 +22,7 @@ var OutfitIndex = (props) => {
   };
 
   return (
-    <div id='moduleOutfit'>
+    <div style={{"margin-bottom": "100px"}} id='moduleOutfit'>
       <ComparisonModal
         relatedData={modalData}
         currentData={currentProduct}

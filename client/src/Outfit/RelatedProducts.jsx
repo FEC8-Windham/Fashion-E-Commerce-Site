@@ -34,14 +34,14 @@ const RelatedProducts = (props) => {
     }
 
     setRightMost(false);
-    setDisplay('linear-gradient(to right, black 70%, transparent)');
+    setDisplay('linear-gradient(to right, black 80%, transparent)');
   };
 
   return (
     <Container onClick={props.click} id='relatedProductsContainer'>
       <SectionTitle >RELATED PRODUCTS</SectionTitle>
-      {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
-      {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
+      {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>&#10094;</PreviousButton> : null}
+      {!rightMost ? <NextButton onClick={clickHandlerRight}>&#10095;</NextButton> : null}
       <FadeoutRight id='fadeout' mask={display}>
         <RowContainer id="relatedContainer">
           {relatedProducts.map((item, i) => {

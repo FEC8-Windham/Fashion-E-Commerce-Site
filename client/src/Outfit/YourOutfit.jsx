@@ -25,7 +25,7 @@ const YourOutfit = (props) => {
       setDisplay('none');
       setRightMost(true);
     } else if (yourOutfit && yourOutfit.length > 3) {
-      setDisplay('linear-gradient(to right, black 70%, transparent)');
+      setDisplay('linear-gradient(to right, black 80%, transparent)');
       setRightMost(false);
     } else {
       setDisplay('none');
@@ -98,14 +98,15 @@ const YourOutfit = (props) => {
     }
 
     setRightMost(false);
-    setDisplay('linear-gradient(to right, black 70%, transparent)');
+    setDisplay('linear-gradient(to right, black 80%, transparent)');
   };
 
   return (
     <Container id='yourOutfitContainer'>
       <SectionTitle>YOUR OUTFIT</SectionTitle>
       {/* <button onClick={clearCache}>Clear</button> */}
-      {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>{'<'}</PreviousButton> : null}
+      {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>&#10094;</PreviousButton> : null}
+      {!rightMost ? <NextButton onClick={clickHandlerRight}>&#10095;</NextButton> : null}
       <FadeoutRight mask={display}>
         <RowContainer id="outfitContainer">
           <YourOutfitEntry first={true} id='Add' click={addClickHandler} />
@@ -120,7 +121,6 @@ const YourOutfit = (props) => {
           }
         </RowContainer>
       </FadeoutRight>
-      {!rightMost ? <NextButton onClick={clickHandlerRight}>{'>'}</NextButton> : null}
     </Container>
   );
 };
