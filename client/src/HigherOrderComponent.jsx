@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 
 // src/Outfit/RelatedProducts.jsx
 
+// CURRENT GOAL: Click on anything in RelatedProducts.jsx and have it log the ref
+//               using the function onButtonClick() below
+
 /*     Using forwardRef    */
 // const higherOrderComponent = (WrappedComponent) => {
 //   const HigherOrderComponent = (props) => {
