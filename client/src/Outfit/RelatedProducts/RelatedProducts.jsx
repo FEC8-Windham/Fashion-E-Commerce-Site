@@ -4,6 +4,7 @@ import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, Sect
 
 const RelatedProducts = (props) => {
   var relatedProducts = props.data;
+  relatedProducts = [...new Set(relatedProducts)];
 
   var [leftMost, setLeftMost] = useState(true);
   var [rightMost, setRightMost] = useState(false);
@@ -11,6 +12,12 @@ const RelatedProducts = (props) => {
 
   useEffect(() => {
     if (relatedProducts.length <= 4) {
+      setDisplay('none');
+      setRightMost(true);
+    } else if (relatedProducts.length > 3) {
+      setDisplay('linear-gradient(to right, black 85%, transparent)');
+      setRightMost(false);
+    } else {
       setDisplay('none');
       setRightMost(true);
     }
@@ -34,7 +41,7 @@ const RelatedProducts = (props) => {
     }
 
     setRightMost(false);
-    setDisplay('linear-gradient(to right, black 80%, transparent)');
+    setDisplay('linear-gradient(to right, black 85%, transparent)');
   };
 
   return (

@@ -21,7 +21,7 @@ const YourOutfit = (props) => {
       setDisplay('none');
       setRightMost(true);
     } else if (yourOutfit && yourOutfit.length > 3) {
-      setDisplay('linear-gradient(to right, black 80%, transparent)');
+      setDisplay('linear-gradient(to right, black 85%, transparent)');
       setRightMost(false);
     } else {
       setDisplay('none');
@@ -88,7 +88,7 @@ const YourOutfit = (props) => {
     }
 
     setRightMost(false);
-    setDisplay('linear-gradient(to right, black 80%, transparent)');
+    setDisplay('linear-gradient(to right, black 85%, transparent)');
   };
 
   return (
