@@ -48,7 +48,6 @@ export const PreviousButton = styled.button`
   z-index: 1;
   font-weight: bold;
   font-size: 30px;
-
 `;
 
 export const NextButton = styled.button`

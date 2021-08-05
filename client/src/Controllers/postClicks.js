@@ -12,10 +12,9 @@ const postClicks = (data) => {
     data: data
   };
 
-  console.log('To be posted:', data);
   axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
+      res.send(JSON.stringify(response.data));
     })
     .catch(function (error) {
       console.log(error);

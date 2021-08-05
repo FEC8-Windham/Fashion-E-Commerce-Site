@@ -13,7 +13,6 @@ export const helpfulClick = (reviewID, string) => {
 };
 
 export const getReviews = (params) => {
-  //console.log(params)
   let config = {
     method: 'get',
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/`,

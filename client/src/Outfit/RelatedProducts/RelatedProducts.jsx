@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import RelatedProductsEntry from './RelatedProductsEntry.jsx';
-import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from './styles/Cards.style.js';
+import { Container, RowContainer, FadeoutRight, NextButton, PreviousButton, SectionTitle } from '../Styles/Cards.style.js';
 
 const RelatedProducts = (props) => {
   var relatedProducts = props.data;
@@ -38,17 +38,17 @@ const RelatedProducts = (props) => {
   };
 
   return (
-    <Container onClick={props.click} id='relatedProductsContainer'>
+    <Container onClick={props.click}>
       <SectionTitle >RELATED PRODUCTS</SectionTitle>
       {!leftMost ? <PreviousButton onClick={clickHandlerLeft}>&#10094;</PreviousButton> : null}
       {!rightMost ? <NextButton onClick={clickHandlerRight}>&#10095;</NextButton> : null}
-      <FadeoutRight id='fadeout' mask={display}>
+      <FadeoutRight mask={display}>
         <RowContainer id="relatedContainer">
           {relatedProducts.map((item, i) => {
             if (relatedProducts[relatedProducts.length - 1] === item) {
-              return <RelatedProductsEntry key={item} relatedId={item} id={'relatedProductsEntry' + i} clickHandler={props.clickHandler} last={true} />;
+              return <RelatedProductsEntry key={item} relatedId={item} clickHandler={props.clickHandler} last={true} />;
             } else {
-              return <RelatedProductsEntry key={item} relatedId={item} id={'relatedProductsEntry' + i} clickHandler={props.clickHandler} />;
+              return <RelatedProductsEntry key={item} relatedId={item} clickHandler={props.clickHandler} />;
             }
           })}
         </RowContainer>

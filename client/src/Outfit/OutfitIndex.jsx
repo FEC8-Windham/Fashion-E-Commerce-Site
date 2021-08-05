@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import RelatedProducts from './RelatedProducts.jsx';
-import YourOutfit from './YourOutfit.jsx';
+import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
+import YourOutfit from './YourOutfit/YourOutfit.jsx';
 import ComparisonModal from './ComparisonModal.jsx';
+import { Outfit } from './Styles/OutfitIndex.style.js';
 
 var OutfitIndex = (props) => {
   var currentProduct = props.metaData.productInfo;
@@ -22,7 +23,7 @@ var OutfitIndex = (props) => {
   };
 
   return (
-    <div style={{"margin-bottom": "100px"}} id='moduleOutfit'>
+    <Outfit id='moduleOutfit'>
       <ComparisonModal
         relatedData={modalData}
         currentData={currentProduct}
@@ -34,7 +35,7 @@ var OutfitIndex = (props) => {
       <RelatedProducts id='relatedProductsComponent' data={relatedProducts} clickHandler={clickHandler} />
       <YourOutfit id='yourOutfitsComponent' data={currentProduct}/>
       <br></br>
-    </div>
+    </Outfit>
   );
 };
 
