@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export var Overview = styled.div`
   margin: auto;
-  margin-left: 350px;
+  margin-left: 200px;
   width:1500px;
   height: 850px;
 `;
@@ -18,6 +18,7 @@ export var MainImageContainer = styled.div`
   background-color: black;
   margin-right: 5vh;
   position: relative;
+  margin-left: 100px;
 `;
 
 export var MainImage = styled.img`
@@ -128,11 +129,15 @@ export var MainThumbImg = styled.img`
   padding:10%;
   opacity: ${props => props.selected ? '0.5' : '1'};
   cursor: pointer;
+  object-fit: cover;
 `;
 
 export var ExpandModalContainer = styled.div`
   position: absolute;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export var ExpandImgContainer = styled.div`
@@ -331,6 +336,7 @@ export var ThumbImg = styled.img`
   height: 70px;
   padding: 5px;
   cursor: pointer;
+  object-fit: cover;
 `;
 
 export var ShareButtons = styled.div`
@@ -401,14 +407,16 @@ export var Slogan = styled.div`
   font-weight: bold;
   color: black;
   padding-top: 2%;
-  padding-left: 5%;
+  padding-left: 45px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  margin-left: 90px;
 `;
 
 export var Description = styled.div`
   padding-top: 1%;
-  padding-left: 5%;
+  padding-left: 45px;
   width: 767px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-left: 90px;
 `;

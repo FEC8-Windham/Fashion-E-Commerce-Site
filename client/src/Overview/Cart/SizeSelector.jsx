@@ -55,21 +55,21 @@ var SizeSelector = ({ currStyle, setSelectedCount, setIsSizeSelected, setIsOutOf
         </SizeSelect>
         :
         <SizeSelect defaultValue={'DEFAULT'} onChange={changeHandler} >
-          <option value='DEFAULT' >&nbsp;&nbsp;&nbsp;&nbsp;Select Size</option>
+          <option value='DEFAULT' >&nbsp;&nbsp;Select Size</option>
           {
-            xsCount ? <option value={xsCount}>XS</option> : null
+            xsCount ? <option value={xsCount}>&nbsp;&nbsp;XS</option> : null
           }
           {
-            sCount ? <option value={sCount}>S</option> : null
+            sCount ? <option value={sCount}>&nbsp;&nbsp;S</option> : null
           }
           {
-            mCount ? <option value={mCount}>M</option> : null
+            mCount ? <option value={mCount}>&nbsp;&nbsp;M</option> : null
           }
           {
-            lCount ? <option value={lCount}>L</option> : null
+            lCount ? <option value={lCount}>&nbsp;&nbsp;L</option> : null
           }
           {
-            xlCount ? <option value={xlCount}>XL</option> : null
+            xlCount ? <option value={xlCount}>&nbsp;&nbsp;XL</option> : null
           }
         </SizeSelect>
       }

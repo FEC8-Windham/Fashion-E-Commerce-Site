@@ -8,12 +8,12 @@ var QuantitySelector = ({ selectedCount }) => {
       {
         selectedCount === null ?
           <QuantitySelect defaultValue={'DEFAULT'} disabled>
-            <option value='DEFAULT'>-</option>
+            <option value='DEFAULT'>&nbsp;&nbsp;-</option>
           </QuantitySelect>
           :
           <QuantitySelect>{
             [...Array(selectedCount)].map((item, i) => (
-              <option key={i + 1} value={i + 1}>{i + 1}</option>
+              <option key={i + 1} value={i + 1}>&nbsp;&nbsp;{i + 1}</option>
             ))}
           </QuantitySelect>
       }
