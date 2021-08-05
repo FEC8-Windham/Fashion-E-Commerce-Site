@@ -5,7 +5,7 @@ import higherOrderComponent from '../../src/HigherOrderComponent.jsx';
 
 /*  Added forwardRef  */
 /* https://stackoverflow.com/questions/60295357/how-to-get-the-ref-value-in-higher-order-component */
-const RelatedProducts = React.forwardRef((props, ref) => {
+const RelatedProducts = (props) => { // possibly use forwardRef here?
   var relatedProducts = props.data;
 
   var [leftMost, setLeftMost] = useState(true);
@@ -56,6 +56,6 @@ const RelatedProducts = React.forwardRef((props, ref) => {
       </FadeoutRight>
     </Container>
   );
-});
+};
 
 export default higherOrderComponent(RelatedProducts);
