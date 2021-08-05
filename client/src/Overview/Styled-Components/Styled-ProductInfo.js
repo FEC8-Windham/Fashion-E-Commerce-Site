@@ -38,7 +38,7 @@ export var PrevArrow = styled.a`
   padding: 16px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -55,7 +55,7 @@ export var NextArrow = styled.a`
   padding: 16px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
   transition: 0.6s ease;
   border-radius: 3px 0 0 3px;
   user-select: none;
