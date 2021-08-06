@@ -258,9 +258,11 @@ export var SeeAllReviews = styled.div`
   font-size: 13px;
   margin-left: 15%;
   padding-left: 5%;
+  margin-top: 5px;
   vertical-align: middle;
   text-decoration: underline;
   cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 export var Category = styled.div`
