@@ -1,4 +1,8 @@
 node_modules
 public/bundle.js
 package-lock.json
+<<<<<<< HEAD
 client/src/config/config.js
+=======
+client/src/config/config.js
+>>>>>>> 2a92e8f1200009c786fbb3a5fc62063196ed689f

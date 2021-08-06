@@ -1,7 +1,9 @@
 const path = require('path');
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
 
 module.exports = {
-  // mode: 'development',
+  mode: 'development',
   entry: './client/src/index.js',
   output: {
     filename: 'bundle.js',
@@ -10,18 +12,27 @@ module.exports = {
   module:
   {
     rules:
-      [
-        {
-          test: /.jsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react'
-            ]
-          }
+      [  {
+        test: /\.(jpg|png|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images',
         }
+      },
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react',
+          ],
+          plugins: [
+            '@babel/transform-runtime'
+          ]
+        }
+      },
       ]
   }
 };
