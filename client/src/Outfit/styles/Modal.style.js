@@ -7,15 +7,21 @@ export const Modal = styled.div`
   right: 0;
   border-style: solid;
   background: #fff;
-  width: 450px;
   position: absolute;
+  width: 500px;
+  height: 300px;
   z-index: 1;
   box-shadow: 0px 0px 1px 1px;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Data = styled.span`
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
+  overflow: scroll;
 `;
 
 export const CloseBtn = styled.button`
@@ -28,35 +34,47 @@ export const CloseBtn = styled.button`
   color: #333;
 `;
 
-export const Table = styled.table`
+export const Top = styled.table`
   width: 100%;
 `;
 
+
+export const Table = styled.table`
+  width: 100%;
+  overflow: scroll;
+`;
+
 export const Title = styled.h4`
-  font-weight: bold;
+  font-weight: normal;
   padding: 0;
-  padding-left: 3px;
   margin: 0;
+  padding-left: 3px;
 `;
 
 export const ProductNames = styled.th`
-  width: 50%;
-  text-align: ${prop => prop.align || 'left'};
-`;
-
-export const Column1 = styled.th`
-  width: 10%;
-`;
-
-export const Column2 = styled.th`
-  width: 80%;
+  width: ${prop => prop.width || '30%'};
+  font-size: 18px;
   text-align: center;
 `;
 
-export const Column3 = styled.th`
-  width: 10%;
+export const Column = styled.th`
+  width: 30%;
+  font-weight: normal;
+  color: ${prop => prop.color || 'black'};
+  margin: 0;
+  text-align: center;
+`;
+
+export const MiddleColumn = styled.th`
+  width: 40%;
+  text-align: center;
 `;
 
 export const Row = styled.tr`
   height: 20px;
+`;
+
+export const ColumnStar = styled.div`
+  margin: auto;
+  padding-left: 40px;
 `;
