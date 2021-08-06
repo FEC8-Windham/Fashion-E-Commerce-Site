@@ -10,10 +10,11 @@ const RatingBar = (props) => {
 
   const toggle = () => {
     setUnderline(!underline);
+    props.changeFilters(Number(rating));
   };
 
   return (
-    <RatingDivCont onClick={()=>props.changeFilters(Number(rating))} width={'100%'}>
+    <RatingDivCont width={'100%'}>
       <RatingDivText onClick={toggle} height={'15px'} width={'20%'}>{!underline ? <u>{stars}</u> : <b>{stars}</b>}</RatingDivText>
       <FullWidthDiv height={'15px'} width={'80%'}>
         <RatingDiv height={'15px'} width={`${percent}%`}>
