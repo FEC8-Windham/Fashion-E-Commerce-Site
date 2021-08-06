@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import axios from 'axios';
 import StarRating from '../../Helper-Components/StarRating.jsx';
-import { Container, FlexContainer } from '../Styles/ReviewStyles.js';
+import { Container, FlexContainer, HelpfulSpan } from '../Styles/ReviewStyles.js';
 import reviewData from '../../../../APIExamples/reviews.js';
-import {helpfulClick} from '../../Controllers/reviewController.js'; //'../src/Controllers/reviewControllers.js';
+import {helpfulClick} from '../../Controllers/reviewController.js';
 import API_KEY from '../../config/config.js';
 
 const HelpfulWidget = (props) => {
@@ -24,11 +24,11 @@ const HelpfulWidget = (props) => {
 
   const [voteMade, setVoteMade] = useState(false);
 
-  return <span>Helpful?{'              '}
+  return <HelpfulSpan>Helpful?{'              '}
     <span onClick={()=>handleClick('helpful')} >
       <u>Yes</u>  ({yes})</span >
     <span onClick={()=>handleClick('report')}>     |   <u>Report</u> </span>
-  </span>;
+  </HelpfulSpan>;
 };
 
 export default HelpfulWidget;

@@ -19,7 +19,7 @@ const ReviewTile = (props) => {
 
   //only returns div if the product was recommended by reviewer
   const [recommendation, setRecommendation] = useState(() => {
-    return review.recommend ? <Container><span>&#10003;   I recommend this product</span></Container> : null;
+    return review.recommend ? <Container><span>&#10003;  <i>I recommend this product</i> </span></Container> : null;
   });
 
   //renders a employee response if there was one.
@@ -27,12 +27,12 @@ const ReviewTile = (props) => {
 
 
   return (
-    <FlexContainer>
+    <FlexContainer margin={'5px'}>
       <Container >
-        <Container float = 'left'>
+        <Container padding={true} float = 'left'>
           <StarRating rating={review.rating}/>
         </Container>
-        <Container float = 'right'>
+        <Container color={'gray'} float = 'right'>
           {review.reviewer_name + ',      ' + moment(review.date).format('MMMM Do YYYY')}
         </Container>
       </Container>
@@ -42,7 +42,7 @@ const ReviewTile = (props) => {
       <ReviewTileBody review={review}/>
       {recommendation}
       {response}
-      <Container>
+      <Container border={'1px solid black'}>
         <HelpfulWidget refresh={props.refresh} review={review}/>
       </Container>
     </FlexContainer>

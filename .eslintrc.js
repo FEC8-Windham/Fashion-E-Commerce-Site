@@ -21,7 +21,7 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 2,
     'indent': [2, 2],
     /* Variable names */
-    'camelcase': 2,
+    'camelcase': 'off',
     /* Language constructs */
     'curly': 2,
     'eqeqeq': [2, 'smart'],
@@ -42,7 +42,7 @@ module.exports = {
     /* Variable declaration */
     'one-var': [1, { 'uninitialized': 'always', 'initialized': 'never' }],
     /* Minuta */
-    'comma-style': [2, 'last'],
-    'quotes': [1, 'single']
+    'comma-style': [2, 'last']
+    //'quotes': [1, 'single']
   }
 };

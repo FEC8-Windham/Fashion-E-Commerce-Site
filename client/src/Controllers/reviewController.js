@@ -2,38 +2,41 @@ import axios from 'axios';
 import API_KEY from '../config/config';
 
 export const helpfulClick = (reviewID, string) => {
-// console.log(reviewID)
   let config = {
     method: 'put',
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/${string}`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/${reviewID}/${string}`,
     headers: {
       'Authorization': API_KEY
     }
   };
   return axios(config);
-  // .then((response) => {
-  //   console.log(`Successfly reported as ${string}, Status Code ${response.status}`);
-  // })
-  // .catch((error) => {
-  //   console.log(error);
-  // });
 };
 
-export const getReviews = (productID) => {
+export const getReviews = (params) => {
   let config = {
     method: 'get',
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/?product_id=${productID}`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/`,
     headers: {
       'Authorization': API_KEY
     }
   };
 
-  return axios(config);
-  // .then((response) => {
-  //   console.log(`Successfly reported as ${string}, Status Code ${response.status}`);
-  // })
-  // .catch((error) => {
-  //   console.log(error);
-  // });
+  config.params = params;
 
+  return axios(config);
+};
+
+export const postReview = formData => {
+  let data = JSON.stringify(formData);
+  let config = {
+    method: 'post',
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews',
+    headers: {
+      'Authorization': API_KEY,
+      'Content-Type': 'application/json'
+    },
+    data: data
+  };
+
+  return axios(config);
 };

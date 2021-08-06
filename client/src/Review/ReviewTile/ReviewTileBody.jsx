@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, ImageFlexContainer } from '../Styles/ReviewStyles.js';
+import { Container, ImageFlexContainer, Image } from '../Styles/ReviewStyles.js';
 import ReviewModal from '../../Helper-Components/ReviewModal.jsx';
 
 const ReviewTileBody = (props) => {
@@ -20,7 +20,6 @@ const ReviewTileBody = (props) => {
   const openModal = (e) => {
     setImageUrl(e.target.currentSrc);
     setClosed(!closed);
-    console.log(e,'eeeeeeeeeee');
   };
 
   const closeModal = () => {
@@ -33,7 +32,7 @@ const ReviewTileBody = (props) => {
     if (review.photos.length >= 1) {
       return (
         <ImageFlexContainer>
-          {review.photos.map(photo => <img onClick={openModal} key={photo.id} height ={80} width={80} src ={photo.url}></img>)}
+          {review.photos.map(photo => <Image onClick={openModal} key={photo.id} height ={80} width={80} src ={photo.url}></Image>)}
           {<ReviewModal closeModal={closeModal} chosenPhoto={imageUrl} closed={closed}/>}
         </ImageFlexContainer>
       );
