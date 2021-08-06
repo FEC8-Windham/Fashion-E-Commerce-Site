@@ -26,7 +26,7 @@ export var getData = async () => {
   var responseObj = await axios(config);
   var relatedProducts = responseObj.data;
 
-  config.params = {product_id: productId, count: '20', sort: 'relevant'};
+  config.params = {product_id: productId, count: '100', sort: 'relevant'};
   config.url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews';
   var responseObj = await axios(config);
   var reviewList = responseObj.data;
