@@ -294,22 +294,3 @@ const NewReview = (props) => {
 };
 
 export default NewReview;
-
-
-// {"product_id":"17071",
-// "rating":1,
-// "summary":"hot trash",
-// "body":"my feet rotted and fell off after wearing these shoes",
-// "recommend":"false",
-// "name":"reeee",
-// "email":"reee@reee.com",
-// "photos":["https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvYXNzZXRzL2VkODM2MGMzLTlkNzUtNGI0Yy1hYmNlLWVjMWRjZjU1MmViMDViZmJkMDc0OTUwM2Y3NDM5MV82MTIyNCAoYykgTXVzZXVtIG9mIExvbmRvbi5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWF1dG8tb3JpZW50ICJdLFsicCIsInRodW1iIiwiMjcwMngxODAxKzIxNisxMTciXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgODEgLWF1dG8tb3JpZW50Il0sWyJwIiwidGh1bWIiLCI2MDB4PiJdXQ/61224%20%28c%29%20Museum%20of%20London.jpg"],"characteristics":{"57235":1,"57236":1,"57237":1,"57238":1}}
-
-// {"product_id":17071,
-// "rating":1,
-// "summary":"hot trash",
-// "body":"my feet rotted and fell off after wearing these shoes","recommend":"false",
-// "name":"reeee",
-// "email":"rreee@reee.com",
-// "photos":["https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvYXNzZXRzL2VkODM2MGMzLTlkNzUtNGI0Yy1hYmNlLWVjMWRjZjU1MmViMDViZmJkMDc0OTUwM2Y3NDM5MV82MTIyNCAoYykgTXVzZXVtIG9mIExvbmRvbi5qcGciXSxbInAiLCJjb252ZXJ0IiwiLWF1dG8tb3JpZW50ICJdLFsicCIsInRodW1iIiwiMjcwMngxODAxKzIxNisxMTciXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgODEgLWF1dG8tb3JpZW50Il0sWyJwIiwidGh1bWIiLCI2MDB4PiJdXQ/61224%20%28c%29%20Museum%20of%20London.jpg"],
-// "characteristics":{"57235":1,"57236":1,"57237":1,"57238":1}}
