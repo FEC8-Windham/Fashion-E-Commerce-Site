@@ -39,4 +39,5 @@ var OutfitIndex = (props) => {
   );
 };
 
+
 export default OutfitIndex;
