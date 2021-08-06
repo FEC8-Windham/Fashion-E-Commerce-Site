@@ -19,8 +19,6 @@ export var calculateRecommendation = (recommendedObj) => {
   var notRec = Number(recommendedObj.false);
   var totalRec = wouldRec + notRec;
 
-
-
   return {recomended: Math.floor((wouldRec / (totalRec)) * 100), total: totalRec };
 
 };
