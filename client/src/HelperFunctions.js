@@ -19,7 +19,7 @@ export var calculateRecommendation = (recommendedObj) => {
   var notRec = Number(recommendedObj.false);
   var totalRec = wouldRec + notRec;
 
-  return {recomended: Math.floor((wouldRec / (totalRec)) * 100), total: totalRec };
+  return { recomended: Math.floor((wouldRec / (totalRec)) * 100), total: totalRec };
 
 };
 
@@ -62,4 +62,17 @@ export var getSKU = (style, size) => {
       return key;
     }
   }
+};
+
+export var navBarScroll = () => {
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
 };

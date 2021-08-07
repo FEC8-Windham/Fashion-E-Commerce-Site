@@ -5,7 +5,7 @@ import OutfitIndex from './Outfit/OutfitIndex.jsx';
 import ReviewIndex from './Review/ReviewIndex.jsx';
 import axios from 'axios';
 import { getData } from './Controllers/getData.js';
-import { calculateAverageRating, getDefaultStyle, setDefaultAsFirstStyle } from './HelperFunctions.js';
+import { calculateAverageRating, getDefaultStyle, setDefaultAsFirstStyle, navBarScroll } from './HelperFunctions.js';
 import clickTrackerHOC from './ClickTrackerHOC.jsx';
 
 var App = (props) => {
@@ -19,6 +19,7 @@ var App = (props) => {
   useEffect(async () => {
     setMetaData(await getData());
     setLoaded(true);
+    navBarScroll();
   }, []);
 
   useEffect(() => {

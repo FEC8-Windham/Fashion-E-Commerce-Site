@@ -3,7 +3,7 @@ import { Nav, NavList, NavItems, NavLinks } from './NavBar.style';
 
 const NavBar = () => {
   return (
-    <Nav>
+    <Nav id="navbar">
       <NavList>
         <NavItems><NavLinks href='#'>Overview</NavLinks></NavItems>
         <NavItems><NavLinks href='#moduleOutfit'>Outfits</NavLinks></NavItems>
