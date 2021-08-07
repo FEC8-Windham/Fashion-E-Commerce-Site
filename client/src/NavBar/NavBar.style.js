@@ -5,17 +5,18 @@ export const Nav = styled.div`
   height: 100px;
   background-color: #404040;
   z-index: 100;
-}
-`;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  `;
 
 export const NavList = styled.ul`
+  position: absolute;
   list-style: none;
   margin: 0;
-  padding: 0;
-  right: 310px;
-  top: 24px;
-  position: absolute;
-`;
+  padding-right: 5vw;
+  `;
 
 export const NavItems = styled.li`
   font-family: Arial, Helvetica, sans-serif;
