@@ -7,3 +7,44 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.dark {
+  background-color: #2b2c30;
+  color: white;
+}
+
+.dark div {
+  color: white;
+  border-color: none;
+  background-color: #2b2c30;
+}
+
+.dark button {
+  color: white;
+  background-color: #333;
+}
+
+.dark select {
+  color: white;
+  background-color: #333;
+}
+
+.dark form {
+  background-color: #2b2c30;
+}
+
+.dark span {
+  color: white;
+}
+
+.dark th {
+  color: white;
+}
+
+.dark tr {
+  color: white;
+}
+
+.dark#add {
+  filter: invert(100%);
+}

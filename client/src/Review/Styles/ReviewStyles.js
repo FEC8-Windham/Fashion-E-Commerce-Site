@@ -135,7 +135,7 @@ export const BreakdownFlexContainer = styled.div`
   margin-right: 30px;
 `;
 
-export const Float = styled.div`
+export const Float = styled.span`
   display: flex; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -208,7 +208,7 @@ export const CharLabelDiv = styled.div`
   text-align: ${props => props.align};
 `;
 
-export const CharBackG = styled.div`
+export const CharBackG = styled.section`
   height: 5px;
   width: 100%;
   background-color: lightgray;

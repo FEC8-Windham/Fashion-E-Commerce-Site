@@ -27,7 +27,7 @@ var AddButton = (({ isSizeSelected, setShowSelectSizeMessage, currSize, currStyl
   };
 
   return (
-    <CartButton onClick={clickHandler}>
+    <CartButton className='addToCart' onClick={clickHandler}>
       &nbsp;&nbsp;&nbsp;&nbsp;Add to Cart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+
     </CartButton>
   );

@@ -10,6 +10,7 @@ export const Container = styled.div`
 
 export const RowContainer = styled.div`
   padding: 0px;
+  margin: 0;
   height: 405px;
   padding-left: 1px;
   overflow-x: hidden;
@@ -37,7 +38,7 @@ export const FadeoutRight = styled.div`
   z-index: 1;
 `;
 
-export const PreviousButton = styled.button`
+export const PreviousButton = styled.div`
   position: absolute;
   border: none;
   margin: 0px;
@@ -51,7 +52,7 @@ export const PreviousButton = styled.button`
   cursor: pointer;
 `;
 
-export const NextButton = styled.button`
+export const NextButton = styled.div`
   position: absolute;
   border: none;
   margin: 0px;

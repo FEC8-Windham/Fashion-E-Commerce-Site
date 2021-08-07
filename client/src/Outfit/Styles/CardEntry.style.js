@@ -58,7 +58,7 @@ export const Pic = styled.img`
   }
   `;
 
-export const StarButton = styled.button`
+export const StarButton = styled.span`
   z-index: 1;
   float: left;
   display: inline-block;
@@ -75,10 +75,11 @@ export const StarButton = styled.button`
   transform: 0.3s ease;
   &:hover {
     transform: scale(1.05);
+    color: black;
   }
 `;
 
-export const XButton = styled.button`
+export const XButton = styled.span`
   z-index: 1;
   right: 5px;
   top: 1px;
@@ -88,6 +89,9 @@ export const XButton = styled.button`
   padding: 10px;
   cursor: pointer;
   transition: .2s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 25px;
   color: darkgray;
   &:hover {
     transform: scale(1.05);

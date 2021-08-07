@@ -57,7 +57,7 @@ const YourOutfitEntry = (props) => {
         <br></br>
         <Card>
           <ImageContainer onClick={props.click}>
-            <Add src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Feather-core-plus-circle.svg/1024px-Feather-core-plus-circle.svg.png'></Add>
+            <Add id='add' src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Feather-core-plus-circle.svg/1024px-Feather-core-plus-circle.svg.png'></Add>
           </ImageContainer>
           <Info>
             <AddOutfit>Add Outfit</AddOutfit>
