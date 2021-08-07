@@ -72,7 +72,6 @@ const YourOutfit = (props) => {
 
   var clickHandlerRight = () => {
     document.querySelector('#outfitContainer').scrollLeft += 260;
-
     const end = document.querySelector('#outfitContainer').scrollWidth - document.querySelector('#outfitContainer').scrollLeft - 1294;
     if (end <= 0) {
       setDisplay('none');

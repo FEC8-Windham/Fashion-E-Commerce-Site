@@ -21,16 +21,16 @@ const RelatedProducts = (props) => {
       setDisplay('none');
       setRightMost(true);
     }
-  }, []);
+  }, [relatedProducts]);
 
   var clickHandlerRight = () => {
     document.querySelector('#relatedContainer').scrollLeft += 260;
     const end = document.querySelector('#relatedContainer').scrollWidth - document.querySelector('#relatedContainer').scrollLeft - 1294;
-    if (end <= 0) {
+    if (end <= 100) {
+      console.log('Reached the end!');
       setDisplay('none');
       setRightMost(true);
     }
-
     setLeftMost(false);
   };
 
