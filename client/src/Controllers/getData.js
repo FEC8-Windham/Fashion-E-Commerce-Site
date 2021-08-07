@@ -1,7 +1,7 @@
 import axios from 'axios';
 import API_KEY from '../config/config';
 
-export var getData = async () => {
+export var getData = async (newId) => {
   var metaData = {};
   var config = {
     method: 'GET',
@@ -12,7 +12,7 @@ export var getData = async () => {
   };
   var responseObj = await axios(config);
   var productsList = responseObj.data;
-  var productId = productsList[4].id;
+  var productId = newId || productsList[0].id;
 
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/products/${productId}`;
   var responseObj = await axios(config);

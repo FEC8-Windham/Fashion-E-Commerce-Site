@@ -22,6 +22,8 @@ var OutfitIndex = (props) => {
     setOpenP(true);
   };
 
+
+
   return (
     <Outfit id='moduleOutfit'>
       <ComparisonModal
@@ -32,7 +34,7 @@ var OutfitIndex = (props) => {
         id='comparisonModal'
       />
       <div id='modal'></div>
-      <RelatedProducts id='relatedProductsComponent' data={relatedProducts} clickHandler={clickHandler} />
+      <RelatedProducts id='relatedProductsComponent' data={relatedProducts} clickHandler={clickHandler} changeProduct={props.changeProduct}/>
       <YourOutfit id='yourOutfitsComponent' data={currentProduct}/>
       <br></br>
     </Outfit>

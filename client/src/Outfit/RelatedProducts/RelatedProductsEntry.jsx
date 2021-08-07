@@ -53,12 +53,12 @@ const RelatedProductsEntry = (props) => {
     <CardContainer margin={marginx}>
       <br></br>
       {loaded ?
-        <Card onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>
+        <Card>
           <ImageContainer>
-            <StarButton>✩</StarButton>
-            <Pic src={url} alt='no image' />
+            <StarButton onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>⧓</StarButton>
+            <Pic onClick={() => props.changeProduct(relatedId)} src={url} alt='no image' />
           </ImageContainer>
-          <Info>
+          <Info onClick={() => props.changeProduct(relatedId)}>
             <Category>{category}</Category>
             <br></br>
             <Title>{name}</Title>

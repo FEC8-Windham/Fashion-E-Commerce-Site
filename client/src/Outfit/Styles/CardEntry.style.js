@@ -68,7 +68,7 @@ export const StarButton = styled.button`
   background: none;
   border: none;
   padding: 0px;
-  font-size: 22px;
+  font-size: 25px;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   color: black;
   cursor: pointer;

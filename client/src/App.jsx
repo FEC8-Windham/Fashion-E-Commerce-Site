@@ -15,6 +15,7 @@ var App = (props) => {
   var [styles, setStyles] = useState(null);
   var [averageRating, setAverageRating] = useState(0);
   var [reviewDiv, setReviewDiv] = useState(null);
+  var [currentId, setCurrentId] = useState(null);
 
   useEffect(async () => {
     setMetaData(await getData());
@@ -22,12 +23,22 @@ var App = (props) => {
     navBarScroll();
   }, []);
 
+  useEffect(async () => {
+    if (currentId) {
+      setMetaData(await getData(currentId));
+    }
+  }, [currentId]);
+
   useEffect(() => {
     if (metaData) {
       setStyles(setDefaultAsFirstStyle(metaData.productStyles));
       setAverageRating(calculateAverageRating(metaData.reviewMeta.ratings));
     }
   }, [metaData]);
+
+  var changeProduct = (id) => {
+    setCurrentId(id);
+  };
 
   var getReviewDiv = (reviewRef) => {
     setReviewDiv(reviewRef.current);
@@ -38,7 +49,7 @@ var App = (props) => {
       <NavBar />
       {loaded ? <OverviewIndex productInfo = {metaData.productInfo} averageRating= {averageRating} styles = {styles} reviewDiv ={reviewDiv}/> : <div>Loading...</div>}
 
-      {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating} /></div> : null}
+      {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating} changeProduct={changeProduct}/></div> : null}
 
       {loaded ? <div><ReviewIndex productInfo = {metaData.productInfo} reviews={metaData.reviewList} reviewMeta={metaData.reviewMeta } getReviewDiv = {getReviewDiv}/></div> : null}
     </div>
