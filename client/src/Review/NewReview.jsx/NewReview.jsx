@@ -213,7 +213,7 @@ const NewReview = (props) => {
     <Float>
       <Form>
         <FullWidthDiv>
-        Write Your Review
+          <h4>Write Your Review</h4>
           <RevClose onClick={props.close}>X Close</RevClose>
         </FullWidthDiv>
         <FullWidthDiv border={'1px solid black'}>
@@ -235,14 +235,14 @@ const NewReview = (props) => {
         {radioArr.map(form=>form)}
         <FullWidthForm border={'1px solid black'}>
           <label>
-            Summary:
-            <textarea key={'summaryform'} value={summary} placeholder={'Example: Best purchase ever!'} onChange={e=>setSummary(e.target.value.slice(0, 60))}/>
+            Summary: <br></br>
+            <textarea cols='60' key={'summaryform'} value={summary} placeholder={'Example: Best purchase ever!'} onChange={e=>setSummary(e.target.value.slice(0, 60))}/>
           </label>
         </FullWidthForm>
         <FullWidthForm border={'1px solid black'}>
           <label>
-            Body*:
-            <textarea key={'bodyform'} value={body} placeholder={'Why did you like the product or not'} onChange={e=>setBody(e.target.value.slice(0, 1000))}/>
+            Body*: <br></br>
+            <textarea cols='60' key={'bodyform'} value={body} placeholder={'Why did you like the product or not'} onChange={e=>setBody(e.target.value.slice(0, 1000))}/>
           </label>
           <FullWidthDiv fontSize={'12px'}>
             {counter < 50 ? `Minimum required characters left: ${50 - counter}` : 'Minimum reached'}
@@ -250,7 +250,7 @@ const NewReview = (props) => {
         </FullWidthForm>
         <FullWidthForm border={'1px solid black'}>
           <label>
-            Attach Picture:
+            Attach Picture:&nbsp;
             <input type='text' key={'photoform'} value={url} placeholder={'Example: imgur.com/image'} onChange={e=>setUrl(e.target.value)} />
             <input onClick={e=>addPhoto(e, url)} type="submit" value="Submit" />
             <input onClick={e=>{
@@ -284,12 +284,8 @@ const NewReview = (props) => {
         <ButtonCont>
           <Button margin={'15px'} onClick={()=>submitForm()} type="submit" value="Submit" >Submit Review</Button>
         </ButtonCont>
-
       </Form>
-
     </Float>
-
-
   );
 };
 

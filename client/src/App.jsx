@@ -3,6 +3,7 @@ import NavBar from './NavBar/NavBar.jsx';
 import OverviewIndex from './Overview/OverviewIndex.jsx';
 import OutfitIndex from './Outfit/OutfitIndex.jsx';
 import ReviewIndex from './Review/ReviewIndex.jsx';
+import Footer from './Footer/Footer.jsx';
 import axios from 'axios';
 import { getData } from './Controllers/getData.js';
 import { calculateAverageRating, getDefaultStyle, setDefaultAsFirstStyle, navBarScroll } from './HelperFunctions.js';
@@ -54,6 +55,7 @@ var App = (props) => {
       {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating} changeProduct={changeProduct}/></div> : null}
 
       {loaded ? <div><ReviewIndex productInfo={metaData.productInfo} reviews={metaData.reviewList} reviewMeta={metaData.reviewMeta } getReviewDiv={getReviewDiv}/></div> : null}
+      <Footer />
     </div>
   );
 };

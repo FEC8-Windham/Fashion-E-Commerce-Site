@@ -9,9 +9,11 @@ const NavBar = () => {
     if (isDark) {
       setDark(false);
       mainDiv.classList.remove('dark');
+      document.body.classList.remove('dark');
     } else {
       setDark(true);
       mainDiv.classList.add('dark');
+      document.body.classList.add('dark');
     }
   };
 

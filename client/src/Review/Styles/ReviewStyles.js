@@ -56,6 +56,7 @@ export const ReviewModuleFlexContainer = styled.div`
   justify-content: center;
   align-self:stretch;
   width:  ${props => props.width};
+  margin-bottom: 100px;
 `;
 
 export const RatingDiv = styled.div`
@@ -112,7 +113,8 @@ export const ImageFlexContainer = styled.div`
   align-self:stretch;
   background-color: white;
   border-bottom: ${props => props.border};
-  margin: 15px;
+  /* margin: 15px; */
+  margin: 10px 1px 10px 1px;
 `;
 
 export const Image = styled.img`
@@ -147,6 +149,7 @@ export const Float = styled.span`
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   justify-content: center;
+  padding-bottom: 300px
   `;
 
 export const Close = styled.button`
@@ -219,10 +222,12 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 500px;
+  width: 600px;
   height: fit-content;
   background-color: white;
-  padding: 0 10px 0 10px;
+  padding: 15px 30px 10px 30px;
+  position: absolute;
+  top: 30px;
 `;
 
 export const StarCont = styled.div`
@@ -272,6 +277,7 @@ export const RatingSpan = styled.span`
   font-size: 45px;
 `;
 export const ButtonCont = styled.div`
+  margin-top: 18px;
   display: flex;
   flex-direction: row;
   justify-content: center;
