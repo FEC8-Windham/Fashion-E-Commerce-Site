@@ -22,8 +22,6 @@ var OutfitIndex = (props) => {
     setOpenP(true);
   };
 
-
-
   return (
     <Outfit id='moduleOutfit'>
       <ComparisonModal

@@ -56,9 +56,15 @@ const RelatedProductsEntry = (props) => {
         <Card>
           <ImageContainer>
             <StarButton onClick={() => { props.clickHandler(relatedData, numberStyles, rating); }}>⧓</StarButton>
-            <Pic onClick={() => props.changeProduct(relatedId)} src={url} alt='no image' />
+            <Pic onClick={() => {
+              props.changeProduct(relatedId);
+              props.setChanged(!props.changed);
+            }} src={url} alt='no image' />
           </ImageContainer>
-          <Info onClick={() => props.changeProduct(relatedId)}>
+          <Info onClick={() => {
+            props.changeProduct(relatedId);
+            props.setChanged(!props.changed);
+          }}>
             <Category>{category}</Category>
             <br></br>
             <Title>{name}</Title>

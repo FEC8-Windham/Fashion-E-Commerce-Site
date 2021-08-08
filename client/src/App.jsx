@@ -16,6 +16,7 @@ var App = (props) => {
   var [averageRating, setAverageRating] = useState(0);
   var [reviewDiv, setReviewDiv] = useState(null);
   var [currentId, setCurrentId] = useState(null);
+  var [changed, setChanged] = useState(false);
 
   useEffect(async () => {
     setMetaData(await getData());

@@ -12,7 +12,7 @@ export var getData = async (newId) => {
   };
   var responseObj = await axios(config);
   var productsList = responseObj.data;
-  var productId = newId || productsList[0].id;
+  var productId = newId || productsList[4].id;
 
   config.url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/products/${productId}`;
   var responseObj = await axios(config);
