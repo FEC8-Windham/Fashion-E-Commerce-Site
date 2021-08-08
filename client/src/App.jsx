@@ -39,6 +39,7 @@ var App = (props) => {
 
   var changeProduct = (id) => {
     setCurrentId(id);
+    setChanged(!changed);
   };
 
   var getReviewDiv = (reviewRef) => {
@@ -48,11 +49,11 @@ var App = (props) => {
   return (
     <div onClick={props.click}>
       <NavBar />
-      {loaded ? <OverviewIndex productInfo = {metaData.productInfo} averageRating= {averageRating} styles = {styles} reviewDiv ={reviewDiv}/> : <div>Loading...</div>}
+      {loaded ? <OverviewIndex productInfo={metaData.productInfo} averageRating={averageRating} styles={styles} reviewDiv={reviewDiv}/> : <div>Loading...</div>}
 
       {loaded ? <div><OutfitIndex metaData={metaData} averageRating={averageRating} changeProduct={changeProduct}/></div> : null}
 
-      {loaded ? <div><ReviewIndex productInfo = {metaData.productInfo} reviews={metaData.reviewList} reviewMeta={metaData.reviewMeta } getReviewDiv = {getReviewDiv}/></div> : null}
+      {loaded ? <div><ReviewIndex productInfo={metaData.productInfo} reviews={metaData.reviewList} reviewMeta={metaData.reviewMeta } getReviewDiv={getReviewDiv}/></div> : null}
     </div>
   );
 };
