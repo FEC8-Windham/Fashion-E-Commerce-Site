@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Nav, NavList, NavItems, NavLinks, DarkModeBtn } from './NavBar.style';
+import { Nav, Logo, NavList, NavItems, NavLinks, DarkModeBtn } from './NavBar.style';
 
 const NavBar = () => {
   const [isDark, setDark] = useState(false);
@@ -19,6 +19,7 @@ const NavBar = () => {
 
   return (
     <Nav id='navbar'>
+      <Logo src='../../../public/images/[ W ]indham (1).png'></Logo>
       <NavList>
         {isDark ? <DarkModeBtn id='dark' bg={'#333'} color={'white'} hovercolor={'black'} hoverbg={'#ebe4e4'} onClick={colorChanger}>☼</DarkModeBtn> : <DarkModeBtn id='notDark' onClick={colorChanger}>☼</DarkModeBtn>}
 

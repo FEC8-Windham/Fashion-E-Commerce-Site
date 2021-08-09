@@ -14,6 +14,10 @@ export const Nav = styled.span`
   z-index: 100;
   `;
 
+export const Logo = styled.img`
+
+`;
+
 export const NavList = styled.ul`
   position: absolute;
   list-style: none;

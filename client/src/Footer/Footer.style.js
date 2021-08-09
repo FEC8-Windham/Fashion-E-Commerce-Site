@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterStyle = styled.span`
-  width: 100%;
+  width: 100vw;
   background-color: #333;
   top: 300;
   height: 150px;
