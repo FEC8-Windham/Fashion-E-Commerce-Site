@@ -3,7 +3,7 @@ import moment from 'moment';
 import ReviewTileBody from './ReviewTileBody.jsx';
 import StarRating from '../../Helper-Components/StarRating.jsx';
 import { Container, FlexContainer } from '../Styles/ReviewStyles.js';
-import reviewData from '../../../../APIExamples/reviews.js';
+import reviewData from '../../../APIExamples/reviews.js';
 import HelpfulWidget from './HelpfulWidget.jsx';
 
 const ReviewTile = (props) => {

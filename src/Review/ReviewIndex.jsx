@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReviewTile from './ReviewTile/ReviewTile.jsx';
 import { getReviews, postReview } from '../Controllers/reviewController.js';
-import reviewData from '../../../APIExamples/reviews.js';
+import reviewData from '../../APIExamples/reviews.js';
 import TileContainer from './TileContainer/TileContainer.jsx';
 import { ReviewModuleFlexContainer } from './Styles/ReviewStyles.js';
 import ReviewBreakdown from './ReviewBreakdown/ReviewBreakdown.jsx';

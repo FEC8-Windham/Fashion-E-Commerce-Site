@@ -3,7 +3,7 @@ import moment from 'moment';
 import axios from 'axios';
 import StarRating from '../../Helper-Components/StarRating.jsx';
 import { Container, FlexContainer, HelpfulSpan } from '../Styles/ReviewStyles.js';
-import reviewData from '../../../../APIExamples/reviews.js';
+import reviewData from '../../../APIExamples/reviews.js';
 import {helpfulClick} from '../../Controllers/reviewController.js';
 import API_KEY from '../../config/config.js';
 

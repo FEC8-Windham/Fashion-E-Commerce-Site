@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import ReviewTile from '../ReviewTile/ReviewTile.jsx';
-import reviewData from '../../../../APIExamples/reviews.js';
+import reviewData from '../../../APIExamples/reviews.js';
 import { Container, TileFlexContainer, Button, ButtonCont } from '../Styles/ReviewStyles.js';
 import SortSelect from './SortSelect.jsx';
 import { calculateRecommendation } from '../../HelperFunctions.js';
