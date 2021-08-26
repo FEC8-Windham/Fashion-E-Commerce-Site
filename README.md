@@ -38,12 +38,14 @@ In the same section are selectors for the different styles of that product. Clic
 as the sizes and quantity available.
 
 [*Style selection*]
+
 ![Style selection](https://media.giphy.com/media/Z7mzGy0Mof7ztsyobm/giphy.gif)
 
 Each style and product has different corresponding sizes and quantities per size. Adding to cart will send a POST request to the API, and adding to cart without
 selecting size or quantity will result in an error message.
 
 [*Add to cart*]
+
 ![Add to cart](https://media.giphy.com/media/tPVKr6J5vWuAyIeI5w/giphy.gif)
 
 **Related Products**
@@ -58,6 +60,7 @@ Clicking on the icon on the top right will display a comparison modal, comparing
 related product. It takes properties from both products and show it in a table.
 
 [*Related Products*]
+
 ![Related Products](https://media.giphy.com/media/9kgoK8l3a6dIr6RFB4/giphy.gif)
 
 **Your Outfit**
@@ -70,6 +73,7 @@ Similar to Related Products, if there are more than 4 cards in the row, it will 
 the product image, category, product name, price, and average rating.
 
 [*Your Outfit*]
+
 ![Alt Text](https://media.giphy.com/media/j292wbLqisBCDb56ej/giphy.gif)
 
 **Ratings and Reviews**
@@ -83,9 +87,11 @@ sorting option will send a GET request to the API with the newly selected sortin
 the page is refreshed or a new option is chosen.
 
 [*Sort reviews by relevence/newest/helpful*]
+
 ![Alt Text](https://media.giphy.com/media/GXQeK62Y1JiDntHFB4/giphy.gif)
 
 [*Filter reviews by star rating*]
+
 ![Alt Text](https://media.giphy.com/media/BkWQUc5dlf7UBYAk3j/giphy.gif)
 
 On the bottom of the reviews container there are a more reviews button and a new reviews button. The more reviews button will
@@ -93,7 +99,9 @@ show an additional two reviews everytime it is clicked, until there the total re
 new review button will open a modal where the user can add a new review that will be posted to the API via a POST request
 
 [*More reviews*]
+
 ![Alt Text](https://media.giphy.com/media/iGabfmnWnjhpBvR6eE/giphy.gif)
 
 [*New review*]
+
 ![Alt Text](https://media.giphy.com/media/w00pDazMSGxIeqgEWK/giphy.gif)
