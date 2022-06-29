@@ -1,5 +1,5 @@
 
-# Frontend Capstone: Project Catwalk
+# Windham Wear : Front-End
 
 Project Catwalk is an e-commerce webpage for streetwear fashion products. This webpage is heavily focused on the frontend and friendly, modern user design.
 
